@@ -20,11 +20,11 @@
 ##  Association
 
 
-has_many   :object 
+has_one   :objective 
 has_many   :circle
 
 
-##  objects テーブル
+##  objective テーブル
 
 
 | Column              | Type       | Options                        |
@@ -61,7 +61,7 @@ hsa_one    :status
 
 ##  Association
 
-belongs_to :object
+belongs_to :objective
 
 
 
@@ -80,7 +80,7 @@ belongs_to :object
 
 ##  Association
 
-belongs_to :object
+belongs_to :objective
 belongs_to :user
 
 

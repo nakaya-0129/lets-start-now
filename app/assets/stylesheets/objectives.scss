@@ -1,4 +1,4 @@
-// Place all the styles related to the objects controller here.
+// Place all the styles related to the objectives controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
@@ -36,7 +36,7 @@
 .main-header {
   height: 300px;
   width: 100%;
-  background-color:lightskyblue;
+  background-color:rgb(74, 103, 228);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,7 +48,7 @@
  
 
 .form {
-  background-color: #595959;
+  background-color: linen;
   height: 100px;
   padding: 20px 40px;
 }
@@ -76,14 +76,13 @@
   height: 50px;
   width: 50%;
   padding: 0 15px;
-  color: #434a54;
+  color: #8c9b96e3;
   border-style: none;
 }
 
 .submit-btn {
   width: 100px;
   height: 50px;
-  padding: 0 30px;
   margin-left: 15px;
   background-color: #eeeeee;
   font-size: 15px;
@@ -120,7 +119,7 @@ font-size: 25px;
   margin-right: 10px;
 }
 
-
-
-
-
+.select-box{
+  width: 250px;
+  height: 30px;
+}
