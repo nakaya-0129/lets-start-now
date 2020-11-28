@@ -1,0 +1,20 @@
+<div class="contents">
+  <div class="container">
+    <h2>Log in form</h2>
+    <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true ,class: "text"%>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "off" , class: "text"%>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Log in " ,class: "sign-up"%>
+      </div>
+    <% end %>
+  </div>
+</div>
