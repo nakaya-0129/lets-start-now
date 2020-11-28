@@ -1,0 +1,23 @@
+ <header class="header">
+      <div class="header_bar">
+        <h2 class="grid" >First of all Sign Up</h2>
+        <% if user_signed_in? %>
+          <div class="user_nav grid">
+          <span><%= current_user.nick_name %>
+           <ul class="user_info">
+            <li>
+             <%= link_to "マイページ", "/users/#{current_user.id}",class: "post" %>
+             <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "post" %>
+            </li>
+            </ul>
+          </span>
+          </div>
+        <% else %>
+          <div class="user_info">
+            <%= link_to "ログイン", new_user_session_path, class: "post" %>
+            <%= link_to "新規登録", new_user_registration_path, class: "post" %>
+          </div>
+        <% end %>
+        </div>
+        <%=image_tag "icons8-メニュー-48.png" %>
+    </header>

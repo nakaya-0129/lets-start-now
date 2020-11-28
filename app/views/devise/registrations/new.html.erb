@@ -1,0 +1,34 @@
+<div class="contents">
+  <div class="container">
+    <h2>Contact Us </h2>
+    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email , class: "text" %>
+      </div>
+       <div class="field">
+        <%= f.label :nick_name %> <em>(8 characters maximum)</em><br />
+        <%= f.text_field :nick_name, autofocus: true, maxlength: "8" ,class: "text"%>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "off",class: "text" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off",class: "text" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Sign up" ,class: "sign-up"%>
+      </div>
+    <% end %>
+  </div>
+</div>

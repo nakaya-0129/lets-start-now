@@ -1,0 +1,126 @@
+// Place all the styles related to the objects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header{ 
+  height: 100%;
+  background-color: linen;
+  font-size: small;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+ } 
+
+
+
+.center_screen {
+  height: 600px;
+  width: 100%;
+  background-image: image-url('3466871_l.jpg');
+  background-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.main-btn{
+  width: 200px;
+  height: 80px;
+  font-size: 20px;
+  color:white;
+  background-color: #0099ff;
+  border-radius: 100vh;
+  cursor: pointer;
+}
+
+
+.main-header {
+  height: 300px;
+  width: 100%;
+  background-color:lightskyblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main_image{
+  width: 100%;
+}
+ 
+
+.form {
+  background-color: #595959;
+  height: 100px;
+  padding: 20px 40px;
+}
+
+.menu {
+  display: flex;
+}
+
+.new-group {
+  margin-right: 5px;
+}
+
+.current-group {
+  color: #eeeeee;
+  margin-bottom: 15px;
+  font-size: 100px;
+}
+
+.new-message {
+  display: flex;
+}
+
+.input-text {
+  font-size: 16px;
+  height: 50px;
+  width: 50%;
+  padding: 0 15px;
+  color: #434a54;
+  border-style: none;
+}
+
+.submit-btn {
+  width: 100px;
+  height: 50px;
+  padding: 0 30px;
+  margin-left: 15px;
+  background-color: #eeeeee;
+  font-size: 15px;
+  color: #1a1d21;
+  cursor: pointer;
+}
+.sign-up{
+  margin-top: 30px; 
+  width: 200px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.contents{
+  height: 100vh;
+  text-align: center;
+}
+.container{
+  height: 100%;
+  background-color: powderblue;
+}
+
+.field{
+font-size: 25px;
+}
+
+.text{
+  width: 250px;
+  height: 30px;
+}
+
+.post{
+  font-size: 15px;
+  margin-right: 10px;
+}
+
+
+
+
+
