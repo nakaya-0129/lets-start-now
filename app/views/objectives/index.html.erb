@@ -1,12 +1,30 @@
  <%= render "shared/header"%>
- <div class="main">
-  <div class="main_screen">
+    <div class="main_screen">
     <div class="main-header">
       <h2 class="current-group">Let's Start Now!</h2>
     </div>
   </div>
  <div class="center_screen">
- <input class="main-btn" type="submit" value="let's start!">
+ <h1 class="center-title">Menber's Bulletin Board</h1>
+ <div class = "object-box">
+ <ul class="object-lists">
+      <% @objectives.each do |objective| %>
+         <%= link_to  objective_path(objective.id) do %>
+           <div class='list'>
+           <div class='objective-img-content'>
+              <%= image_tag objective.image.variant(gravity: :center, resize: '220x220').processed, class: "object-image" if objective.image.attached? %>
+           </div> 
+            <div class="object-name">
+            <span>ユーザーネーム:<%=objective.full_name%>さん</span> 
+            <span>テーマ:<%= objective.category.name %> </span>
+            </div>
+            </div>
+      <% end %>
+  <% end %>
+</div>
+<% if @objectives.blank?%>
+<h1 class ="sub-screen">目標を設定して投稿しよう！</h1>
+<% end %>
  </div>
  
   <div class="messages"></div>
@@ -16,4 +34,4 @@
        <input class="submit-btn" type="submit" value="検索">
      </form>
    </div>
-</div>
+   </div>

@@ -1,6 +1,6 @@
 class Hobit < ActiveHash::Base
   self.data = [
-    {id: 1, name: "--"},
+    {id: 1, name: "--毎日取り組む時間を設定して下さい--"},
     {id: 2, name: "10~15分"},
     {id: 3, name: "15~30分"},
     {id: 4, name: "30~1時間"},

@@ -6,40 +6,46 @@
   height: 100%;
   background-color: linen;
   font-size: small;
+  text-decoration: none;
   display: flex;
   justify-content: space-between;
   margin: auto;
  } 
-
+.user_info, .post{
+  list-style: none;
+  text-decoration: none;
+}
 
 
 .center_screen {
-  height: 600px;
+  height: 100vh;
   width: 100%;
-  background-image: image-url('3466871_l.jpg');
-  background-size: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-.main-btn{
-  width: 200px;
-  height: 80px;
-  font-size: 20px;
-  color:white;
-  background-color: #0099ff;
-  border-radius: 100vh;
-  cursor: pointer;
+  background-image: image-url('669060_l.jpg');
+  background-size: cover;
 }
 
 
 .main-header {
   height: 300px;
   width: 100%;
-  background-color:rgb(74, 103, 228);
+  background-color:lightyellow;
   display: flex;
-  justify-content: center;
   align-items: center;
+  text-decoration: none;
+}
+
+.object-box{
+  display: flex;
+  text-decoration: none;
+}
+.list{
+  text-decoration: none;
+}
+
+.object-lists{
+  display: inline-block;
+  list-style: none;
+  flex-direction: row;
 }
 
 .main_image{
@@ -62,7 +68,7 @@
 }
 
 .current-group {
-  color: #eeeeee;
+  color: rgb(216, 147, 57);
   margin-bottom: 15px;
   font-size: 100px;
 }
@@ -97,11 +103,8 @@
 }
 
 .contents{
-  height: 100vh;
+  height: 200vh;
   text-align: center;
-}
-.container{
-  height: 100%;
   background-color: powderblue;
 }
 
@@ -121,5 +124,45 @@ font-size: 25px;
 
 .select-box{
   width: 250px;
-  height: 30px;
+  height: 25px;
+}
+
+.object-show-box{
+  text-align: center;
+  background-image: image-url('1108540_l.jpg') ;
+  background-size: cover;
+  height: 100vh;
+  font-size: 30px;
+}
+
+.detail-table{
+  margin: 0 auto;
+  font-size: 25px;
+  border: solid 1px;
+  background-color: linen;
+}
+
+.object-display{
+  display: flex;
+  justify-content: center;
+  margin-right: 10px; 
+}
+
+.btn--object{
+color: black;
+background-color: rgb(247, 165, 99);
+border-radius: 100vh;
+text-decoration: none;
+}
+
+.send-btn{
+  height: 50px;
+  width: 100x;
+  background-color: wheat;
+  border: solid 1px;
+  border-radius:  100vh;
+}
+
+.object-display{
+margin-top: 50px;
 }

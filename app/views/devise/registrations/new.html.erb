@@ -3,7 +3,6 @@
     <h2>Contact Us </h2>
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <%= devise_error_messages! %>
-
       <div class="field">
         <%= f.label :email %><br />
         <%= f.email_field :email , class: "text" %>
