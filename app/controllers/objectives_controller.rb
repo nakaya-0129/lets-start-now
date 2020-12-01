@@ -50,6 +50,6 @@ class ObjectivesController < ApplicationController
 
   private
   def objects_params
-    params.require(:objective).permit(:image, :full_name, :category_id, :hobit_id, :one_day, :one_week, :three_month, :year).merge(user_id: current_user.id)
+    params.require(:objective).permit(:image, :user_name, :category_id, :hobit_id, :one_day, :one_week, :three_month, :year).merge(user_id: current_user.id)
   end
 end
