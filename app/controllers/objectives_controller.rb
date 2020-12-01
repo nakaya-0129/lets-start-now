@@ -1,7 +1,8 @@
 class ObjectivesController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index,:show]
 
   def index
+    @objectives = Objective.includes(:user)
   end
 
   def new
@@ -17,8 +18,38 @@ class ObjectivesController < ApplicationController
       end
     end
 
+    def show
+      @objective = Objective.find(params[:id])
+      @comment = Comment.new
+      @comments = @objective.comments.includes(:user)
+    end
+
+    def edit
+      @objective = Objective.find(params[:id])
+    end
+
+    def update
+      @objective = Objective.find(params[:id])
+      if @objective.update(objects_params)
+        redirect_to root_path
+      else
+        render :edit
+      end
+    end
+
+    def destroy
+      @objective =Objective.find(params[:id])
+      if @objective.user_id == current_user.id
+        @objective.destroy
+      redirect_to root_path
+      else
+        render :show
+      end
+    end
+
+
   private
   def objects_params
-    params.require(:objective).permit(:category_id, :hobit_id, :one_day, :one_week, :three_month, :year).merge(user_id: current_user.id)
+    params.require(:objective).permit(:image, :full_name, :category_id, :hobit_id, :one_day, :one_week, :three_month, :year).merge(user_id: current_user.id)
   end
 end

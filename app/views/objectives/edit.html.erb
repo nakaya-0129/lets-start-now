@@ -1,0 +1,46 @@
+<%= render "shared/login" %>
+<div class="contents">
+  <div class="container">
+    <h1>Setting of the Goal</h1>
+    <%= form_with model: @objective , url: objective_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+    <div class="field">
+       <h3>ユーザーネーム</h3>
+        <%= f.text_area :full_name, class: "text"%>
+      </div>
+    <div class="field">
+    <h3>イメージ画像<h3>
+        <p>
+          クリックしてプロフィール画像をアップロード
+        </p>
+        <%= f.file_field :image, id:"profile-image",class: "text" %>
+     </div>   
+      <div class="field">
+      <h3>テーマを決める</h3>
+       <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box",id:"item-category"}) %>
+       <h3>時間設定(一日あたりの時間)</h3>
+        <%= f.collection_select(:hobit_id, Hobit.all, :id, :name, {}, {class:"select-box",id:"item-category"}) %>
+        <h3>一日の目標</h3>
+        <%= f.text_area :one_day, class: "text"%>
+      </div>
+      <div class="field">
+      <h3>一週間の目標</h3>
+        <%= f.text_area :one_week, class: "text"%>
+      </div>
+       <div class="field">
+       <h3>一ヶ月の目標</h3>
+        <%= f.text_area :month, class: "text"%>
+      </div>
+       <div class="field">
+       <h3>三ヶ月間の目標</h3>
+        <%= f.text_area :three_month, class: "text"%>
+      </div>
+       <div class="field">
+       <h3>今年の目標</h3>
+        <%= f.text_area :year, class: "text"%>
+      </div>
+      <div class="actions">
+        <%= f.submit "修正する！" ,class: "send-btn"%>
+      </div>
+    <% end %>
+  </div>
+</div！
