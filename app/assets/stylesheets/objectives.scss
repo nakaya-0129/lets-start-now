@@ -28,7 +28,8 @@
 .main-header {
   height: 300px;
   width: 100%;
-  background-color:lightyellow;
+  background-image: image-url('4011543_s.jpg');
+  background-size: cover;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -68,7 +69,7 @@
 }
 
 .current-group {
-  color: rgb(216, 147, 57);
+  color: rgb(238, 236, 235);
   margin-bottom: 15px;
   font-size: 100px;
 }
@@ -90,6 +91,7 @@
   width: 100px;
   height: 50px;
   margin-left: 15px;
+  margin-top: 30px;
   background-color: #eeeeee;
   font-size: 15px;
   color: #1a1d21;

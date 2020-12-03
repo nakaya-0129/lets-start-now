@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     if @comment.user_id == current_user.id
        @comment.destory(comment_params)
-    redirect_to root_path
+       redirect_to root_path
     else
      render :show 
     end

@@ -49,19 +49,18 @@ hsa_one    :status
 ##  status  テーブル
 
 
-| Column          | Type        | Options                        |
-| --------------- | ----------- | ------------------------------ |
-| knowledge       |  integer    | null: false                    |
-| self_management |  integer    | null: false                    | 
-| curiosity       |  integer    | null: false                    |
-| imagination     |  integer    | null: false                    |
-| sustainability  |  integer    | null: false                    |
-| achievement     |  integer    | null: false                    |
-| empathy         |  integer    | null: false                    |
+| Column          | Type        | Options             |
+| --------------- | ----------- | ------------------- |
+| knowledge       |  integer    |                     |
+| self_management |  integer    |                     |
+| imagination     |  integer    |                     |
+| sustainability  |  integer    |                     |
+| achievement     |  integer    |                     |
+| empathy         |  integer    |                     |
 
 ##  Association
 
-belongs_to :objective
+belongs_to :aggregates
 
 
 
@@ -84,3 +83,14 @@ belongs_to :objective
 belongs_to :user
 
 
+## Aggregates
+
+| Column            | Type        | Options                        |
+| ---------------   | ----------- | ------------------------------ |
+| continuation_data |  integer    | null: false                    |
+| ability_id        |  integer    | null: false                    |
+| ability_point     |  integer    | null: false                    |
+| user_id           |  integer    | null: false                    |
+
+ belongs_to :user
+ belongs_to :status

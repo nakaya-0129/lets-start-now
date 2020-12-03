@@ -1,0 +1,24 @@
+<%= render "shared/login" %>
+<div class="contents">
+  <div class="container">
+    <h1>Setting of the Status</h1>
+    <%= form_with model: @aggregate, url: aggregates_path, class: 'aggregate_user', local: true do |f| %>
+      <div class="field">
+      <h3>テーマを参考に成長を実感した能力を選択して下さい</h3>
+       <%= f.collection_select(:ability_id, Ability.all, :id, :name, {}, {class:"select-box",id:"aggregate-category"}) %>
+        <h3>継続指数を入力して下さい</h3>
+        <span>継続指数：毎日の実行時間 X 継続日数</span>
+        <%= f.text_field :continuation_data, id: "grow-up", class: "text"%>
+      </div>
+      <div class="field">
+      <h3>Grow up pointを入力して下さい</h3>
+        <%= f.text_field :ability_point,class: "text"%>
+      </div>
+       <span>Grow up point</span>
+        <span id= "ability-point"></span>
+      <div class ="actions">
+        <%= f.submit "commit!" ,class: "submit-btn"%>
+      </div>
+      <% end %>
+  </div>
+</div>
