@@ -9,13 +9,10 @@
       </div>
     <div class="field">
     <h3>目標投稿イメージ画像<h3>
-        <p>
-          クリックしてプロフィール画像をアップロード
-        </p>
         <%= f.file_field :image, id:"profile-image",class: "text" %>
      </div>   
       <div class="field">
-      <h3>テーマを決める</h3>
+      <h3>目標のテーマを決めよう！</h3>
        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box",id:"item-category"}) %>
        <h3>時間設定(一日あたりの時間)</h3>
         <%= f.collection_select(:hobit_id, Hobit.all, :id, :name, {}, {class:"select-box",id:"item-category"}) %>
@@ -23,20 +20,22 @@
         <%= f.text_area :one_day, class: "text"%>
       </div>
       <div class="field">
-      <h3>一週間の目標</h3>
-        <%= f.text_area :one_week, class: "text"%>
+      <h3>目標を達成するためのアクションプランを考えよう！</h3>
+      <p>(具体的な行動を記入しよう！)</p>
+        <%= f.text_area :action_plan, class: "text"%>
       </div>
        <div class="field">
-       <h3>一ヶ月の目標</h3>
-        <%= f.text_area :month, class: "text"%>
+       <h3>習慣化したい行動を記入しよう！</h3>
+        <%= f.text_area :hobituation, class: "text"%>
       </div>
        <div class="field">
-       <h3>三ヶ月間の目標</h3>
-        <%= f.text_area :three_month, class: "text"%>
-      </div>
-       <div class="field">
-       <h3>今年の目標</h3>
-        <%= f.text_area :year, class: "text"%>
+       <h3>行動のメリットとデメリットを考えよう！</h3>
+       <p>(メリットを考えてみよう！)</p>
+        <%= f.text_area :merit, class: "text"%>
+        </div>
+        <div class ="field">
+       <p>(デメリットを考えてみよう！)</p>
+        <%= f.text_area :demerit, class: "text"%>
       </div>
       <div class="actions">
         <%= f.submit "commit!" ,class: "submit-btn"%>

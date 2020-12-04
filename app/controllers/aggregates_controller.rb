@@ -1,11 +1,12 @@
 class AggregatesController < ApplicationController
 
-  def index
-    @aggregate = Aggregate.new
-  end
 
   def new
-  @aggregate = Aggregate.new
+   @aggregate = Aggregate.new
+  end
+
+  def show
+   @aggregate = Aggregate.find(params[:id])
   end
 
   def create
@@ -19,6 +20,6 @@ class AggregatesController < ApplicationController
 
   private
   def aggregates_params
-   params.require(:aggregate).permit(:ability_id,:ability_point,:continuation_data).merge(user_id: current_user.id)
+   params.require(:aggregate).permit(:ability_id,:ability_point,:continuation_data,:action_point).merge(user_id: current_user.id)
   end
 end

@@ -15,8 +15,8 @@
               <%= image_tag objective.image.variant(gravity: :center, resize: '220x220').processed, class: "object-image" if objective.image.attached? %>
            </div> 
             <div class="object-name">
-            <span>ユーザーネーム:<%= objective.user_name %>さん</span> 
-            <span>テーマ:<%= objective.category.name %> </span>
+            <span>UserName:<%= objective.user_name %>さん</span> 
+            <span>Thema:<%= objective.category.name %> </span>
             </div>
             </div>
       <% end %>

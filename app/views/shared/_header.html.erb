@@ -7,7 +7,7 @@
             <li>
              <%= link_to "目標設定", new_objective_path, class: "post" %>
              <%= link_to "ステータス設定", new_aggregate_path(current_user.id), class: "post" %>
-             <%= link_to "マイページ", objective_path(current_user.id),class: "post" %>
+             <%= link_to "マイページ", aggregate_path(current_user.id),class: "post" %>
              <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "post" %>
             </li>
             </ul>
@@ -22,5 +22,4 @@
         <% end %>
         </div>
         </div>
-        <%=image_tag "icons8-メニュー-48.png" %>
     </header>

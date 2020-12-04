@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_12_02_101654) do
     t.integer "ability_id", null: false
     t.integer "ability_point", null: false
     t.integer "continuation_data", null: false
+    t.integer "action_point", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -55,10 +56,10 @@ ActiveRecord::Schema.define(version: 2020_12_02_101654) do
     t.integer "category_id", null: false
     t.integer "hobit_id", null: false
     t.string "one_day", null: false
-    t.string "one_week"
-    t.string "month"
-    t.string "three_month"
-    t.string "year"
+    t.string "action_plan", null: false
+    t.string "hobituation"
+    t.string "merit"
+    t.string "demerit"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

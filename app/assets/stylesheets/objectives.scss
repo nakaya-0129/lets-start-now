@@ -4,7 +4,7 @@
 
 .header{ 
   height: 100%;
-  background-color: linen;
+  background-color: rgb(248, 248, 130);
   font-size: small;
   text-decoration: none;
   display: flex;
@@ -20,7 +20,7 @@
 .center_screen {
   height: 100vh;
   width: 100%;
-  background-image: image-url('669060_l.jpg');
+  background-image:image-url('2226404_l.jpg');
   background-size: cover;
 }
 
@@ -55,7 +55,7 @@
  
 
 .form {
-  background-color: linen;
+  background-color: rgb(248, 248, 130);
   height: 100px;
   padding: 20px 40px;
 }
@@ -107,7 +107,15 @@
 .contents{
   height: 200vh;
   text-align: center;
-  background-color: powderblue;
+  background-color: rgb(222, 245, 248);
+}
+
+h3{
+  font-weight: 100;
+  font-size: 18px;
+}
+p{
+  font-size: 13px;
 }
 
 .field{
@@ -141,7 +149,7 @@ font-size: 20px;
   margin: 0 auto;
   font-size: 25px;
   border: solid 1px;
-  background-color: linen;
+  background-color: rgb(238, 156, 74);
 }
 
 .object-display{

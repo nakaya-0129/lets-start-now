@@ -9,7 +9,8 @@ self.data =[
   {id: 7, name: "掃除、整理"},
   {id: 8, name: "ストレス解消"},
   {id: 9, name: "趣味、娯楽"},
-  {id: 10, name: "仲間作り"}
+  {id: 10, name: "仲間作り"},
+  {id: 11, name: "その他"}
 ]
 
 include ActiveHash::Associations
