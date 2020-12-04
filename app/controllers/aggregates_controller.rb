@@ -20,6 +20,6 @@ class AggregatesController < ApplicationController
 
   private
   def aggregates_params
-   params.require(:aggregate).permit(:ability_id,:ability_point,:continuation_data,:action_point).merge(user_id: current_user.id)
+   params.require(:aggregate).permit(:ability_id,:ability_point,:continuation_data,:action_point,:self_compliment).merge(user_id: current_user.id)
   end
 end

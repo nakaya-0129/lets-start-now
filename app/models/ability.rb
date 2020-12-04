@@ -5,7 +5,9 @@ class Ability < ActiveHash::Base
     { id: 3, name: '自己管理'},
     { id: 4, name: '想像力'},
     { id: 5, name: '共感力'},
-    { id: 6, name: '行動力'}
+    { id: 6, name: '行動力'},
+    { id: 7, name: '記憶力'},
+    { id: 8, name: '特に無し'}
   ]
 
   include ActiveHash::Associations
