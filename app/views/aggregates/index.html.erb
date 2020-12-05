@@ -10,7 +10,7 @@
       <% @aggregates.each do |aggregate| %>
          <%= link_to  aggregate_path(aggregate.id) do %>
             <div class="aggregate-name">
-            <p>日付:<%= aggregate.start_day%>日</p>
+            <p><%= aggregate.start_day%></p>
             <p>目標達成率:<%= aggregate.action_point %>%</p> 
             <p>成長した能力:<%= aggregate.ability.name %></p>
             </div>
