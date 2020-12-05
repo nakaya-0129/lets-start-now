@@ -4,7 +4,7 @@
   <%= image_tag @objective.image.variant(gravity: :center, resize: '450x450'),class: "object-image" %>
 </div>
 <div class="object-explain-box">
-      <span><%= @objective.user_name %></span>
+      <span>ユーザー：<%= @objective.user_name %></span>
     <table class="detail-table">
       <tbody>
         <tr>
@@ -28,11 +28,11 @@
           <td class="detail-value"><%= @objective.hobituation %></td>
         </tr>
         <tr>
-          <th class="detail-item">行動のメリット</th>
+          <th class="detail-object">習慣化のメリット</th>
           <td class="detail-value"><%= @objective.merit %></td>
         </tr>
         <tr>
-          <th class="detail-item">行動のデメリット・障害</th>
+          <th class="detail-object">習慣化のデメリット・障害</th>
           <td class="detail-value"><%= @objective.demerit %></td>
         </tr>
       </tbody>

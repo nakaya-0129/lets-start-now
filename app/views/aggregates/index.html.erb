@@ -1,0 +1,31 @@
+<%= render "shared/login"%>
+    <div class="main_screen">
+    <div class="main-header">
+      <h2 class="current-group">My page</h2>
+    </div>
+ <div class="center_screen">
+ <h1 class="center-title">My Note</h1>
+ <div class = "aggregate-box">
+ <ul class="aggregate-lists">
+      <% @aggregates.each do |aggregate| %>
+         <%= link_to  aggregate_path(aggregate.id) do %>
+            <div class="aggregate-name">
+            <p>日付:<%= aggregate.start_day%>日</p>
+            <p>目標達成率:<%= aggregate.action_point %>%</p> 
+            <p>成長した能力:<%= aggregate.ability.name %></p>
+            </div>
+      <% end %>
+  <% end %>
+</div>
+<% if @aggregates.blank?%>
+<h1 class ="center-title">自分だけのノートを作成しよう！</h1>
+<% end %>
+ </div>
+  <div class="messages"></div>
+   <div class="form">
+     <form class="new-message">
+       <input class="input-text" placeholder="メンバー、目標、学習仲間を検索する" type="text">
+       <input class="submit-btn" type="submit" value="検索">
+     </form>
+   </div>
+   </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_02_101654) do
+ActiveRecord::Schema.define(version: 2020_12_05_032601) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -37,8 +37,9 @@ ActiveRecord::Schema.define(version: 2020_12_02_101654) do
     t.integer "user_id", null: false
     t.integer "ability_id", null: false
     t.integer "ability_point", null: false
-    t.integer "continuation_data", null: false
+    t.date "start_day", null: false
     t.integer "action_point", null: false
+    t.integer "period_id", null: false
     t.string "self_compliment", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -65,6 +66,17 @@ ActiveRecord::Schema.define(version: 2020_12_02_101654) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_objectives_on_user_id"
+  end
+
+  create_table "statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "knowledge"
+    t.integer "self_management"
+    t.integer "imageintion"
+    t.integer "sustainability"
+    t.integer "achievement"
+    t.integer "empathy"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

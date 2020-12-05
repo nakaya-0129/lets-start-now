@@ -1,11 +1,11 @@
 <%= render "shared/login" %>
 <div class="contents">
+ <h1 class="text-title">目標とアクションプランを作成して、投稿しよう！</h1>
   <div class="container">
-    <h1>Setting of the Goal</h1>
     <%= form_with model: @objective , url: objectives_path, id: 'new_user', class: 'new_user', local: true do |f| %>
     <div class="field">
        <h3>ユーザーネーム</h3>
-        <%= f.text_area :user_name, class: "text"%>
+        <%= f.text_field :user_name, class: "text"%>
       </div>
     <div class="field">
     <h3>目標投稿イメージ画像<h3>
@@ -14,8 +14,12 @@
       <div class="field">
       <h3>目標のテーマを決めよう！</h3>
        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box",id:"item-category"}) %>
+       </div>
+       <div class="field">
        <h3>時間設定(一日あたりの時間)</h3>
         <%= f.collection_select(:hobit_id, Hobit.all, :id, :name, {}, {class:"select-box",id:"item-category"}) %>
+        </div>
+        <div class="field">
         <h3>一日の目標</h3>
         <%= f.text_area :one_day, class: "text"%>
       </div>
@@ -24,12 +28,13 @@
       <p>(具体的な行動を記入しよう！)</p>
         <%= f.text_area :action_plan, class: "text"%>
       </div>
-       <div class="field">
+      <h1 class="text-title">習慣化したいことを投稿しよう！</h1>
+       <div class="field_hobit">
        <h3>習慣化したい行動を記入しよう！</h3>
         <%= f.text_area :hobituation, class: "text"%>
       </div>
        <div class="field">
-       <h3>行動のメリットとデメリットを考えよう！</h3>
+       <h3>習慣化のメリットとデメリットを考えよう！</h3>
        <p>(メリットを考えてみよう！)</p>
         <%= f.text_area :merit, class: "text"%>
         </div>
@@ -38,7 +43,7 @@
         <%= f.text_area :demerit, class: "text"%>
       </div>
       <div class="actions">
-        <%= f.submit "commit!" ,class: "submit-btn"%>
+        <%= f.submit "投稿する！" ,class: "submit-btn"%>
       </div>
     <% end %>
   </div>

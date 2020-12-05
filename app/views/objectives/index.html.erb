@@ -5,7 +5,7 @@
     </div>
   </div>
  <div class="center_screen">
- <h1 class="center-title">Menber's Bulletin Board</h1>
+ <h1 class="center-title">To Do List 掲示板</h1>
  <div class = "object-box">
  <ul class="object-lists">
       <% @objectives.each do |objective| %>
@@ -13,9 +13,9 @@
            <div class='list'>
            <div class='objective-img-content'>
               <%= image_tag objective.image.variant(gravity: :center, resize: '220x220').processed, class: "object-image" if objective.image.attached? %>
-           </div> 
+              </div>
             <div class="object-name">
-            <span>UserName:<%= objective.user_name %>さん</span> 
+            <span>User:<%= objective.user_name %>さん</span> 
             <span>Thema:<%= objective.category.name %> </span>
             </div>
             </div>

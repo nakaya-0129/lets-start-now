@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .header{ 
-  height: 100%;
+  height: 50px;
   background-color: rgb(248, 248, 130);
   font-size: small;
   text-decoration: none;
@@ -12,6 +12,7 @@
   margin: auto;
  } 
 .user_info, .post{
+  padding-top: 10px;
   list-style: none;
   text-decoration: none;
 }
@@ -36,17 +37,27 @@
 }
 
 .object-box{
+  margin-top: 10px;
   display: flex;
   text-decoration: none;
 }
+.center-title{
+  font-size:30px;
+  padding-top: 10px;
+}
 .list{
-  text-decoration: none;
+  margin: 20px;
 }
 
 .object-lists{
-  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
   list-style: none;
   flex-direction: row;
+}
+.object-img-content,.object-name{
+  text-decoration: none;
+  color: #1a1d21;
 }
 
 .main_image{
@@ -82,6 +93,7 @@
   font-size: 16px;
   height: 50px;
   width: 50%;
+  margin-top: 10px;
   padding: 0 15px;
   color: #8c9b96e3;
   border-style: none;
@@ -95,6 +107,7 @@
   background-color: #eeeeee;
   font-size: 15px;
   color: #1a1d21;
+  border-radius: 100vh;
   cursor: pointer;
 }
 .sign-up{
@@ -105,24 +118,37 @@
 }
 
 .contents{
-  height: 200vh;
+  height: 150vh;
   text-align: center;
   background-color: rgb(222, 245, 248);
+  background-size: cover;
+}
+.text-title{
+  padding-top: 10px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  color: rgb(241, 171, 79);
 }
 
-h3{
+h2,h3{
   font-weight: 100;
   font-size: 18px;
+  margin-top: 10px;
 }
+
 p{
   font-size: 13px;
 }
 
-.field{
-font-size: 20px;
+.field,.select-box{
+  margin-top: 20px;
+}
+.field_hobit{
+  margin-top: 30px;
 }
 
 .text{
+  margin-top: 10px;
   width: 250px;
   height: 30px;
 }
@@ -141,15 +167,16 @@ font-size: 20px;
   text-align: center;
   background-image: image-url('1108540_l.jpg') ;
   background-size: cover;
-  height: 100vh;
+  height: 200vh;
   font-size: 30px;
+  padding-top: 20px;
 }
 
 .detail-table{
-  margin: 0 auto;
+  margin:0 auto;
   font-size: 25px;
   border: solid 1px;
-  background-color: rgb(238, 156, 74);
+  background-color: rgb(248, 248, 130);
 }
 
 .object-display{
@@ -158,11 +185,14 @@ font-size: 20px;
   margin-right: 10px; 
 }
 
-.btn--object{
+.btn-object{
+height: 30px;
+width: 40px;
 color: black;
-background-color: rgb(247, 165, 99);
+background-color: rgb(245, 177, 157);
 border-radius: 100vh;
 text-decoration: none;
+margin-top: 20px;
 }
 
 .send-btn{
@@ -175,4 +205,23 @@ text-decoration: none;
 
 .object-display{
 margin-top: 50px;
+}
+
+.detail-object{
+  padding-bottom: 15px;
+}
+.object-explain-box{
+  margin-top: 10px;
+}
+.aggregate-lists{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-right: 20px;
+
+}
+.aggregate-name{
+  background-color: azure;
+  margin: 20px;
+  border: solid 1px;
 }
