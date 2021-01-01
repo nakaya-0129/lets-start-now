@@ -39,14 +39,14 @@
     </table>
   <div class= "object-display">
 <% if user_signed_in? && current_user.id == @objective.user_id%>
-    <%= link_to '目標の修正' ,edit_objective_path(@objective.id), method: :get, class: "btn btn--object" %>
+    <%= link_to '目標の修正' ,edit_objective_path(@objective.id), method: :get, class: "btn--object" %>
     <span>or</span>
-    <%= link_to '削除', objective_path(@objective.id), method: :delete, class:'btn btn--object' %>
+    <%= link_to '削除', objective_path(@objective.id), method: :delete, class: "btn--object" %>
  <% elsif user_signed_in? %>
     <div class= "comment-container">
     <%= form_with(model: [@objective, @comment], local: true) do |form| %>
         <%= form.text_area :text, placeholder: "コメントする", rows: "2" ,class: "text"%>
-        <%= form.submit "メッセージを送る",class: "send-btn" %>
+    <span><%= form.submit "メッセージを送る",class: "send-btn" %></span>
      <% end %>
      <% else %>
     <% end %>
@@ -54,12 +54,13 @@
   </div>
      <div class="comments">
       <h4>＜コメント一覧＞</h4>
-      <% if @comments %>
+      <div class ="comments-table">
         <% @comments.each do |comment| %>
-          <p>
-            <%= comment.text %>
-          </p>
-        <% end %>
+        <p>
+     <%= link_to comment.user.nick_name, "/objectives/#{comment.user_id}" ,class: "comment-lists"%>:
+        <%= comment.text %>
+        </p>
       <% end %>
+      </div>
    </div>
    </div>

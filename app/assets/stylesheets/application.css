@@ -116,3 +116,22 @@ hr {
 input, select {
   vertical-align:middle;
 }
+
+.futter-form {
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(182,238, 182);
+}
+  .form-lists{
+    list-style: none;
+    font-size: 15px;
+  }
+  .company-name{
+    font-size: 20px;
+    font-weight: initial;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }

@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def create
     Comment.create(comment_params)
-    redirect_to root_path
+    redirect_to objective_path(params[:objective_id])
   end
 
   def destory

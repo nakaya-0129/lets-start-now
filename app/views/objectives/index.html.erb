@@ -6,17 +6,27 @@
   </div>
  <div class="center_screen">
  <h1 class="center-title">To Do List 掲示板</h1>
+ <span>push!</span><%= link_to "目標投稿を作成する", new_objective_path ,class: "post-btn"%>
+   <p class="post-title">投稿テーマで検索しよう！</p>
+   <%= search_form_for @q, url: search_objectives_path do |f| %>
+   <%= f.collection_select :category_id_eq, Category.where.not(id: 0),:id,:name, include_blank: '---検索するテーマを選択して下さい---' %>
+   <%= f.submit '検索' %>
+ <% end %>
  <div class = "object-box">
  <ul class="object-lists">
       <% @objectives.each do |objective| %>
-         <%= link_to  objective_path(objective.id) do %>
+         <%= link_to  objective_path(objective.id),class: "object-lists" do %>
            <div class='list'>
            <div class='objective-img-content'>
               <%= image_tag objective.image.variant(gravity: :center, resize: '220x220').processed, class: "object-image" if objective.image.attached? %>
+              <% if user_signed_in? && current_user.id == objective.user_id %>
+                 <%= link_to '目標の修正' ,edit_objective_path(objective.id), method: :get, class: "btn-object hidden" %>
+                 <%= link_to '削除', objective_path(objective.id), method: :delete, class: "btn-object hidden" %>
+             <% end %>
               </div>
             <div class="object-name">
             <span><%= objective.user_name %></span> 
-            <span><%= objective.category.name %> </span>
+            <span><%= objective.category.name %></span>
             </div>
             </div>
       <% end %>
@@ -26,12 +36,3 @@
 <h1 class ="sub-screen">目標を設定して投稿しよう！</h1>
 <% end %>
  </div>
- 
-  <div class="messages"></div>
-   <div class="form">
-     <form class="new-message">
-       <input class="input-text" placeholder="メンバー、目標、学習仲間を検索する" type="text">
-       <input class="submit-btn" type="submit" value="検索">
-     </form>
-   </div>
-   </div>

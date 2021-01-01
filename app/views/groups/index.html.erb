@@ -1,0 +1,23 @@
+ <%= render "shared/group"%>
+    <div class="group_screen">
+    <div class="main-header">
+      <h2 class="current-group">Group Page</h2>
+    </div>
+ <div class="center_screen">
+ <h1 class="center-title">グループ一覧 <br>
+      参加したいコミュニティをクリックしよう！</h1>
+ <div class = "aggregate-box">
+ <ul class="aggregate-lists">
+ <% @groups.each do |group| %>
+         <%= link_to  group_path(group.id) do %>
+            <div class="aggregate-name">
+            <p><%= group.name%></p>
+            <p><%= group.comment %></p>
+            </div>
+      <% end %>
+  <% end %>
+<% if @groups.blank?%>
+<h1 class ="center-title">グループを作成しよう！</h1>
+<% end %>
+ </div>
+ </div> 

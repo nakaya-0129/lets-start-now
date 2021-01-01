@@ -1,0 +1,27 @@
+<%= render "shared/login" %>
+<div class="contents">
+ <h1 class="text-title">テーマを共有できる仲間を作ろう！</h1>
+  <div class="container">
+    <%= form_with model: @group, url: groups_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+    <div class = "field">
+    <h3>ユーザー名(グループメンバーに公開)</h3>
+        <%= f.text_field :user_name, class: "text"%>
+      </div>
+    <div class="field">
+       <h3>グループ名</h3>
+        <%= f.text_field :name, class: "text"%>
+      </div>
+      <div class= "field">
+      <h3>コメントを記入しよう</h3>
+        <%= f.text_field :comment, class: "text"%>
+      </div>
+      <div class="field">
+      <h3>グループのテーマを決めよう！</h3>
+       <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box",id:"item-category"}) %>
+       </div>
+      <div class="actions">
+        <%= f.submit "グループを作成する！" ,class: "submit-btn"%>
+      </div>
+    <% end %>
+  </div>
+</div>

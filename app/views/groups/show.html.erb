@@ -1,0 +1,18 @@
+<%= render "shared/login"%>
+<div class = "group-content">
+   <div class = "group-name">
+       <h1 class="group-title">グループ名</h1>
+  <%= @group.name %>
+   <h1 class="group-title">グループのテーマ</h1>
+  <%= @group.category.name%>
+   <h1 class="group-title">メッセージ</h1>
+  <%= @group.comment %>
+</div>
+  <% if current_user.id != @group.id%>
+<ul class = "group-select">
+  <h1 class ="group-title">グループラインに参加しますか？</h1>  
+    <%= link_to "参加する", group_path(@group.id),method: :get, class:  "btn--group"%>
+    <%= link_to "参加しない", groups_path, class: "btn--group"%>
+  <% end %>
+</div>
+

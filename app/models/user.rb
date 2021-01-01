@@ -6,5 +6,7 @@ class User < ApplicationRecord
          
 has_many :objectives   
 has_many :comments 
-has_many :aggregates   
+has_many :aggregates  
+has_many :group_users
+has_many :groups, through: :group_users 
 end

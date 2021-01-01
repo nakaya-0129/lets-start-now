@@ -1,0 +1,28 @@
+<header class="header">
+  <div class="header_bar">
+     <% if user_signed_in? %>
+          <div class="user_nav-grid">
+          <span><%= "ユーザーネーム #{current_user.nick_name}" %></span>
+           <div class="user_info">
+           <div class ="todo-lists"  id= "lists" >Menu-list
+            <ul class ="todo-lists hidden" id = "pull-down-lists">
+             <li><%= link_to "グループ作成", new_group_path, class: "post" %></li> 
+             <li><%= link_to "マイページに移動する", aggregates_path(current_user.id), class: "post" %></li>
+             <li><%=link_to "トップページに戻る", root_path, class: "post"%></li>
+             <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "post" %></li>
+            </ul>
+           </div>
+          </div>
+        <% else %>
+         <h2 class="grid" >First of all Sign Up</h2>
+          <ul class="user_info">
+          <li>
+            <%= link_to "ログイン", new_user_session_path, class: "post" %>
+            <%= link_to "新規登録", new_user_registration_path, class: "post" %>
+          </li>
+        <% end %>
+          </ul>
+        </div>
+        </div>
+    </header>
+            

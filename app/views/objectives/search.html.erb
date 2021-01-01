@@ -1,0 +1,22 @@
+<%= render "shared/login"%>
+<div class ="search-screen">
+    <h1 class="select-title">検索結果一覧</h1>
+   <% if @selection.length !=0 %>
+       <% @selection.each do |objective| %>
+   <div class ="search-contents">
+      <% if objective %>
+     <div class ="search-lists">
+       <%= link_to objective_path(objective.id),class: "search-lists" do %>
+         <div class ="search-image-contents">
+          <%= image_tag objective.image.variant(gravity: :center, resize: '220x220').processed, class: "object-image" if objective.image.attached? %>
+         <div class="search-object">
+          <span><%= objective.user_name%></span>
+          <span><%= objective.category.name%></span>
+          <% end %>
+          <% end %>
+          </div>
+         </div>
+      </div>
+      <% end %>
+       <% end %>
+</div>

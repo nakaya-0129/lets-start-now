@@ -1,7 +1,12 @@
 <%= render "shared/login" %>
 <div class="object-show-box">
+<h1>My Note Page</h1>
     <table class="detail-table">
       <tbody>
+        <tr>
+          <th class="detail-object">取り組んだ内容</th>
+          <td class="detail-value"><%= @aggregate.result_comment %></td>
+        </tr>
         <tr>
           <th class="detail-object">成長した能力</th>
           <td class="detail-value"><%= @aggregate.ability.name %></td>
@@ -19,13 +24,9 @@
           <td class="detail-value"><%= @aggregate.action_point %></td>
         </tr>
         <tr>
-          <th class="detail-object">成長値</th>
-          <td class="detail-value"><%= @aggregate.ability_point %></td>
-        </tr>
-        <tr>
           <th class="detail-object">自分への褒め言葉</th>
           <td class="detail-value"><%= @aggregate.self_compliment %></td>
-        </tr>
+         </tr>
       </tbody>
     </table>
      <%= link_to '削除', aggregate_path(@aggregate.id), method: :delete, class:'btn-object' %>

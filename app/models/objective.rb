@@ -17,6 +17,6 @@ class Objective < ApplicationRecord
     validates :hobit_id
   end
 
-  belongs_to :category
-  belongs_to :hobit
+  belongs_to_active_hash :category
+  belongs_to_active_hash :hobit
 end

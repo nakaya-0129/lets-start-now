@@ -15,5 +15,6 @@ self.data =[
 
 include ActiveHash::Associations
   belongs_to :objective
+  belongs_to :group
   
 end

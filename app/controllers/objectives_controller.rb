@@ -1,8 +1,9 @@
 class ObjectivesController < ApplicationController
   before_action :authenticate_user!, except: [:index,:show]
+  before_action :searching_object, only: [:index,:search]
 
   def index
-    @objectives = Objective.includes(:user)
+    @objectives = Objective.all
   end
 
   def new
@@ -16,6 +17,12 @@ class ObjectivesController < ApplicationController
       else
         render :new
       end
+    end
+
+    def search
+      @selection = @q.result
+      category_id = params[:q][:category_id_eq]
+      @category_id = Category.find_by(id: category_id)
     end
 
     def show
@@ -52,4 +59,8 @@ class ObjectivesController < ApplicationController
   def objects_params
     params.require(:objective).permit(:image, :user_name, :category_id, :hobit_id, :one_day, :action_plan, :hobituation, :merit, :demerit).merge(user_id: current_user.id)
   end
+
+def searching_object
+ @q = Objective.ransack(params[:q])
+end
 end

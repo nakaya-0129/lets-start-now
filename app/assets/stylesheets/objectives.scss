@@ -3,14 +3,21 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .header{ 
+  position: fixed;
+  width: 100%;
   height: 50px;
-  background-color: rgb(248, 248, 130);
+  background-color: rgb(182, 250, 187);
   font-size: small;
   text-decoration: none;
-  display: flex;
-  justify-content: space-between;
-  margin: auto;
- } 
+.todo-lists{
+  text-align: center;
+  margin: 0 auto;
+  border: 1px solid black;
+  width: 250px;
+  font-size: 20px;
+  background-color:white;
+} 
+} 
 .user_info, .post{
   padding-top: 10px;
   list-style: none;
@@ -18,15 +25,50 @@
 }
 
 
-.center_screen {
+.center_screen,.search-screen{
+  font-family: monospace;
   height: 100vh;
   width: 100%;
+  text-decoration: none;
   background-image:image-url('2226404_l.jpg');
   background-size: cover;
+  .select-title{
+    padding-top: 50px;
+    font-size: 25px;
+  }
+  h1{
+    margin-bottom: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+  .post-btn{
+    color: #1a1d21;
+    text-decoration: none;
+    font-size: 15px;
+    background-color: white;
+    border: 1px solid #57595a;
+    border-bottom: 5px solid #57595a;
+    border-right: 5px solid #57595a;
+  }
+  .post-btn:hover{
+    margin-top: 5px;
+    background-color: rgb(224, 223, 219);
+    border-bottom: 1px solid whitesmoke;
+    border-right: 1px solid whitesmoke;
+    opacity: 0.5;
+  }
+  .post-title{
+    margin-left: 30px;
+    margin-top: 15px;
+    font-size: 18px;
+  }
+span{
+  margin: 10px;
+  font-size: 18px;
+}
 }
 
-
-.main-header {
+.main-header{ 
   height: 300px;
   width: 100%;
   background-image: image-url('4011543_s.jpg');
@@ -48,12 +90,20 @@
 .list{
   margin: 20px;
 }
+.search-lists{
+  float: left;
+  margin: 10px;
+  font-size: 20px;
+  color: #1a1d21;
+  text-decoration: none;
+}
 
 .object-lists{
   display: flex;
   flex-wrap: wrap;
   list-style: none;
   flex-direction: row;
+  text-decoration: none;
 }
 .object-img-content,.object-name{
   text-decoration: none;
@@ -64,11 +114,14 @@
   width: 100%;
 }
  
-
-.form {
-  background-color: rgb(248, 248, 130);
-  height: 100px;
-  padding: 20px 40px;
+.comments{
+  margin-top: 10px;
+  padding-top: 20px;
+  .comment-table, .comment-lists, p{
+    text-decoration: none;
+    color: black;
+  padding-top: 20px;
+  }
 }
 
 .menu {
@@ -85,11 +138,7 @@
   font-size: 100px;
 }
 
-.new-message {
-  display: flex;
-}
-
-.input-text {
+.input-text{
   font-size: 16px;
   height: 50px;
   width: 50%;
@@ -99,8 +148,8 @@
   border-style: none;
 }
 
-.submit-btn {
-  width: 100px;
+.submit-btn{
+  width: 200px;
   height: 50px;
   margin-left: 15px;
   margin-top: 30px;
@@ -109,6 +158,16 @@
   color: #1a1d21;
   border-radius: 100vh;
   cursor: pointer;
+}
+.group-send{
+  width: 500px;
+  height: 50px;
+  text-align: center;
+  padding-top: 25px;
+  text-decoration: none;
+  font-size: 20px;
+  background-color: rgb(247, 188, 101);
+  border-radius: 100vh;
 }
 .sign-up{
   margin-top: 30px; 
@@ -127,7 +186,11 @@
   padding-top: 10px;
   margin-bottom: 20px;
   font-size: 30px;
-  color: rgb(241, 171, 79);
+  color: rgb(10, 10, 10);
+}
+h1{
+  font-family: monospace ;
+  color: rgb(16, 18, 19);
 }
 
 h2,h3{
@@ -140,7 +203,12 @@ p{
   font-size: 13px;
 }
 
+.select-area{
+  height: 30px;
+}
+
 .field,.select-box{
+  font-family: serif;
   margin-top: 20px;
 }
 .field_hobit{
@@ -155,7 +223,7 @@ p{
 
 .post{
   font-size: 15px;
-  margin-right: 10px;
+  
 }
 
 .select-box{
@@ -165,34 +233,47 @@ p{
 
 .object-show-box{
   text-align: center;
-  background-image: image-url('1108540_l.jpg') ;
+  background-image: image-url('1108540_l.jpg');
   background-size: cover;
   height: 200vh;
   font-size: 30px;
-  padding-top: 20px;
-}
-
+  padding-top: 50px;
+  padding-bottom: 10px;
 .detail-table{
   margin:0 auto;
   font-size: 25px;
-  border: solid 1px;
-  background-color: rgb(248, 248, 130);
 }
-
 .object-display{
-  display: flex;
   justify-content: center;
   margin-right: 10px; 
 }
-
-.btn-object{
+.btn--object{
 height: 30px;
 width: 40px;
-color: black;
-background-color: rgb(245, 177, 157);
-border-radius: 100vh;
+color:#ff7c5c;
+font-weight: bold;
+background-color: #f7f7f7;
+border-left: solid 6px #ff7c5c;
 text-decoration: none;
 margin-top: 20px;
+box-shadow:  inset 0px 4px 2px rgba( 0, 0, 0, 0.29);
+}
+.btn--object:active{
+  box-shadow:  inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(4px);
+}
+}
+
+.hidden{
+  display: none;
+  list-style: none;
+  font-size: 20px;
+  color: #1a1d21;
+  border: 1px solid black;
+  background-color: white;
+}
+.post:hover{
+  opacity: 0.4;
 }
 
 .send-btn{
@@ -201,6 +282,7 @@ margin-top: 20px;
   background-color: wheat;
   border: solid 1px;
   border-radius:  100vh;
+  margin-left: 10px;
 }
 
 .object-display{
@@ -208,7 +290,7 @@ margin-top: 50px;
 }
 
 .detail-object{
-  padding-bottom: 15px;
+  padding-top: 30px;
 }
 .object-explain-box{
   margin-top: 10px;
@@ -221,7 +303,17 @@ margin-top: 50px;
 
 }
 .aggregate-name{
-  background-color: azure;
+  font-size: 15px;
+  color: #1a1d21;
   margin: 20px;
-  border: solid 1px;
+}
+
+.ability-point{
+  animation:blink 1s ease-in-out infinite alternate;
+}
+
+.action{
+  margin-top: 10px;
+  font-size: 30px;
+  color: rgb(236, 77, 77);
 }

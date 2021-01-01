@@ -1,7 +1,7 @@
 class AggregatesController < ApplicationController
 
   def index
-   @aggregates = Aggregate.includes(:user)
+   @aggregates = current_user.aggregates.all
   end
 
   def new
@@ -15,7 +15,7 @@ class AggregatesController < ApplicationController
   def create
     @aggregate = Aggregate.new(aggregates_params)
     if @aggregate.save
-     redirect_to aggregate_path
+     redirect_to aggregates_path
   else
     render :new
   end
@@ -32,6 +32,6 @@ end
 
   private
   def aggregates_params
-   params.require(:aggregate).permit(:ability_id,:ability_point,:period_id,:start_day,:action_point,:self_compliment).merge(user_id: current_user.id)
+   params.require(:aggregate).permit(:ability_id,:result_comment,:period_id,:start_day,:action_point,:self_compliment).merge(user_id: current_user.id)
   end
 end
