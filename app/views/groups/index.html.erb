@@ -7,6 +7,7 @@
  <h1 class="center-title">グループ一覧 <br>
       参加したいコミュニティをクリックしよう！</h1>
  <div class = "aggregate-box">
+  <span>新しいグループを作成する⇨</span><%= link_to "push!", new_group_path ,class: "post-btn"%>
  <ul class="aggregate-lists">
  <% @groups.each do |group| %>
          <%= link_to  group_path(group.id) do %>
@@ -16,8 +17,5 @@
             </div>
       <% end %>
   <% end %>
-<% if @groups.blank?%>
-<h1 class ="center-title">グループを作成しよう！</h1>
-<% end %>
  </div>
  </div> 

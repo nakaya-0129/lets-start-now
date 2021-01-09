@@ -2,7 +2,7 @@
 <div class="contents">
   <div class="container">
     <h1 class="text-title">成長の記録をつけよう！</h1>
-<%= form_with model: @aggregate, url: aggregates_path, class: 'aggregate_user', local: true do |f| %>
+<%= form_with model: @aggregate, url: aggregate_path, class: 'aggregate_user', local: true do |f| %>
       <h3>スタートした日を入力しよう！</h3>
        <div class='field'>
              <%= raw sprintf(
@@ -35,7 +35,7 @@
       </div>
         <span class ="action" id= "action-point"></span>
       <div class="field">
-       <h3>コメント欄</h3>
+       <h3>自分への褒め言葉</h3>
         <%= f.text_field :self_compliment,class: "text"%>
       </div>
       <div class ="actions">

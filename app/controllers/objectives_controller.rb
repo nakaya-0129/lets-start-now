@@ -1,9 +1,9 @@
 class ObjectivesController < ApplicationController
   before_action :authenticate_user!, except: [:index,:show]
-  before_action :searching_object, only: [:index,:search]
+  before_action :searching_object, only: [:search,:index]
 
   def index
-    @objectives = Objective.all
+    @objectives = Objective.all.order(created_at: :desc)
   end
 
   def new

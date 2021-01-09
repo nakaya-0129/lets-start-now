@@ -1,0 +1,17 @@
+<%= render "shared/login"%>
+<div class ="search-screen">
+    <h1 class="select-title">My Note Page</h1>
+       <% @aggregates.each do |aggregate| %>
+   <div class ="search-contents">
+      <% if aggregate.action_point.present? %>
+     <div class ="search-lists">
+       <%= link_to aggregate_path(aggregate.id),class: "search-lists" do %>
+         <div class="search-object">
+          <span><%= aggregate.start_day %></span>
+          <span><%= aggregate.result_comment %></span>
+          <% end %>
+          </div>
+       </div>
+      <% end %>
+      <% end %>
+</div>

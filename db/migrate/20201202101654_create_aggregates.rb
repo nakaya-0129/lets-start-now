@@ -5,9 +5,9 @@ class CreateAggregates < ActiveRecord::Migration[6.0]
       t.integer :ability_id,         null: false
       t.string  :result_comment,      null: false
       t.date    :start_day,          null: false  
-      t.integer :action_point,       null:false 
+      t.integer :action_point
       t.integer :period_id,             null:false
-      t.string  :self_compliment,    null:false
+      t.string  :self_compliment
       t.timestamps
     end
   end

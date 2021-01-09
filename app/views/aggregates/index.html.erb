@@ -3,21 +3,41 @@
     <div class="main-header">
       <h2 class="current-group">My page</h2>
     </div>
- <div class="center_screen">
+ <div class="center-screen-a">
  <h1 class="center-title">My Note</h1>
+ <span>スタート記録を記入する⇨</span><%= link_to "push!", new_aggregate_path(current_user.id) ,class: "post-btn"%>
+ <%= form_with url: search_aggregates_path, local: true, method: :get do  |f| %>
+  <p class="aggregate-menu">ノートの管理</p>
+  <div class="aggregate-list">投稿内容を確認する<%=f.check_box :user_id %><%= f.submit "確認" %></div>
+  <% end %>
+  <%= link_to meetings_path,local: true do %>
+  <div class =calender>#カレンダーを表示する</div>
+  <% end %>
+  <div class= "aggregate-grap">#グラフを表示する</div>
+  <br>
+  <div class ="aggregate-user">#ユーザー情報編集</div>
+  <br>
+ 
  <div class = "aggregate-box">
- <ul class="aggregate-lists">
-      <% @aggregates.each do |aggregate| %>
-         <%= link_to  aggregate_path(aggregate.id) do %>
-            <div class="aggregate-name">
-            <p><%= aggregate.start_day%></p>
-            <p><%= aggregate.result_comment %></p>
-            <p>達成率:<%= aggregate.action_point %>%</p> 
-            </div>
+ <div class="aggregate-board">
+  </div>
+  <h1 class="page-title">Now Doing</h1>
+   <div class="aggregate-lists">
+  <% @aggregates.each do |aggregate| %>
+  <%if aggregate.action_point.blank? %>
+            <span><%= aggregate.start_day %></span>
+            <span>テーマ：<%= aggregate.result_comment %></span>
+      <%= link_to aggregate_path(aggregate.id) do %>
+          <span><button type ="button" >詳細</button></span>
+      <% end %>
+      <%= link_to edit_aggregate_path(aggregate.id) do %>
+          <span><button type ="button">編集</button></span>
+      <%end%>
+      <%= link_to aggregate_path(aggregate.id), method: :delete do %>
+          <span><button type ="button">削除</button></span>
       <% end %>
   <% end %>
-<% if @aggregates.blank?%>
-<h1 class ="center-title">自分だけのノートを作成しよう！</h1>
-<% end %>
+  <% end%>
+  </div>
  </div>
  </div>

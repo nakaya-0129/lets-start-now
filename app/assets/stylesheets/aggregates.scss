@@ -2,3 +2,114 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.center-screen-a,.search-screen{
+  font-family: monospace;
+  font-size: 20px;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  background-color: white
+  ;
+  background-size: cover;
+  .select-title{
+    padding-top: 50px;
+    font-size: 25px;
+  }
+  h1{
+    margin-bottom: 25px;
+    font-size: 25px;
+    text-align: center;
+  }
+  ul{
+    margin-bottom: 30px;
+  }
+
+  input{
+    width: 50px;
+  }
+  .calender{
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  .post-btn{
+    margin-top: 10px;
+    color: #1a1d21;
+    text-decoration: none;
+    font-size: 15px;
+    background-color: white;
+    border: 3px solid #57595a;
+    border-bottom: 5px solid #57595a;
+    border-right: 5px solid #57595a;
+    border-left: 5px solid #57595a;
+  }
+  .post-btn:hover{
+    margin-top: 5px;
+    background-color: rgb(224, 223, 219);
+    border: 1px solid whitesmoke;
+    opacity: 0.5;
+  }
+  .post-title{
+    margin-left: 30px;
+    margin-top: 15px;
+    font-size: 18px;
+  }
+  .company-name,.selection-form,.explan-list,.help-list{
+    font-size: 15px;
+    font-weight: initial;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+}
+.aggregate-menu{
+  cursor: pointer;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+  .aggregate-list{
+    text-align: center;
+    border: solid 1px rgb(247, 182, 182);
+    line-height: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition-duration:  0.4s;
+  }
+  .aggregate-list.is-open{
+    line-height: normal;
+    height: auto;
+    font-size: 12px;
+    background-color: white;
+    opacity: 1;
+}
+
+
+.aggregate-lists{
+  width: 100%;
+  height: 50vh;
+  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-decoration: none;
+  span{
+    margin-right: 20px;
+  }
+  button{
+    margin-bottom: 20px;
+  }  
+}
+.aggregate-board{
+  width: 100%;
+  height: 5vh;
+  border-bottom: solid 1px black;
+}
+
+.ability-point{
+  animation:blink 1s ease-in-out infinite alternate;
+}
+
+.action{
+  margin-top: 10px;
+  font-size: 30px;
+  color: rgb(236, 77, 77);
+}

@@ -1,5 +1,10 @@
-<%=render "shared/login" %>
+<%=render "shared/top" %>
 <div class= "object-show-box">
+<% if user_signed_in? && current_user.id == @objective.user_id%>
+    <%= link_to '目標の修正' ,edit_objective_path(@objective.id), method: :get, class: "btn--object" %>
+    <span>/</span>
+    <%= link_to '削除', objective_path(@objective.id), method: :delete, class: "btn--object" %>
+<% end %>
 <div class= "object-image-box">
   <%= image_tag @objective.image.variant(gravity: :center, resize: '450x450'),class: "object-image" %>
 </div>
@@ -16,51 +21,50 @@
           <td class="detail-value"><%= @objective.hobit.name %></td>
         </tr>
         <tr>
-          <th class="detail-object">一日の目標</th>
+          <th class="detail-object">目標宣言</th>
           <td class="detail-value"><%= @objective.one_day %></td>
         </tr>
         <tr>
-          <th class="detail-object">今日のアクションプラン</th>
+          <th class="detail-object">アクションプラン</th>
           <td class="detail-value"><%= @objective.action_plan %></td>
         </tr>
-        <tr>
-          <th class="detail-object">習慣化したいこと</th>
-          <td class="detail-value"><%= @objective.hobituation %></td>
-        </tr>
-        <tr>
-          <th class="detail-object">習慣化のメリット</th>
+        <%if current_user.id == @objective.user_id %>
+           <tr>
+           <th class="detail-object">目標達成を妨げる習慣/行動</th>
+           <td class="detail-value"><%= @objective.hobituation%></th>
+           </tr>
+           <tr>
+          <th class="detail-object">メリット</th>
           <td class="detail-value"><%= @objective.merit %></td>
         </tr>
         <tr>
-          <th class="detail-object">習慣化のデメリット・障害</th>
+          <th class="detail-object">デメリット</th>
           <td class="detail-value"><%= @objective.demerit %></td>
         </tr>
+        <% end %>
       </tbody>
     </table>
   <div class= "object-display">
-<% if user_signed_in? && current_user.id == @objective.user_id%>
-    <%= link_to '目標の修正' ,edit_objective_path(@objective.id), method: :get, class: "btn--object" %>
-    <span>or</span>
-    <%= link_to '削除', objective_path(@objective.id), method: :delete, class: "btn--object" %>
- <% elsif user_signed_in? %>
+ <% if user_signed_in? %>
     <div class= "comment-container">
+    <h3>コメントコーナー</h3>
     <%= form_with(model: [@objective, @comment], local: true) do |form| %>
         <%= form.text_area :text, placeholder: "コメントする", rows: "2" ,class: "text"%>
-    <span><%= form.submit "メッセージを送る",class: "send-btn" %></span>
+    <span><%= form.submit "送信",class: "send-btn" %></span>
      <% end %>
      <% else %>
     <% end %>
-    </div>
-  </div>
      <div class="comments">
-      <h4>＜コメント一覧＞</h4>
+      <h4>コメント一覧</h4>
       <div class ="comments-table">
         <% @comments.each do |comment| %>
         <p>
-     <%= link_to comment.user.nick_name, "/objectives/#{comment.user_id}" ,class: "comment-lists"%>:
+    <strong><%= comment.user.nick_name %>:</strong>
         <%= comment.text %>
         </p>
       <% end %>
       </div>
+   </div>
+   </div>
    </div>
    </div>

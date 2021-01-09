@@ -21,13 +21,12 @@
         </tr>
         <tr>
           <th class="detail-object">達成率</th>
-          <td class="detail-value"><%= @aggregate.action_point %></td>
+          <td class="detail-value"><%= @aggregate.action_point %>%</td>
         </tr>
         <tr>
-          <th class="detail-object">自分への褒め言葉</th>
+          <th class="detail-object">コメント</th>
           <td class="detail-value"><%= @aggregate.self_compliment %></td>
          </tr>
       </tbody>
     </table>
-     <%= link_to '削除', aggregate_path(@aggregate.id), method: :delete, class:'btn-object' %>
     </div>

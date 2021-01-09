@@ -1,25 +1,78 @@
 // Place all the styles related to the objectives controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-.header{ 
+.header{
   position: fixed;
   width: 100%;
   height: 50px;
+}
+.header-bar{ 
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
   background-color: rgb(182, 250, 187);
+  justify-content: space-between;
+  position: relative;
   font-size: small;
   text-decoration: none;
-.todo-lists{
-  text-align: center;
-  margin: 0 auto;
-  border: 1px solid black;
-  width: 250px;
+  .title{
+    font-size: 30px;
+    margin-left: 50px;
+  }
+.todo-lists,.psy-lists{
+  width: 180px;
   font-size: 20px;
-  background-color:white;
-} 
-} 
+  color:rgb(219, 151, 103);
+  cursor: pointer;
+}
+.hidden{
+  display: none;
+  list-style: none;
+  position: absolute;
+  top: 38px;
+  font-size: 20px;
+  color: #1a1d21;
+  background-color: white;
+}
+.post:hover{
+  opacity: 0.4;
+}
+}
+
+.psy-accordion{
+  width: 100%;
+  height: 350px;
+.psy-menu{
+  color: rgb(27, 22, 22);
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+}
+.psy-menu:hover,
+.psy-menu:active,
+.psy-menu.is-active{
+  background-color: white;
+}
+.psy-list{
+  text-align: center;
+  border: solid 1px rgb(247, 182, 182);
+  line-height: 0;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition-duration:  0.4s;
+}
+.psy-list.is-open{
+  line-height: normal;
+  height: auto;
+  font-size: 12px;
+  background-color: white;
+  opacity: 1;
+}
+}
+
 .user_info, .post{
-  padding-top: 10px;
   list-style: none;
   text-decoration: none;
 }
@@ -42,19 +95,20 @@
     text-align: center;
   }
   .post-btn{
+    width: 100px;
     color: #1a1d21;
     text-decoration: none;
     font-size: 15px;
     background-color: white;
-    border: 1px solid #57595a;
+    border: 3px solid #57595a;
     border-bottom: 5px solid #57595a;
     border-right: 5px solid #57595a;
+    border-left: 5px solid #57595a;
   }
   .post-btn:hover{
     margin-top: 5px;
     background-color: rgb(224, 223, 219);
-    border-bottom: 1px solid whitesmoke;
-    border-right: 1px solid whitesmoke;
+    border: 1px solid whitesmoke;
     opacity: 0.5;
   }
   .post-title{
@@ -63,7 +117,7 @@
     font-size: 18px;
   }
 span{
-  margin: 10px;
+  margin-left: 20px;
   font-size: 18px;
 }
 }
@@ -78,17 +132,12 @@ span{
   text-decoration: none;
 }
 
-.object-box{
-  margin-top: 10px;
-  display: flex;
-  text-decoration: none;
-}
 .center-title{
   font-size:30px;
   padding-top: 10px;
 }
 .list{
-  margin: 20px;
+  padding-left: 20px;
 }
 .search-lists{
   float: left;
@@ -98,30 +147,43 @@ span{
   text-decoration: none;
 }
 
-.object-lists{
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  flex-direction: row;
-  text-decoration: none;
-}
-.object-img-content,.object-name{
+.object-box{
+  margin-top: 20px;
+  margin-bottom: 300px;
+  .object-lists{
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   list-style: none;
+   flex-direction: row;
+   text-decoration: none;
+  }
+.object-img-content{
   text-decoration: none;
   color: #1a1d21;
+}
 }
 
 .main_image{
   width: 100%;
 }
  
-.comments{
+.comment-container{
+  border: solid 1px skyblue;
+  background-color: white;
+  height: 100vh;
   margin-top: 10px;
   padding-top: 20px;
-  .comment-table, .comment-lists, p{
+  .comments.comment-table, .comment-lists, p{
     text-decoration: none;
     color: black;
   padding-top: 20px;
+  font-size: 20px;
   }
+}
+
+.commet-list{
+  padding-top: 50px;
 }
 
 .menu {
@@ -153,6 +215,7 @@ span{
   height: 50px;
   margin-left: 15px;
   margin-top: 30px;
+  margin-bottom: 60px;
   background-color: #eeeeee;
   font-size: 15px;
   color: #1a1d21;
@@ -177,7 +240,8 @@ span{
 }
 
 .contents{
-  height: 150vh;
+  padding-top: 50px;
+  height: 160vh;
   text-align: center;
   background-color: rgb(222, 245, 248);
   background-size: cover;
@@ -204,7 +268,7 @@ p{
 }
 
 .select-area{
-  height: 30px;
+  height: 20px;
 }
 
 .field,.select-box{
@@ -217,18 +281,20 @@ p{
 
 .text{
   margin-top: 10px;
-  width: 250px;
-  height: 30px;
+  height: 40px;
+  width: 300px;
 }
 
 .post{
   font-size: 15px;
-  
+  height: 20px;
+  width: 200px;
+  margin-top: 15px;
 }
 
 .select-box{
   width: 250px;
-  height: 25px;
+  height: 20px;
 }
 
 .object-show-box{
@@ -237,7 +303,7 @@ p{
   background-size: cover;
   height: 200vh;
   font-size: 30px;
-  padding-top: 50px;
+  padding-top: 80px;
   padding-bottom: 10px;
 .detail-table{
   margin:0 auto;
@@ -248,41 +314,41 @@ p{
   margin-right: 10px; 
 }
 .btn--object{
-height: 30px;
-width: 40px;
-color:#ff7c5c;
-font-weight: bold;
-background-color: #f7f7f7;
-border-left: solid 6px #ff7c5c;
-text-decoration: none;
-margin-top: 20px;
-box-shadow:  inset 0px 4px 2px rgba( 0, 0, 0, 0.29);
+  color: #fff;
+  background-color: #eb6100;
+  border-bottom: 5px solid #b84c00;
 }
-.btn--object:active{
-  box-shadow:  inset 0 0 2px rgba(128, 128, 128, 0.1);
-  transform: translateY(4px);
+.btn--object:hover{
+  margin-top: 3px;
+  color: #eb6100;
+  background: #f8f7f7;
+  border-bottom: 2px solid #b84c00;
 }
+.btn--object{
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
 }
-
-.hidden{
-  display: none;
-  list-style: none;
-  font-size: 20px;
-  color: #1a1d21;
-  border: 1px solid black;
-  background-color: white;
-}
-.post:hover{
-  opacity: 0.4;
 }
 
 .send-btn{
-  height: 50px;
-  width: 100x;
-  background-color: wheat;
-  border: solid 1px;
-  border-radius:  100vh;
-  margin-left: 10px;
+  margin-bottom: 15px;
+  width: 60px;
+  height: 30px;
+    color: #1a1d21;
+    text-decoration: none;
+    font-size: 15px;
+    background-color: white;
+    border: 3px solid #57595a;
+    border-bottom: 5px solid #57595a;
+    border-right: 5px solid #57595a;
+    border-left: 5px solid #57595a;
+    cursor: pointer;
+}
+.send-btn:hover{
+  margin-top: 5px;
+  background-color: rgb(224, 223, 219);
+  border: 1px solid whitesmoke;
+  opacity: 0.5;
 }
 
 .object-display{
@@ -295,25 +361,7 @@ margin-top: 50px;
 .object-explain-box{
   margin-top: 10px;
 }
-.aggregate-lists{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin-right: 20px;
-
-}
-.aggregate-name{
-  font-size: 15px;
-  color: #1a1d21;
-  margin: 20px;
-}
-
-.ability-point{
-  animation:blink 1s ease-in-out infinite alternate;
-}
-
-.action{
-  margin-top: 10px;
-  font-size: 30px;
-  color: rgb(236, 77, 77);
+.search-btn{
+  width: 80px;
+  vertical-align:middle;
 }

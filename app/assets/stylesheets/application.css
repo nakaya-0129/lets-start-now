@@ -9,7 +9,7 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
+ *= require simple_calendar
  *= require_tree .
  *= require_self
  */
@@ -45,6 +45,7 @@ time, mark, audio, video {
 
 body {
   line-height:1;
+
 }
 
 article,aside,details,figcaption,figure,
@@ -72,6 +73,7 @@ a {
   font-size:100%;
   vertical-align:baseline;
   background:transparent;
+  text-decoration: none;
 }
 
 /* change colours to suit your needs */
@@ -113,12 +115,23 @@ hr {
   padding:0;
 }
 
-input, select {
+input{
+  vertical-align:middle;
+  height: 20px;
+  width: 200px;
+  margin: 5px;
+}
+.select{
+  width: 100px;
+  margin: 5px;
   vertical-align:middle;
 }
 
 .futter-form {
   position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   bottom: 0;
   height: 50px;
   width: 100%;
@@ -130,8 +143,8 @@ input, select {
     list-style: none;
     font-size: 15px;
   }
-  .company-name{
-    font-size: 20px;
+  .company-name,.selection-form,.explan-list,.help-list{
+    font-size: 15px;
     font-weight: initial;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }

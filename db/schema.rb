@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_08_024309) do
+ActiveRecord::Schema.define(version: 2021_01_09_053105) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -38,9 +38,9 @@ ActiveRecord::Schema.define(version: 2020_12_08_024309) do
     t.integer "ability_id", null: false
     t.string "result_comment", null: false
     t.date "start_day", null: false
-    t.integer "action_point", null: false
+    t.integer "action_point"
     t.integer "period_id", null: false
-    t.string "self_compliment", null: false
+    t.string "self_compliment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -72,6 +72,13 @@ ActiveRecord::Schema.define(version: 2020_12_08_024309) do
     t.index ["name"], name: "index_groups_on_name", unique: true
   end
 
+  create_table "meetings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "start_time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "objectives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "user_name", null: false
     t.integer "category_id", null: false
@@ -85,17 +92,6 @@ ActiveRecord::Schema.define(version: 2020_12_08_024309) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_objectives_on_user_id"
-  end
-
-  create_table "statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "knowledge"
-    t.integer "self_management"
-    t.integer "imageintion"
-    t.integer "sustainability"
-    t.integer "achievement"
-    t.integer "empathy"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

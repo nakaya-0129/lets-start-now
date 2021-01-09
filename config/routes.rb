@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
+  resources :meetings
   devise_for :users 
   root to: 'objectives#index'
 
-  resources :aggregates, only: [:index, :new, :create, :show,:destroy]
+  resources :aggregates do
+    collection do
+      get 'search'
+    end
+  end
+
   resources :groups, only: [:index, :new, :show,:create, :edit, :update]
 
   resources :objectives do

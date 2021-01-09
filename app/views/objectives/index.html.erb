@@ -1,38 +1,73 @@
  <%= render "shared/header"%>
     <div class="main_screen">
     <div class="main-header">
-      <h2 class="current-group">Let's Start Now!</h2>
+      <h2 class="current-group">Top page</h2>
     </div>
   </div>
  <div class="center_screen">
- <h1 class="center-title">To Do List 掲示板</h1>
- <span>push!</span><%= link_to "目標投稿を作成する", new_objective_path ,class: "post-btn"%>
-   <p class="post-title">投稿テーマで検索しよう！</p>
+ <h1 class="center-title">投稿の作成</h1>
+   <span>目標投稿を作成する⇨</span><%= link_to "push!", new_objective_path ,class: "post-btn"%>
+<h1 class="center-title">投稿検索</h1>   
    <%= search_form_for @q, url: search_objectives_path do |f| %>
-   <%= f.collection_select :category_id_eq, Category.where.not(id: 0),:id,:name, include_blank: '---検索するテーマを選択して下さい---' %>
-   <%= f.submit '検索' %>
- <% end %>
- <div class = "object-box">
- <ul class="object-lists">
+   <span>投稿テーマで検索しよう！<%= f.collection_select :category_id_eq, Category.where.not(id: 0),:id,:name %></span>
+   <%= f.submit '検索',class:"search-btn" %>
+   <% end %>
+   <%= search_form_for @q, url: search_objectives_path do |f| %>
+   <label>
+   <span>ユーザー名で検索<%=f.search_field :user_name_eq, placeholder: "--登録したユーザー名を入力--"%></span>
+   <%= f.submit '検索',class: "search-btn" %> 
+   <% end %>
+   </label>
+ <div class="object-box">
+ <h1 class="center-title">目標投稿掲示板</h1>
+  <div class="object-lists">
       <% @objectives.each do |objective| %>
-         <%= link_to  objective_path(objective.id),class: "object-lists" do %>
-           <div class='list'>
-           <div class='objective-img-content'>
+      <div class='objective-img-content'>
               <%= image_tag objective.image.variant(gravity: :center, resize: '220x220').processed, class: "object-image" if objective.image.attached? %>
-              <% if user_signed_in? && current_user.id == objective.user_id %>
-                 <%= link_to '目標の修正' ,edit_objective_path(objective.id), method: :get, class: "btn-object hidden" %>
-                 <%= link_to '削除', objective_path(objective.id), method: :delete, class: "btn-object hidden" %>
+              <div class= "object-name">
+              <span><%= objective.user_name %></span> 
+              <span><%= objective.category.name %></span>
+            <%= link_to  objective_path(objective.id) do %>
+                <span><button type="button">詳細</button></span>
              <% end %>
-              </div>
-            <div class="object-name">
-            <span><%= objective.user_name %></span> 
-            <span><%= objective.category.name %></span>
-            </div>
-            </div>
+             </div>
+             </div>
       <% end %>
-  <% end %>
-</div>
-<% if @objectives.blank?%>
-<h1 class ="sub-screen">目標を設定して投稿しよう！</h1>
-<% end %>
- </div>
+      </div>
+   </div>
+  </div>
+ <section>
+        <div class="psy-accordion">
+        <p class="psy-menu">心理学講座①</p>
+         <div class="psy-list">①宣言効果<br>
+         宣言効果とは：自分の目標を他人に宣言することで、<br>
+   その目標が達成しやすくなることです。<br>
+   理由としては、<br>
+   宣言をすることで、自分にプレッシャーをかけることができることが挙げられます。<br>
+   逆に宣言をしなければ、その目標は自分だけのものになり、<br>
+   辛くなったり、投げ出したくなったときに、<br>
+   簡単に諦めることができてしまいます。<br>
+   また宣言をすることで、<br>
+   その目標に意識を向ける機会が増えるため、<br>
+   目標を達成する意欲を高めることにつながります。</div>
+     <div class="psy-accordion">
+        <p class="psy-menu">心理学講座②</p>
+         <div class="psy-list">②4つのマトリックス<br>
+        ４つのマトリックスとは：様々な解釈が存在しますが、<br>
+        ここでは、目標を達成するための思考法と定義します。<br>
+        目標の達成を妨げている行動がある場合、<br>
+        その行動に関する短期的メリットと長期的メリット、<br>
+        短期的デメリット、長期的デメリットを書き出すことで、<br>
+        メリットのない、または少ない行動を改める効果が期待できます。<br>
+        <br>
+        例：朝寝坊をする。<br>
+        短期的メリット、ぎりぎりまで眠ることができる。<br>
+        短期的デメリット、常に時間に追われてしまう。<br>
+        長期的なメリット、特に思い浮かばない。<br>
+        長期的なデメリット、ゆとりがないことで、遅刻の原因や仕事のミスにつながる。<br>
+        このようにメリットとデメリットが明確になることで、<br>
+        目標達成を妨げる行動を抑えることにつながります。
+        </div>
+     </div>  
+      </section>
+   </div>

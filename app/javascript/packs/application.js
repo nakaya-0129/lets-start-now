@@ -9,6 +9,8 @@ require("@rails/activestorage").start()
 require("channels")
 require("../action_point");
 require("../object");
+require("../psy");
+require("../aggregate")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

@@ -1,17 +1,15 @@
  <header class="header">
-  <div class="header_bar">
+  <div class="header-bar">
+  <h1 class="title">Let's Start Now</h1>
      <% if user_signed_in? %>
           <div class="user_nav-grid">
-          <span><%= "ユーザーネーム #{current_user.nick_name}" %></span>
            <div class="user_info">
-           <div class ="todo-lists"  id= "lists" >Menu-list
+           <div class ="todo-lists"  id= "lists" >Menu-list</div>
             <ul class ="todo-lists hidden" id = "pull-down-lists">
-             <li><%= link_to "成長記録", new_aggregate_path(current_user.id), class: "post" %></li>
              <li><%= link_to "グループページへ移動する", groups_path, class: "post" %></li> 
              <li><%= link_to "トップページへ移動する", root_path, class: "post" %></li>
              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "post" %></li>
             </ul>
-           </div>
           </div>
         <% else %>
          <h2 class="grid" >First of all Sign Up</h2>

@@ -4,7 +4,6 @@ class Aggregate < ApplicationRecord
   with_options presence: true do
     validates :ability_id
     validates :result_comment
-    validates :action_point, format:{with: /\A[0-9]+\z/}
     validates :start_day
     validates :period_id
     validates :user_id
