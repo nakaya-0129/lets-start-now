@@ -1,0 +1,16 @@
+<%=render "shared/page"%>
+<div class="top-page">
+<h1 class="top-title">Let's<br>
+Start<br>
+now</h1>
+<p>〜今できることから始めよう！〜<br> 
+目標達成サポートアプリ<P>
+<button class="start-btn" id="start-btn">SignUp/LogIn</button>
+<div class ="start-btn hidden" id = "top-pulldown-lists">
+ <h2>Log in form</h2>
+ <p>新規登録はこちら(サインアップは無料です)↓</p>
+   <%= link_to "SignUp", new_user_registration_path ,class: "sign-up"%>
+  <p>ログインフォームへ</p>
+ <%= link_to "LogIn" ,user_session_path, class: "sign-up"%>
+</div>
+</div>

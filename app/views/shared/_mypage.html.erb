@@ -1,5 +1,11 @@
  <header class="header">
   <div class="header-bar">
+ <div class="header-space">
+  <%= link_to user_path(current_user.id) do%>
+ <span><%= image_tag(current_user.image_url) %></span>
+ <span><%= current_user.nick_name %></span>
+ <% end %>
+ </div>
   <h1 class="title">Let's Start Now</h1>
      <% if user_signed_in? %>
           <div class="user_nav-grid">
@@ -7,7 +13,7 @@
            <div class ="todo-lists"  id= "lists" >Menu-list</div>
             <ul class ="todo-lists hidden" id = "pull-down-lists">
              <li><%= link_to "グループページへ移動する", groups_path, class: "post" %></li> 
-             <li><%= link_to "トップページへ移動する", root_path, class: "post" %></li>
+             <li><%= link_to "投稿ページへ移動する", objectives_path, class: "post" %></li>
              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "post" %></li>
             </ul>
           </div>

@@ -1,16 +1,23 @@
 class CommentsController < ApplicationController
   def create
-    Comment.create(comment_params)
-    redirect_to objective_path(params[:objective_id])
-  end
+    @objective = Objective.find(params[:objective_id])
+    @comment = Comment.new(comment_params)
+    @comment.user_id = current_user.id
+      if @comment.save
+        flash[:success] ="コメントを投稿しました"
+        redirect_back(fallback_location: objective_path(@objective.id))
+      else
+        redirect_back(fallback_location: objective_path)
+      end
+   end
 
-  def destory
+  def destroy
     @comment = Comment.find(params[:id])
     if @comment.user_id == current_user.id
-       @comment.destory(comment_params)
-       redirect_to root_path
+       @comment.destroy
+       flash[:success] ="コメントを削除しました"
+       redirect_to request.referer
     else
-     render :show 
     end
   end
 

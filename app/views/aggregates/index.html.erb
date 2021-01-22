@@ -1,29 +1,30 @@
 <%= render "shared/mypage"%>
     <div class="main_screen">
     <div class="main-header">
-      <h2 class="current-group">My page</h2>
+      <h2 class="current-group">My page~ワークスペース〜</h2>
     </div>
  <div class="center-screen-a">
  <h1 class="center-title">My Note</h1>
  <span>スタート記録を記入する⇨</span><%= link_to "push!", new_aggregate_path(current_user.id) ,class: "post-btn"%>
  <%= form_with url: search_aggregates_path, local: true, method: :get do  |f| %>
   <p class="aggregate-menu">ノートの管理</p>
-  <div class="aggregate-list">投稿内容を確認する<%=f.check_box :user_id %><%= f.submit "確認" %></div>
+  <div class="aggregate-list">達成済みのタスクを表示する<%=f.check_box :user_id %><%= f.submit "確認"%></div>
   <% end %>
   <%= link_to meetings_path,local: true do %>
   <div class =calender>#カレンダーを表示する</div>
   <% end %>
-  <div class= "aggregate-grap">#グラフを表示する</div>
-  <br>
-  <div class ="aggregate-user">#ユーザー情報編集</div>
-  <br>
- 
+  <div class= "aggregate-menu">#If-thenルール</div>
+  <div class="aggregate-list">If then 行動</div>
+ <div class = "aggregate-box">
+  <div class ="aggregate-menu">#学習サポート</div>
+  <div class="aggregate-list">目次</div>
  <div class = "aggregate-box">
  <div class="aggregate-board">
   </div>
-  <h1 class="page-title">Now Doing</h1>
+  <h3 class="aggregate-title">Now Doing</h3>
+  <h4 class="supple">(最大５件まで保存可能)</h4>
    <div class="aggregate-lists">
-  <% @aggregates.each do |aggregate| %>
+  <% @aggregates.first(5).each do |aggregate| %>
   <%if aggregate.action_point.blank? %>
             <span><%= aggregate.start_day %></span>
             <span>テーマ：<%= aggregate.result_comment %></span>
@@ -41,3 +42,4 @@
   </div>
  </div>
  </div>
+ <%= render "shared/futter" %>

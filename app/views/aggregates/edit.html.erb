@@ -23,7 +23,7 @@
        </div>
        <div class="field">
        <h3>今回取り組んだ内容を記入しよう！</h3>
-       <%= f.text_area :result_comment, class: "post"%>
+       <%= f.text_field :result_comment, class: "post"%>
        </div>
        <div class="field">
         <h3>成長を実感した能力はありますか？</h3>
@@ -35,8 +35,8 @@
       </div>
         <span class ="action" id= "action-point"></span>
       <div class="field">
-       <h3>自分への褒め言葉</h3>
-        <%= f.text_field :self_compliment,class: "text"%>
+       <h3>コメント欄</h3>
+        <%= f.text_area :self_compliment,class: "text"%>
       </div>
       <div class ="actions">
         <%= f.submit "記録する！" ,class: "submit-btn"%>

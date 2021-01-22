@@ -1,11 +1,90 @@
 // Place all the styles related to the objectives controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.top-page{
+  padding-top: 50px;
+  background-image: image-url("4011543_s.jpg");
+  background-size: contain;
+  width: 100%;
+  height: 123vh;
+  .top-title{
+    font-family: "Gill Sans",serif;
+    font-size: 100px;
+    text-align: center;
+    opacity: 0.9;
+  }
+  p{
+    color: black;
+    font-size: 15px;
+    margin-top: 20px;
+  }
+  button{
+    margin-top: 30px;
+    opacity: 0.8;
+    text-align: center;
+    border-radius: 100vh;
+    border: chartreuse solid 1px;
+    width: 200px;
+    background-color: rgb(182, 250, 187);
+    height: 50px;
+    font-size: 20px;
+    transition: all 200ms 0s ease;
+  }
+  button:hover{
+    opacity: 1.0;
+    font-size: 30px;
+    width: 300px;
+    height: 80px;
+    color: snow;
+    background-color:skyblue;
+  }
+  .hidden{
+    display: none;
+    margin:0 auto;
+    border: solid greenyellow 2px;
+    background-color: white;
+    width:  350px;
+    height: 200px;
+    opacity: 0.8;
+  }
+  h2{
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+  .sign-up{
+    font-size: 30px;
+  }
+  .sign-up:hover{
+   font-size: 50px;
+   background-color: white;
+  }
+}
+
+.line{
+  width: 20px;
+  height: 3px;
+  background-color: black;
+  margin: 3px;
+.list-menu, a{
+  background-color: white;
+  width: 200px;
+  height: 100px;
+  border: solid 1px black;
+  list-style: none;
+}
+.link-box{
+font-size: 15px;
+padding-top: 10px;
+}
+}
+
+
 .header{
   position: fixed;
   width: 100%;
   height: 50px;
 }
+
 .header-bar{ 
   display: flex;
   align-items: center;
@@ -17,26 +96,52 @@
   font-size: small;
   text-decoration: none;
   .title{
+    font-family: "Gill Sans",serif;
     font-size: 30px;
     margin-left: 50px;
   }
 .todo-lists,.psy-lists{
+  font-family: "Gill Sans", serif;
   width: 180px;
   font-size: 20px;
   color:rgb(219, 151, 103);
   cursor: pointer;
+  transition: all 200ms ease;
+  opacity: 0.8;
+}
+.todo-lists:hover{
+  opacity: 1.0;
+  font-size: 30px;
 }
 .hidden{
   display: none;
   list-style: none;
   position: absolute;
+  font-family: "Gill Sans", serif;
+  width: 240px;
   top: 38px;
+  right: 10px;
   font-size: 20px;
   color: #1a1d21;
   background-color: white;
 }
+.post{
+  opacity: 0.6;
+  transition: all 200ms 0s ease;
+}
 .post:hover{
-  opacity: 0.4;
+font-size: 20px;
+opacity: 1.0;
+}
+img{
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  border-radius: 100px;
+}
+span{
+  font-size: 15px;
+
 }
 }
 
@@ -78,12 +183,11 @@
 }
 
 
-.center_screen,.search-screen{
+.center_screen{
   font-family: monospace;
   height: 100vh;
   width: 100%;
   text-decoration: none;
-  background-image:image-url('2226404_l.jpg');
   background-size: cover;
   .select-title{
     padding-top: 50px;
@@ -94,28 +198,6 @@
     font-size: 30px;
     text-align: center;
   }
-  .post-btn{
-    width: 100px;
-    color: #1a1d21;
-    text-decoration: none;
-    font-size: 15px;
-    background-color: white;
-    border: 3px solid #57595a;
-    border-bottom: 5px solid #57595a;
-    border-right: 5px solid #57595a;
-    border-left: 5px solid #57595a;
-  }
-  .post-btn:hover{
-    margin-top: 5px;
-    background-color: rgb(224, 223, 219);
-    border: 1px solid whitesmoke;
-    opacity: 0.5;
-  }
-  .post-title{
-    margin-left: 30px;
-    margin-top: 15px;
-    font-size: 18px;
-  }
 span{
   margin-left: 20px;
   font-size: 18px;
@@ -123,22 +205,52 @@ span{
 }
 
 .main-header{ 
-  height: 300px;
-  width: 100%;
-  background-image: image-url('4011543_s.jpg');
+  padding-top: 50px;
+  height: 40px;
+  background-color: rgb(180, 223, 240);
   background-size: cover;
+  text-align: center;
   display: flex;
-  align-items: center;
+  justify-content: space-around;
+  align-items: flex-end;
   text-decoration: none;
+  transition: all 300ms 1s ease;
+  .current-group{
+    font-family: monospace;
+    font-size: 30px;
+    margin-right: 600px;
+    margin-bottom: 10px;
+  }
+a,span{
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+a:hover{
+  color: red;
+}
+.center-title{
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+.post-btn{
+  margin-bottom: 10px;
+}
+.post-btn:hover{
+  font-size: 25px;
+}
 }
 
-.center-title{
-  font-size:30px;
-  padding-top: 10px;
-}
 .list{
   padding-left: 20px;
 }
+.search-screen{
+  font-family: monospace;
+  height: 120vh;
+  width: 100%;
+  text-decoration: none;
+  .search-contents{
+    height: 100vh;
+  }
 .search-lists{
   float: left;
   margin: 10px;
@@ -146,9 +258,10 @@ span{
   color: #1a1d21;
   text-decoration: none;
 }
+}
 
 .object-box{
-  margin-top: 20px;
+  margin-top: 5px;
   margin-bottom: 300px;
   .object-lists{
    display: flex;
@@ -168,36 +281,12 @@ span{
   width: 100%;
 }
  
-.comment-container{
-  border: solid 1px skyblue;
-  background-color: white;
-  height: 100vh;
-  margin-top: 10px;
-  padding-top: 20px;
-  .comments.comment-table, .comment-lists, p{
-    text-decoration: none;
-    color: black;
-  padding-top: 20px;
-  font-size: 20px;
-  }
-}
-
-.commet-list{
-  padding-top: 50px;
-}
-
 .menu {
   display: flex;
 }
 
 .new-group {
   margin-right: 5px;
-}
-
-.current-group {
-  color: rgb(238, 236, 235);
-  margin-bottom: 15px;
-  font-size: 100px;
 }
 
 .input-text{
@@ -216,9 +305,10 @@ span{
   margin-left: 15px;
   margin-top: 30px;
   margin-bottom: 60px;
-  background-color: #eeeeee;
+  background-color: #f1c958;
   font-size: 15px;
   color: #1a1d21;
+  border: ridge 10px orange ;
   border-radius: 100vh;
   cursor: pointer;
 }
@@ -234,14 +324,23 @@ span{
 }
 .sign-up{
   margin-top: 30px; 
-  width: 200px;
+  width: 100px;
   height: 50px;
   cursor: pointer;
+  transition: background-color 0s,width 1s,height 1s, font-size 1s,transform 3s, 300ms ease;
+}
+.sign-up:hover{
+opacity: 0.8;
+font-size: 30px;
+width: 200px;
+height: 60px;
+background-color: rgb(175, 235, 240);
+border: none;
 }
 
 .contents{
   padding-top: 50px;
-  height: 160vh;
+  height: 170vh;
   text-align: center;
   background-color: rgb(222, 245, 248);
   background-size: cover;
@@ -272,7 +371,7 @@ p{
 }
 
 .field,.select-box{
-  font-family: serif;
+  font-family: "Gill Sans", serif;
   margin-top: 20px;
 }
 .field_hobit{
@@ -280,6 +379,7 @@ p{
 }
 
 .text{
+  text-align: center;
   margin-top: 10px;
   height: 40px;
   width: 300px;
@@ -299,34 +399,33 @@ p{
 
 .object-show-box{
   text-align: center;
-  background-image: image-url('1108540_l.jpg');
-  background-size: cover;
-  height: 200vh;
+  height: 120vh;
   font-size: 30px;
   padding-top: 80px;
   padding-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
 .detail-table{
-  margin:0 auto;
+  margin: 0 auto;
   font-size: 25px;
+}
+.detail-object{
+  padding-right: 20px;
 }
 .object-display{
   justify-content: center;
   margin-right: 10px; 
 }
-.btn--object{
-  color: #fff;
-  background-color: #eb6100;
-  border-bottom: 5px solid #b84c00;
 }
-.btn--object:hover{
-  margin-top: 3px;
-  color: #eb6100;
-  background: #f8f7f7;
-  border-bottom: 2px solid #b84c00;
+
+.users-select{
+  font-size: 20px;
+  margin-top: 25px;
+.users-selection{
+  color: #1a1d21;
 }
-.btn--object{
-  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
-  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+.users-selection:hover{
+  opacity: 0.6;
 }
 }
 
@@ -351,12 +450,11 @@ p{
   opacity: 0.5;
 }
 
-.object-display{
-margin-top: 50px;
-}
-
 .detail-object{
   padding-top: 30px;
+}
+.detail-value{
+  padding-top:  30px;
 }
 .object-explain-box{
   margin-top: 10px;
@@ -364,4 +462,47 @@ margin-top: 50px;
 .search-btn{
   width: 80px;
   vertical-align:middle;
+}
+
+.comments{
+  font-size: 18px;
+  .comments-table{
+  width: 600px;
+  height: 50px;
+  border: double 1px black;
+  margin-top: 20px;
+  }
+  .comment-name{
+    padding-left: 400px;
+  }
+  img{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    border-radius: 100px;
+  }
+  .comment-btn{
+    font-size: 12px;
+    border: solid 1px black;
+    background-color: rgb(231, 226, 226);
+  }
+  .comment-btn:hover{
+    color: red;
+  }
+}
+
+.edit-btn{
+  margin-top: 30px; 
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+  transition: background-color 0s,width 1s,height 1s, font-size 1s,transform 3s, 300ms ease;
+}
+.edit-btn:hover{
+opacity: 0.8;
+font-size: 30px;
+width: 200px;
+height: 60px;
+background-color: rgb(175, 235, 240);
+border: none;
 }

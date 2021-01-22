@@ -1,13 +1,9 @@
  <%= render "shared/header"%>
     <div class="main_screen">
-    <div class="main-header">
-      <h2 class="current-group">Top page</h2>
-    </div>
-  </div>
- <div class="center_screen">
- <h1 class="center-title">投稿の作成</h1>
-   <span>目標投稿を作成する⇨</span><%= link_to "push!", new_objective_path ,class: "post-btn"%>
-<h1 class="center-title">投稿検索</h1>   
+    <div class="main-header hidden" id="main-header">
+<h1 class="center-title">投稿の作成</h1>
+   <%= link_to  new_objective_path  do%><span>目標投稿を作成する</span><% end %>
+   <h1 class="center-title">投稿検索</h1>
    <%= search_form_for @q, url: search_objectives_path do |f| %>
    <span>投稿テーマで検索しよう！<%= f.collection_select :category_id_eq, Category.where.not(id: 0),:id,:name %></span>
    <%= f.submit '検索',class:"search-btn" %>
@@ -18,16 +14,20 @@
    <%= f.submit '検索',class: "search-btn" %> 
    <% end %>
    </label>
+    </div>
+  </div>
+ <div class="center_screen">
  <div class="object-box">
  <h1 class="center-title">目標投稿掲示板</h1>
+  <p>(新着順20件まで表示)</p>
   <div class="object-lists">
-      <% @objectives.each do |objective| %>
+      <% @objectives.first(20).each do |objective| %>
       <div class='objective-img-content'>
               <%= image_tag objective.image.variant(gravity: :center, resize: '220x220').processed, class: "object-image" if objective.image.attached? %>
               <div class= "object-name">
               <span><%= objective.user_name %></span> 
               <span><%= objective.category.name %></span>
-            <%= link_to  objective_path(objective.id) do %>
+           <%= link_to  objective_path(objective.id) do %>
                 <span><button type="button">詳細</button></span>
              <% end %>
              </div>
@@ -71,3 +71,4 @@
      </div>  
       </section>
    </div>
+   <%= render "shared/futter" %>

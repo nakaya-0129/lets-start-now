@@ -1,6 +1,22 @@
 // Place all the styles related to the meetings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-/*
-*=require simple_calendar
-*/
+
+.meeting-screen{
+  padding-top: 50px;
+  height: 170vh;
+  text-align: center;
+  background-color: rgb(222, 245, 248);
+  background-size: cover;
+  h1{
+  font-size: 30px;
+  }
+  .meeting-main{
+    margin-top: 20px;
+    font-size: 20px;
+   .time{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    }
+  }
+}

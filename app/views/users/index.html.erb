@@ -1,0 +1,16 @@
+<%= render "shared/user_header" %>
+ <div class="users-box"> 
+  <div class="user-contents">
+    <h1 class="user-title">ユーザー一覧</h1>
+        <% @users.each do |user| %>
+    <div class= "users-table">
+     <%=link_to user_path(user.id) do%>
+     <ul class="user-lists">
+      <li><img src=<%= user.image %> class="image"><li>
+      <li><%= user.nick_name %><li>
+     </ul>
+      <% end %>
+      <% end %>
+      </div>
+  </div>
+</div>

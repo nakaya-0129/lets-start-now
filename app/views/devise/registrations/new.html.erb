@@ -1,33 +1,37 @@
-<div class="contents">
-  <div class="container">
-    <h2>Contact Us </h2>
+<%=render "shared/form"%>
+<div class="login-form">
+  <div class="signup-contents">
+    <h2 class=form-text>Contact Us </h2>
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <%= devise_error_messages! %>
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email , class: "post" %>
-      </div>
-       <div class="field">
-        <%= f.label :nick_name %> <em>(8 characters maximum)</em><br />
-        <%= f.text_field :nick_name, autofocus: true, maxlength: "8" ,class: "text"%>
+      <div class="login-field">
+      <p>プロフィール画像を選択して下さい</p>
+        <%= f.file_field :image, id:"profile-image",class: "text" %>
       </div>
 
-      <div class="field">
-        <%= f.label :password %>
+      <div class="login-field">
+        <%= f.email_field :email , class: "text",placeholder:"----メールアドレスを登録して下さい----" %>
+      </div>
+
+      <div class="login-field">
+        <%= f.text_field :nick_name, autofocus: true, maxlength: "8" ,class: "text",placeholder:"---公開するユーザー名を登録して下さい---"%>
+      </div>
+
+      <div class="login-field">
         <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <em><%= @minimum_password_length %> 文字(英数字含む)</em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "off",class: "post" %>
+        <%= f.password_field :password, autocomplete: "off",class: "text",placeholder:"------新規パスワードを設定-------" %>
       </div>
 
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off",class: "text" %>
+      <div class="login-field">
+        <%= f.password_field :password_confirmation, autocomplete: "off",class: "text" ,placeholder:"---パスワードの確認---"%>
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up" ,class: "sign-up"%>
+        <%= f.submit "Sign Up" ,class: "sign-up"%>
       </div>
     <% end %>
   </div>
 </div>
+<%= render "shared/futter" %>

@@ -7,9 +7,10 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/2865365d85.js" crossorigin="anonymous"></script>
   </head>
   <body>
+    <%# debug(params) if Rails.env.development? %>
     <%= yield %>
   </body>
-  <%= render "shared/futter" %>
 </html>

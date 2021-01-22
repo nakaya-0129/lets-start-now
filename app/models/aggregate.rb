@@ -1,6 +1,6 @@
 class Aggregate < ApplicationRecord
   belongs_to :user
-
+  
   with_options presence: true do
     validates :ability_id
     validates :result_comment

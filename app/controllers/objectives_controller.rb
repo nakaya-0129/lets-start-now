@@ -1,9 +1,14 @@
 class ObjectivesController < ApplicationController
-  before_action :authenticate_user!, except: [:index,:show]
+  before_action :authenticate_user!, except: [:top]
+  before_action :objective_find, only: [:show,:edit,:update,:destroy]
   before_action :searching_object, only: [:search,:index]
+  def top
+
+  end
 
   def index
     @objectives = Objective.all.order(created_at: :desc)
+
   end
 
   def new
@@ -13,7 +18,8 @@ class ObjectivesController < ApplicationController
   def create
       @objective = Objective.new(objects_params)
       if @objective.save
-        redirect_to root_path
+        flash[:success] = "目標を投稿しました"
+        redirect_to objectives_path
       else
         render :new
       end
@@ -26,29 +32,25 @@ class ObjectivesController < ApplicationController
     end
 
     def show
-      @objective = Objective.find(params[:id])
       @comment = Comment.new
-      @comments = @objective.comments.includes(:user)
+      @comments =@objective.comments.order(created_at: :desc)
     end
 
     def edit
-      @objective = Objective.find(params[:id])
     end
 
     def update
-      @objective = Objective.find(params[:id])
       if @objective.update(objects_params)
-        redirect_to root_path
+        redirect_to objectives_path
       else
         render :edit
       end
     end
 
     def destroy
-      @objective =Objective.find(params[:id])
       if @objective.user_id == current_user.id
         @objective.destroy
-      redirect_to root_path
+      redirect_to objectives_path
       else
         render :show
       end
@@ -63,4 +65,9 @@ class ObjectivesController < ApplicationController
 def searching_object
  @q = Objective.ransack(params[:q])
 end
+
+def objective_find
+  @objective = Objective.find(params[:id])
+end
+
 end

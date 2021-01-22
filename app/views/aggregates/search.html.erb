@@ -5,11 +5,18 @@
    <div class ="search-contents">
       <% if aggregate.action_point.present? %>
      <div class ="search-lists">
-       <%= link_to aggregate_path(aggregate.id),class: "search-lists" do %>
-         <div class="search-object">
-          <span><%= aggregate.start_day %></span>
-          <span><%= aggregate.result_comment %></span>
-          <% end %>
+         <div class="aggregate-show">
+            <span><%= aggregate.start_day %></span>
+            <span>テーマ：<%= aggregate.result_comment %></span>
+      <%= link_to aggregate_path(aggregate.id) do %>
+          <span><button type ="button" >詳細</button></span>
+      <% end %>
+      <%= link_to edit_aggregate_path(aggregate.id) do %>
+          <span><button type ="button">編集</button></span>
+      <%end%>
+      <%= link_to aggregate_path(aggregate.id), method: :delete do %>
+          <span><button type ="button">削除</button></span>
+      <% end %>
           </div>
        </div>
       <% end %>

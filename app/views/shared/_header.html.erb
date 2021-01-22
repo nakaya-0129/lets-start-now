@@ -1,6 +1,15 @@
  <header class="header">
   <div class="header-bar">
-  <h1 class="title">Let's Start Now!</h1>
+  <div class="header-space">
+  <% if current_user.image_url.present? %>
+  <%= link_to user_path(current_user.id) do%>
+ <span><%= image_tag(current_user.image_url) %></span>
+ <span><%= current_user.nick_name %></span>
+ <% end %>
+ <% else %>
+ <% end %>
+ </div>
+  <h1 class="title" >Let's Start Now!</h1>
      <% if user_signed_in? %>
           <div class="user_nav-grid">
            <div class="user_info">
@@ -8,6 +17,7 @@
             <ul class ="hidden" id = "pull-down-lists">
              <li><%= link_to "マイページに移動する", aggregates_path(current_user.id), class: "post" %></li>
              <li><%= link_to "グループページへ移動する", groups_path, class: "post" %></li> 
+             <li><%= link_to "ユーザー一覧表示", users_index_path, class: "post"%></li>
              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "post" %></li>
             </ul>
           </div>

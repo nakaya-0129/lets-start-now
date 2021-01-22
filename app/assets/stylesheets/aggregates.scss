@@ -96,7 +96,7 @@
   }
   button{
     margin-bottom: 20px;
-  }  
+  }
 }
 .aggregate-board{
   width: 100%;
@@ -112,4 +112,45 @@
   margin-top: 10px;
   font-size: 30px;
   color: rgb(236, 77, 77);
+}
+
+.aggregate-show{
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-decoration: none;
+  span{
+    margin-right: 20px;
+  }
+  button{
+  margin-bottom: 10px;
+  }
+}
+
+.aggregate-show-box{
+  text-align: center;
+  height: auto;
+  font-size: 30px;
+  padding-top: 60px;
+  padding-bottom: 10px;
+.detail-table{
+  margin: 0 auto;
+  font-size: 25px;
+}
+.detail-object{
+  padding-right: 20px;
+}
+}
+
+.aggregate-title{
+  font-family: monospace;
+  font-size: 25px;
+}
+.supple{
+  font-size: 16px;
+  margin-bottom: 25px;
+  margin-top: 10px;
 }
