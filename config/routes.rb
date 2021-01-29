@@ -4,7 +4,10 @@ Rails.application.routes.draw do
     :registrations => 'users/registrations',
     :sessions => 'users/sessions',
     :passwords => 'users/posswords'
-  } 
+  }  do
+    get :favorites, on: :collection
+  end
+
   get "users/:id/show", to: "users#show", as: "user"
   get "users/index" => "users#index"
   
@@ -18,6 +21,8 @@ Rails.application.routes.draw do
   get 'top' => 'objectives#top'
   resources :objectives do
     resources :comments, only: [:create,:destroy]
+     post 'add' => 'favorites#create'
+     delete '/add' => 'favorites#destroy'
     collection do
       get 'search'
     end

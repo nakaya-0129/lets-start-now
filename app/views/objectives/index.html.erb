@@ -23,13 +23,12 @@
   <div class="object-lists">
       <% @objectives.first(20).each do |objective| %>
       <div class='objective-img-content'>
-              <%= image_tag objective.image.variant(gravity: :center, resize: '220x220').processed, class: "object-image" if objective.image.attached? %>
+             <%= link_to  objective_path(objective.id) do %>
+                <%= image_tag objective.image.variant(gravity: :center, resize: '220x220').processed, class: "object-image" if objective.image.attached? %>
+             <% end %>
               <div class= "object-name">
               <span><%= objective.user_name %></span> 
               <span><%= objective.category.name %></span>
-           <%= link_to  objective_path(objective.id) do %>
-                <span><button type="button">詳細</button></span>
-             <% end %>
              </div>
              </div>
       <% end %>

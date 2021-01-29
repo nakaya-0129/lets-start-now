@@ -1,11 +1,12 @@
-window.addEventListener('turbolinks:load', ()=>{
-  const pullDownObject = document.getElementById("start-btn");
-  const pullDownLists = document.getElementById("top-pulldown-lists");
- pullDownObject.addEventListener('click', ()=>{
-   if (pullDownLists.getAttribute("style") =="display:block;") {
-     pullDownLists.removeAttribute("style","display:block;")
-   } else{
-     pullDownLists.setAttribute("style","display:block;")
-   }
- });
+window.document.addEventListener('scroll',()=>{
+const targetElement = document.querySelectorAll(".top-lists");
+for (let i = 0; i< targetElement.length; i++){
+  const getElementDistance =targetElement[i].getBoundingClientRect().top + targetElement[i].clientHeight * 0.6
+  console.log(getElementDistance);
+    if(window.innerHeight > getElementDistance){
+      targetElement[i].classList.add("show");
+    }else if(window.innerHeight < getElementDistance){
+      targetElement[i].classList.remove("show");
+    }
+}
 });

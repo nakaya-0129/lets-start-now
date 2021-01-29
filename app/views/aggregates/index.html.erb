@@ -1,11 +1,11 @@
 <%= render "shared/mypage"%>
     <div class="main_screen">
-    <div class="main-header">
+    <div class="aggregate-header">
       <h2 class="current-group">My page~ワークスペース〜</h2>
     </div>
  <div class="center-screen-a">
  <h1 class="center-title">My Note</h1>
- <span>スタート記録を記入する⇨</span><%= link_to "push!", new_aggregate_path(current_user.id) ,class: "post-btn"%>
+ <span class="push-btn"><%= link_to  new_aggregate_path(current_user.id) do %>スタート記録を記入する</span><% end %>
  <%= form_with url: search_aggregates_path, local: true, method: :get do  |f| %>
   <p class="aggregate-menu">ノートの管理</p>
   <div class="aggregate-list">達成済みのタスクを表示する<%=f.check_box :user_id %><%= f.submit "確認"%></div>

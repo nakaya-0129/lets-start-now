@@ -1,5 +1,13 @@
 <header class="header">
       <div class="header-bar">
         <%=link_to "トップページに戻る", top_path, class: "post"%>
+          <h1 class ="header-title">Let's Start Now!</h1>
+          <div class="user_nav-grid">
+           <div class="user_info">
+           <div class ="todo-lists"  id= "lists" >Menu-list</div>
+            <ul class ="todo-lists hidden" id = "pull-down-lists">
+             <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "post" %></li>
+            </ul>
+          </div>
         </div>
     </header>

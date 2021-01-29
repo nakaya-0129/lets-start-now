@@ -1,7 +1,16 @@
 // Place all the styles related to the aggregates controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+.aggregate-header{ 
+  font-family: monospace;
+  padding-top: 55px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  height: 45px;
+  background-color: rgb(180, 223, 240);
+  background-size: cover;
+  text-align: center;
+}
 .center-screen-a,.search-screen{
   font-family: monospace;
   font-size: 20px;
@@ -32,22 +41,20 @@
     margin-top: 30px;
     margin-bottom: 20px;
   }
-  .post-btn{
-    margin-top: 10px;
-    color: #1a1d21;
+  .push-btn{
+    display: inline-block;
+    padding: 0.5em 1em;
     text-decoration: none;
-    font-size: 15px;
-    background-color: white;
-    border: 3px solid #57595a;
-    border-bottom: 5px solid #57595a;
-    border-right: 5px solid #57595a;
-    border-left: 5px solid #57595a;
+    background-color: rgb(167, 220, 241);
+    border-bottom: solid 4px rgb(75, 73, 73);
+    border-radius: 3px;
   }
-  .post-btn:hover{
-    margin-top: 5px;
-    background-color: rgb(224, 223, 219);
-    border: 1px solid whitesmoke;
-    opacity: 0.5;
+  .push-btn:active{
+   -webkit-transform: translateY(4px);
+   transform: translateY(4px);
+   box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+   color: red;
+   border-bottom: none;
   }
   .post-title{
     margin-left: 30px;
@@ -95,7 +102,12 @@
     margin-right: 20px;
   }
   button{
-    margin-bottom: 20px;
+  border: outset 6px rgb(121, 240, 141);
+  background-color: rgb(250, 249, 249);
+  border-radius: 50vh;
+  }
+  button:hover{
+    opacity: 0.6;
   }
 }
 .aggregate-board{

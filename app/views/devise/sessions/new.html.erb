@@ -1,5 +1,11 @@
 <%= render "shared/form"%>
 <div class="login-form">
+<div class= "login-text">
+<h1>Let <br>
+    Start<br>
+    Now</h1>
+</div>
+
   <div class="login-contents">
     <h2 class="login-title">Log in form</h2>
     <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
@@ -14,11 +20,11 @@
       <div class="actions">
         <%= f.submit "Log in " ,class: "sign-up"%>
       </div>
-
     <% end %>
-  </div>
-  <p>*パスワードを忘れてしまった場合</p>
+    <p>*パスワードを忘れてしまった場合</p>
   <br>
   <p>*正常にログインできない場合は問合せフォームへお願いします</p>
+   </div>
 </div>
-<%= render "shared/futter" %>
+  
+ <%= render "shared/futter" %>

@@ -1,64 +1,205 @@
 // Place all the styles related to the objectives controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.top-page{
-  padding-top: 50px;
-  background-image: image-url("4011543_s.jpg");
-  background-size: contain;
+.top-header{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  font-size: 25px;
   width: 100%;
-  height: 123vh;
-  .top-title{
-    font-family: "Gill Sans",serif;
-    font-size: 100px;
-    text-align: center;
-    opacity: 0.9;
+  height: 60px;
+  h1{
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    border-radius: 10px;
+    padding: 2px;
   }
-  p{
-    color: black;
-    font-size: 15px;
-    margin-top: 20px;
+  .top-about{
+    margin-top: 10px;
   }
-  button{
-    margin-top: 30px;
-    opacity: 0.8;
-    text-align: center;
-    border-radius: 100vh;
-    border: chartreuse solid 1px;
-    width: 200px;
-    background-color: rgb(182, 250, 187);
+  .top-about:hover{
+    opacity: 0.6;
+  }
+  .header-btn{
     height: 50px;
+    margin-right: 30px;
     font-size: 20px;
-    transition: all 200ms 0s ease;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-bottom: solid 6px rgb(75, 73, 73);
+    border-radius: 3px;
+  } 
+  .header-btn:active{
+    -webkit-transform: translateY(4px);
+   transform: translateY(4px);
+   box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+   color: red;
+   border-bottom: none;
   }
-  button:hover{
-    opacity: 1.0;
+}
+
+.top-page{
+  width: 100%;
+  display: flex;
+.top-title{
+  text-align: center;
+  width: 50%;
+  height: 350vh;
+  background-color: orange;
+}
+h1{
+  margin-bottom: 100vh;
+  padding-top: 200px;
+  font-size: 100px;
+}
+
+@keyframes titleAnimation {
+  0%{
+  letter-spacing: 0.3em;
+  opacity: 0;
+  }
+}
+h2{
+  font-weight: bold;
+  font-size: 40px;
+  animation: titleAnimation 3s;
+}
+}
+
+.top-object{
+ height: 200px;
+ margin-left: 100px;
+ width: 50%;
+ display: flex;
+ flex-direction: column;
+ .top-frame{
+   margin-top: 30px;
+   font-size: 40px;
+ }
+.top-sapport{
+  transition: 5s;
+  transform: translateY(30px);
+  margin-top: 50px;
+  margin-bottom: 100px;
+  height: 200px;
+  padding: 10px;
+  animation: titleAnimation 3S;
+}
+
+.top-lists{
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 2s;
+  padding: 10px;
+  height: 200px;
+  margin-top: 300px;
+  margin-bottom: 50px;
+}
+.top-lists.show{
+  opacity: 0.8;
+  transform: none;
+}
+  p{
+    transform: translateZ(50px);
+    margin-bottom: 15px;
+    margin-left: 80px;
+    color: black;
+    font-size: 20px;
+  }
+  span{
     font-size: 30px;
-    width: 300px;
-    height: 80px;
-    color: snow;
-    background-color:skyblue;
-  }
-  .hidden{
-    display: none;
-    margin:0 auto;
-    border: solid greenyellow 2px;
-    background-color: white;
-    width:  350px;
-    height: 200px;
-    opacity: 0.8;
   }
   h2{
+    margin-left: 60px;
+  }
+  h3{
+    font-size: 50px;
+  }
+  h4{
+    margin-left: 50px;
+    margin-bottom: 30px;
+    font-size: 40px;
+  }
+  .image{
+    margin-bottom: 30px;
+    margin-left: 60px;
+    width: 300px;
+    height: 200px;
+    opacity: 1.0;
+    border-radius: 100vh;
+  }
+  .main-btn{
+    background-color: orange;
+    height: 50px;
+    margin-right: 5px;
+    font-size: 20px;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-bottom: solid 6px rgb(75, 73, 73);
+    border-radius: 3px;
+  } 
+  .main-btn:active{
+    -webkit-transform: translateY(4px);
+   transform: translateY(4px);
+   box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+   color: red;
+   border-bottom: none;
+  }
+}
+
+ .top-signup{
+  margin-right: 40px;
+  span{
+  margin-top: 10px;
+  font-size: 20px;
+  }
+  .start-btn{
+    font-size: 20px;
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-bottom: solid 6px rgb(75, 73, 73);
+    border-radius: 3px;
+  }
+  .start-btn:active{
+    -webkit-transform: translateY(4px);
+   transform: translateY(4px);
+   box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+   color: red;
+   border-bottom: none;
+  }
+}
+
+  
+  h2{
+    font-size: 25px;
+  }
+  h4{
     font-size: 25px;
     margin-bottom: 10px;
   }
-  .sign-up{
-    font-size: 30px;
+  .sign{
+    font-size: 20px;
   }
-  .sign-up:hover{
-   font-size: 50px;
+  .sign:hover{
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+   font-size: 40px;
    background-color: white;
   }
-}
+ 
+
+.top-footer{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px 20px 10px;
+  height: 30px;
+  width: 100%;
+  border-top: solid 6px rgb(116, 112, 112);
+    font-size: 20px;
+  }
 
 .line{
   width: 20px;
@@ -90,7 +231,7 @@ padding-top: 10px;
   align-items: center;
   width: 100%;
   height: 50px;
-  background-color: rgb(182, 250, 187);
+  background-color: white;
   justify-content: space-between;
   position: relative;
   font-size: small;
@@ -100,8 +241,12 @@ padding-top: 10px;
     font-size: 30px;
     margin-left: 50px;
   }
+  .header-title{
+    font-family: "Gill Sans",serif; 
+    font-size: 30px;
+  }
+  
 .todo-lists,.psy-lists{
-  font-family: "Gill Sans", serif;
   width: 180px;
   font-size: 20px;
   color:rgb(219, 151, 103);
@@ -141,7 +286,6 @@ img{
 }
 span{
   font-size: 15px;
-
 }
 }
 
@@ -177,6 +321,7 @@ span{
 }
 }
 
+
 .user_info, .post{
   list-style: none;
   text-decoration: none;
@@ -184,6 +329,7 @@ span{
 
 
 .center_screen{
+  text-align: center;
   font-family: monospace;
   height: 100vh;
   width: 100%;
@@ -207,6 +353,7 @@ span{
 .main-header{ 
   padding-top: 50px;
   height: 40px;
+  margin-bottom: 20px;
   background-color: rgb(180, 223, 240);
   background-size: cover;
   text-align: center;
@@ -275,6 +422,13 @@ a:hover{
   text-decoration: none;
   color: #1a1d21;
 }
+.object-image{
+  margin-top: 20px;
+}
+.object-image:hover{
+border: 10px ridge skyblue ;
+opacity: 0.6;
+}
 }
 
 .main_image{
@@ -323,26 +477,22 @@ a:hover{
   border-radius: 100vh;
 }
 .sign-up{
-  margin-top: 30px; 
-  width: 100px;
+  width: 200px;
   height: 50px;
+  font-size: 20px;
   cursor: pointer;
-  transition: background-color 0s,width 1s,height 1s, font-size 1s,transform 3s, 300ms ease;
+  background-color: orange;
 }
-.sign-up:hover{
-opacity: 0.8;
-font-size: 30px;
-width: 200px;
-height: 60px;
-background-color: rgb(175, 235, 240);
-border: none;
+.sign-up:active{
+  opacity: 0.6;
+  
 }
+
 
 .contents{
   padding-top: 50px;
   height: 170vh;
   text-align: center;
-  background-color: rgb(222, 245, 248);
   background-size: cover;
 }
 .text-title{
@@ -422,10 +572,15 @@ p{
   font-size: 20px;
   margin-top: 25px;
 .users-selection{
-  color: #1a1d21;
 }
 .users-selection:hover{
-  opacity: 0.6;
+  opacity: 0.8;
+  background-color: rgb(184, 226, 243);
+}
+.image{
+  width: 30px;
+  height: 30px;
+  border-radius: 50vh;
 }
 }
 
@@ -468,11 +623,12 @@ p{
   font-size: 18px;
   .comments-table{
   width: 600px;
-  height: 50px;
+  height: 60px;
   border: double 1px black;
   margin-top: 20px;
   }
   .comment-name{
+    padding-top:   15px;
     padding-left: 400px;
   }
   img{

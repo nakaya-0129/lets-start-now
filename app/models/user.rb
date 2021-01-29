@@ -11,5 +11,6 @@ has_many :comments
 has_many :aggregates  
 has_many :group_users
 has_many :groups, through: :group_users 
+has_many :favorites, dependent: :destroy
 mount_uploader :image, ImageUploader
 end
