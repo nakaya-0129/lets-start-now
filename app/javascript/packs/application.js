@@ -12,8 +12,9 @@ require("../object");
 require("../psy");
 require("../aggregate");
 require("../top");
+require("../animation")
 require("jquery")
-require("../index");
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

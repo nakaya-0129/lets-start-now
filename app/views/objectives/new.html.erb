@@ -1,57 +1,90 @@
 <%= render "shared/top" %>
 <div class="contents">
- <h1 class="text-title">目標とアクションプランを作成して、投稿しよう！</h1>
-  <div class="container">
-    <%= form_with model: @objective , url: objectives_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-    <div class="field">
+<span><%=link_to "《戻る" , objectives_path, class:"post" %></span>
+  <div class="conainer">
+  
+     <h1 class="text-title">目標とアクションプランを作成して、投稿しよう！</h1>
+        <%= form_with model: @objective , url: objectives_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+
+      <div class="field">
        <h3>ユーザーネーム</h3>
         <%= f.text_field :user_name, class: "post"%>
       </div>
-    <div class="field">
-    <h3>目標投稿イメージ画像<h3>
+
+      <div class="field">
+        <h3>目標投稿イメージ画像<h3>
         <%= f.file_field :image, id:"profile-image",class: "text" %>
-     </div>   
+      </div> 
+
       <div class="field">
-      <h3>目標のテーマを決めよう！</h3>
-       <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box",id:"item-category",include_blank: "---取り組むテーマを選択して下さい---"}) %>
-       </div>
+          <h3>目標のテーマを決めよう！</h3>
+          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box",id:"item-category",include_blank: "---取り組むテーマを選択して下さい---"}) %>
+      </div>
+
        <div class="field">
-       <h3>時間設定(一日あたりの時間)</h3>
-        <%= f.collection_select(:hobit_id, Hobit.all, :id, :name, {}, {class:"select-box",id:"item-category"}) %>
+          <h3>時間設定(一日あたりの時間)</h3>
+            <%= f.collection_select(:hobit_id, Hobit.all, :id, :name, {}, {class:"select-box",id:"item-category"}) %>
         </div>
+
         <div class="field">
-        <h3>目標宣言（具体的な目標を設定しよう！）</h3>
-        <%= f.text_area :one_day, class: "text"%>
-      </div>
+            <h3>目標宣言（具体的な目標を設定しよう！）</h3>
+             <%= f.text_area :one_day, class: "text"%>
+        </div>
+
       <div class="field">
-      <h3>First-Step：目標を達成するためのアクションプランを考えよう！</h3>
-      <p>(具体的な行動を記入しよう！)</p>
-        <%= f.text_area :action_plan, class: "text"%>
+          <h3>First-Step：目標を達成するためのアクションプランを考えよう！</h3>
+            <p>(具体的な行動を記入しよう！)</p>
+            <%= f.text_area :action_plan, class: "text"%>
       </div>
-      <br>
+
+      <div class="actions">
+        <%= f.submit "投稿する！", class: "submit-btn" %>
+      </div>
+      <% end %>
+    </div>
+
+    <div class="contents-side">
+            <p class="contents-list">宣言効果とは？</p>
+       <div class="first-text" id="first-text">     
+            <b>自分の目標を他人に宣言することで、</b>
+            <b>その目標が達成しやすくなることです。</b>
+            <b>理由は宣言によって,</b>
+            <b>自分にプレッシャーをかけられることが挙げられます。<b>
+        </div>
+         <div class= "second-text" id="second-text">  
+          <b>逆に宣言をしなければその目標は自分だけのものになり、<b>
+          <b>辛くなったり、投げ出したくなったときに、</b>
+          <b>簡単に諦めることができてしまいます。<b>
+          <b>また宣言をすることで、</b>
+          <b>その目標に意識を向ける機会が増えるため、</b>
+          <b>目標を達成する意欲を高めることにつながります。</b>
+       </div>
+
+    </div>
+  
+  </div>
       
-      <h1 class="text-title">行動/習慣を見直してみよう！</h1>
+      <%# <h1 class="text-title">行動/習慣を見直してみよう！</h1>
       <p>注：行動/習慣については、個人的な内容を含むことを考慮して、<br>
          非公開になっています。</p>
        <br>
        <div class="field_hobit">
        <h3>目標達成を妨げる習慣/行動を記入しよう！</h3>
         <%= f.text_area :hobituation, class: "text"%>
-      </div>
+      <%# </div>
        <div class="field">
        <h3>習慣/行動のメリットとデメリットを考えよう！</h3>
        <p>(メリットを考えてみよう！)</p>
         <%= f.text_area :merit, class: "text"%>
-        </div>
+        <%# </div>
         <div class ="field">
        <p>(デメリットを考えてみよう！)</p>
         <%= f.text_area :demerit, class: "text"%>
-      </div>
+      <%# </div>
       <p>注：習慣化のメリットとデメリットの思考法については、<br>
       心理学講座②：４つのマトリックスで詳しく解説されています。</p>
       <div class="actions">
-        <%= f.submit "投稿する！" ,class: "submit-btn"%>
-      </div>
-    <% end %>
-  </div>
-</div>
+         <%= f.submit "投稿する！" ,class: "submit-btn" %>
+      <%# </div> %>
+      
+  

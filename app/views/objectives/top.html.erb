@@ -54,13 +54,17 @@
     <div class="top-lists">
     <%= image_tag "4011543_s.jpg", class: "image"%>
       <h4>スモールステップ</h4>
-        <p>小さな成功体験の積み重ねを大切に</p>
+        <p>小さな努力から始めよう！</p>
+        <p>今できることからゆっくりステップアップ！</p>
         <p>大きな目標もまずは、小さな一歩から踏み出そう！</p>
     </div>
     <div class="top-lists">
-         <span>Frist Of All</span><%= link_to new_user_registration_path do%>
+         <b>Frist Of All</b><%= link_to new_user_registration_path do%>
         <button class="main-btn" id="main-btn">SignUp</button>
-        <% end %>
+        <% end %><br>
+         <b>Let's Start</b> <%= link_to user_session_path do %>
+         <button class="login-btn" id="login-btn">Login</button>
+         <%end%>
      </div>
   </div>
   </div>

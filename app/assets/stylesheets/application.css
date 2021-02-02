@@ -43,6 +43,7 @@ time, mark, audio, video {
 }
 
 body {
+  margin: 0;
   line-height:1;
 }
 
@@ -129,7 +130,6 @@ input{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 20px;
   height: 50px;
   width: 100%;
   display: flex;

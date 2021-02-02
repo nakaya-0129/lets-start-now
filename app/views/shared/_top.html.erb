@@ -1,8 +1,17 @@
 <header class="header">
       <div class="header-bar">
- <%=link_to "前ページに戻る", objectives_path, class: "post"%>
  <h1 class="title" >Let's Start Now!</h1>
-         <div class="header-link">
+      <div class="header-link">
+ <h1 class="title">Post Page</h1>        
         </div>
+        <div class="user-name">
+        <span>login user:</span>
+    <% if current_user.image_url.present? %>
+        <%= link_to user_path(current_user.id) do%>
+      <span><%= current_user.nick_name %></span>
+      <span><%= image_tag(current_user.image_url) %></span>
+      <% end %>
+      <% else %>
+      <% end %>
     </div>
     </header>

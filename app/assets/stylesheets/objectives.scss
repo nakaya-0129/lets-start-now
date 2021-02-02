@@ -31,6 +31,10 @@
     border-bottom: solid 6px rgb(75, 73, 73);
     border-radius: 3px;
   } 
+  .header-btn:hover{
+    cursor: pointer;
+    opacity: 0.6;
+  }
   .header-btn:active{
     -webkit-transform: translateY(4px);
    transform: translateY(4px);
@@ -98,13 +102,13 @@ h2{
   margin-bottom: 50px;
 }
 .top-lists.show{
-  opacity: 0.8;
+  opacity: 1.0;
   transform: none;
 }
   p{
     transform: translateZ(50px);
     margin-bottom: 15px;
-    margin-left: 80px;
+    margin-left: 50px;
     color: black;
     font-size: 20px;
   }
@@ -122,15 +126,20 @@ h2{
     margin-bottom: 30px;
     font-size: 40px;
   }
+  b{
+    font-size: 30px;
+    margin-left: 5px;
+  }
   .image{
     margin-bottom: 30px;
-    margin-left: 60px;
+    margin-left: 80px;
     width: 300px;
     height: 200px;
     opacity: 1.0;
     border-radius: 100vh;
   }
   .main-btn{
+    margin-bottom: 20px;
     background-color: orange;
     height: 50px;
     margin-right: 5px;
@@ -139,8 +148,34 @@ h2{
     text-decoration: none;
     border-bottom: solid 6px rgb(75, 73, 73);
     border-radius: 3px;
+  }
+  .main-btn:hover{
+    cursor: pointer;
+    opacity: 0.6;
   } 
   .main-btn:active{
+    -webkit-transform: translateY(4px);
+   transform: translateY(4px);
+   box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+   color: red;
+   border-bottom: none;
+  }
+  .login-btn{
+    margin-bottom: 20px;
+    margin-left: 5px;
+    background-color: orange;
+    height: 50px;
+    font-size: 20px;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-bottom: solid 6px rgb(75, 73, 73);
+    border-radius: 3px;
+  }
+  .login-btn:hover{
+    cursor: pointer;
+    opacity: 0.6;
+  } 
+  .login-btn:active{
     -webkit-transform: translateY(4px);
    transform: translateY(4px);
    box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
@@ -163,6 +198,10 @@ h2{
     border-bottom: solid 6px rgb(75, 73, 73);
     border-radius: 3px;
   }
+  .start-btn:hover{
+    cursor: pointer;
+    opacity: 0.6;
+  }
   .start-btn:active{
     -webkit-transform: translateY(4px);
    transform: translateY(4px);
@@ -179,6 +218,7 @@ h2{
   h4{
     font-size: 25px;
     margin-bottom: 10px;
+    margin-left: 80px;
   }
   .sign{
     font-size: 20px;
@@ -224,64 +264,35 @@ padding-top: 10px;
   position: fixed;
   width: 100%;
   height: 50px;
-}
-
 .header-bar{ 
   display: flex;
   align-items: center;
-  width: 100%;
-  height: 50px;
   background-color: white;
   justify-content: space-between;
-  position: relative;
   font-size: small;
   text-decoration: none;
+}
+.header-space{
+  margin-right: 30px;
+}
   .title{
-    font-family: "Gill Sans",serif;
     font-size: 30px;
-    margin-left: 50px;
+    margin-left: 35px;
   }
   .header-title{
-    font-family: "Gill Sans",serif; 
     font-size: 30px;
+    margin: 10px 20px 20px 20px;
   }
-  
-.todo-lists,.psy-lists{
-  width: 180px;
-  font-size: 20px;
-  color:rgb(219, 151, 103);
-  cursor: pointer;
-  transition: all 200ms ease;
-  opacity: 0.8;
-}
-.todo-lists:hover{
-  opacity: 1.0;
-  font-size: 30px;
-}
-.hidden{
-  display: none;
-  list-style: none;
-  position: absolute;
-  font-family: "Gill Sans", serif;
-  width: 240px;
-  top: 38px;
-  right: 10px;
-  font-size: 20px;
-  color: #1a1d21;
-  background-color: white;
-}
-.post{
-  opacity: 0.6;
-  transition: all 200ms 0s ease;
-}
-.post:hover{
-font-size: 20px;
-opacity: 1.0;
+ .page-name{
+   font-size: 30px;
+ }
+ .user-name{
+  margin-right: 20px;
+  margin-bottom: 10px;
 }
 img{
-  width: 20px;
-  height: 20px;
-  margin-left: 10px;
+  width: 30px;
+  height: 30px;
   border-radius: 100px;
 }
 span{
@@ -289,110 +300,137 @@ span{
 }
 }
 
-.psy-accordion{
-  width: 100%;
-  height: 350px;
-.psy-menu{
-  color: rgb(27, 22, 22);
-  font-size: 18px;
-  text-align: center;
-  cursor: pointer;
-}
-.psy-menu:hover,
-.psy-menu:active,
-.psy-menu.is-active{
-  background-color: white;
-}
-.psy-list{
-  text-align: center;
-  border: solid 1px rgb(247, 182, 182);
-  line-height: 0;
-  height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition-duration:  0.4s;
-}
-.psy-list.is-open{
-  line-height: normal;
-  height: auto;
-  font-size: 12px;
-  background-color: white;
-  opacity: 1;
-}
-}
-
-
 .user_info, .post{
   list-style: none;
   text-decoration: none;
 }
 
-
 .center_screen{
-  text-align: center;
-  font-family: monospace;
-  height: 100vh;
+  display: flex;
+  height: 120vh;
   width: 100%;
   text-decoration: none;
-  background-size: cover;
-  .select-title{
-    padding-top: 50px;
-    font-size: 25px;
+  .object-sidemenu{
+  font-size: 20px;
+  height: 90vh;
+  width: 30%;
   }
-  h1{
-    margin-bottom: 20px;
-    font-size: 30px;
+  @keyframes SideAnimation {
+    0%{
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+  }
+  .side-bar{
+    background-color: orange;
     text-align: center;
+    margin-top: 70px;
+    padding-bottom: 15px;
+  }
+  .hidden{
+   opacity: 0.8;
+   display: none;
+   background-color: whitesmoke;
+   margin-left: 30px;
+   width: 88%;
+   height: 80vh;
+   animation: SideAnimation 2s;
+  }
+  
+  .side-lists{
+    padding-top: 25px;
+    list-style: none;
+    padding-left: 20px;
+  }
+  .side-lists:hover{
+    cursor: pointer;
+  }
+  .object-lists{
+    font-size: 20px;
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    text-decoration: none;
+   }
+   button{
+    margin-left: 30px;
+    font-size: 30px;
+    width: 400px;
+    height: 50px;
+    border-bottom: solid 6px rgb(75, 73, 73);
+   }
+   button:active{
+    -webkit-transform: translateY(4px);
+   transform: translateY(4px);
+   box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+   color: red;
+   border-bottom: none;
+  }
+  
+ .objective-img-content{
+   text-decoration: none;
+   color: #1a1d21;
+   padding-left: 30px;
+   padding-top: 70px;
+ }
+ .object-image{
+   width: 400px;
+   height: 300px;
+   margin-bottom: 10px;
+   margin-left: 20px;
+ }
+ .object-image image:hover{
+ transform: scale(1.1);
+ transition: 1S;
+ }
+ .object-name{
+   margin-bottom: 30px;
+ }
+ @keyframes SearchAnimation {
+ 0%{
+   opacity: 0;
+   transform: translateY(10px);
+ }
+ }
+ .search{
+   display: none;
+   width: 100%;
+   height: 30px;
+   animation: SearchAnimation 0.5s;
+ }
+  h1{
+    padding-top: 20px;
+    font-size: 30px;
   }
 span{
   margin-left: 20px;
   font-size: 18px;
 }
-}
-
-.main-header{ 
-  padding-top: 50px;
-  height: 40px;
-  margin-bottom: 20px;
-  background-color: rgb(180, 223, 240);
-  background-size: cover;
-  text-align: center;
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
-  text-decoration: none;
-  transition: all 300ms 1s ease;
-  .current-group{
-    font-family: monospace;
-    font-size: 30px;
-    margin-right: 600px;
-    margin-bottom: 10px;
-  }
-a,span{
-  font-size: 15px;
+.post{
+  font-size: 20px;
   margin-bottom: 10px;
+}
+li,a{
+  color: black;
+  padding-bottom: 25px;
 }
 a:hover{
-  color: red;
+  color: orange;
 }
-.center-title{
-  margin-bottom: 10px;
-  font-size: 15px;
-}
-.post-btn{
-  margin-bottom: 10px;
-}
-.post-btn:hover{
-  font-size: 25px;
+li:hover{
+  color: orange;
 }
 }
+
+
 
 .list{
   padding-left: 20px;
 }
 .search-screen{
   font-family: monospace;
-  height: 120vh;
+  height: 100vh;
   width: 100%;
   text-decoration: none;
   .search-contents{
@@ -407,29 +445,7 @@ a:hover{
 }
 }
 
-.object-box{
-  margin-top: 5px;
-  margin-bottom: 300px;
-  .object-lists{
-   display: flex;
-   justify-content: space-around;
-   flex-wrap: wrap;
-   list-style: none;
-   flex-direction: row;
-   text-decoration: none;
-  }
-.object-img-content{
-  text-decoration: none;
-  color: #1a1d21;
-}
-.object-image{
-  margin-top: 20px;
-}
-.object-image:hover{
-border: 10px ridge skyblue ;
-opacity: 0.6;
-}
-}
+  
 
 .main_image{
   width: 100%;
@@ -456,15 +472,23 @@ opacity: 0.6;
 .submit-btn{
   width: 200px;
   height: 50px;
-  margin-left: 15px;
+  font-size: 20px;
   margin-top: 30px;
-  margin-bottom: 60px;
-  background-color: #f1c958;
-  font-size: 15px;
-  color: #1a1d21;
-  border: ridge 10px orange ;
-  border-radius: 100vh;
+  border-radius: 10px;
   cursor: pointer;
+  background-color: orange;
+  border-bottom: solid 6px rgb(75, 73, 73);
+}
+.submit-btn:hover{
+  opacity: 0.6;
+  cursor: pointer;
+}
+.submit-btn:active{
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+  color: red;
+  border-bottom: none;
 }
 .group-send{
   width: 500px;
@@ -490,13 +514,76 @@ opacity: 0.6;
 
 
 .contents{
-  padding-top: 50px;
-  height: 170vh;
+  padding-top: 60px;
+  margin-bottom: 40px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
   text-align: center;
   background-size: cover;
+.contents-side{
+  width: 40%;
+  height: 100vh;
+}
+@keyframes OptionAnimation{
+  0%{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  50%{
+    background-color: orange;
+    border-radius: 10px;
+  }
+}
+.contents-list{
+  font-weight: bold;
+  font-size: 40px;
+  padding-top: 20px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  background-color: orange;
+  border-radius: 10px;
+  animation: OptionAnimation 3s;
+}
+@keyframes TextAnimation{
+  0%{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+}
+
+.first-text{
+  opacity: 0;
+}
+.first-text.show{
+  opacity: 1;
+  border-radius: 10px;
+  animation: TextAnimation 3s;
+}
+.second-text{
+  opacity: 0;
+}
+.second-text.show{
+  opacity: 1;
+  border-radius: 10px;
+  animation: TextAnimation 3s;
+}
+b{
+  display: inline-block;
+  font-size: 18px;
+  font-weight: normal;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.container{
+  width: 900px;
+  height: 100vh;
 }
 .text-title{
-  padding-top: 10px;
+  margin-left: 60px;
+  margin-right: 60px;
+  padding-top: 20px;
   margin-bottom: 20px;
   font-size: 30px;
   color: rgb(10, 10, 10);
@@ -541,10 +628,10 @@ p{
   width: 200px;
   margin-top: 15px;
 }
-
 .select-box{
   width: 250px;
   height: 20px;
+}
 }
 
 .object-show-box{
@@ -565,6 +652,15 @@ p{
 .object-display{
   justify-content: center;
   margin-right: 10px; 
+}
+textarea{
+  margin-top: 20px;
+  text-align: center;
+  width: 520px;
+  height: 40px;
+}
+.text-title{
+  margin-bottom: 20px;
 }
 }
 
@@ -644,6 +740,10 @@ p{
   }
   .comment-btn:hover{
     color: red;
+  }
+  textarea{
+    width: 300px;
+    height: 40px;
   }
 }
 

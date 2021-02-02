@@ -1,35 +1,19 @@
- <header class="header">
-  <div class="header-bar">
-  <div class="header-space">
-  <% if current_user.image_url.present? %>
-  <%= link_to user_path(current_user.id) do%>
- <span><%= image_tag(current_user.image_url) %></span>
- <span><%= current_user.nick_name %></span>
- <% end %>
- <% else %>
- <% end %>
+<header class="header">
+ <div class="header-bar">
+      <h1 class="title" >Let's Start Now!</h1>
+   <div class="header-space">
+       <h1 class="page-name">IndexPage</h1>
+   </div>
+
+   <div class="user-name">
+      <span>login user:</span>
+    <% if current_user.image_url.present? %>
+        <%= link_to user_path(current_user.id) do%>
+      <span><%= current_user.nick_name %></span>
+      <span><%= image_tag(current_user.image_url) %></span>
+      <% end %>
+      <% else %>
+      <% end %>
+   </div>
  </div>
-  <h1 class="title" >Let's Start Now!</h1>
-     <% if user_signed_in? %>
-          <div class="user_nav-grid">
-           <div class="user_info">
-           <div class ="todo-lists"  id= "lists" >Menu-list</div>
-            <ul class ="hidden" id = "pull-down-lists">
-             <li><%= link_to "マイページに移動する", aggregates_path(current_user.id), class: "post" %></li>
-             <li><%= link_to "グループページへ移動する", groups_path, class: "post" %></li> 
-             <li><%= link_to "ユーザー一覧表示", users_index_path, class: "post"%></li>
-             <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "post" %></li>
-            </ul>
-          </div>
-          </div>
-        <% else %>
-         <h1 class="title">First of all Sign Up</h1>
-          <ul class="user_info">
-          <li>
-            <%= link_to "ログイン", new_user_session_path, class: "post" %>
-            <%= link_to "新規登録", new_user_registration_path, class: "post" %>
-          </li>
-        <% end %>
-          </ul>
-        </div>
-    </header>
+</header>
