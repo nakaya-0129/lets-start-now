@@ -11,8 +11,25 @@
                      <li class="lists" id="search-name">ユーザー名で検索する▽</li>
                      <li class="search" id="search-user"><%=f.search_field :user_name_eq, placeholder: "--登録したユーザー名を入力--"%><span><%= f.submit '検索',class: "search-btn" %></span></li>
                       <% end %> 
+                      <div class="module-show">
+                        <div class="show-lists" id="modal">
+                            <h1>User Profiel</h1>
+                             <p><%= link_to "〆編集", edit_user_registration_path(current_user.id) %></p>
+                           <%= image_tag(current_user.image_url) %>
+                           <p>ユーザー名</p>
+                             <%= current_user.nick_name %>
+                           <p>e-mail</p>
+                             <%= current_user.email %>
+                           <p>プロフィール</p>
+                             <%= current_user.profile %>
+                             <br>
+                            <button class= "close" id="close">close</button>
+                            
+                        </div>
+                        <div class="mask" id="mask"></div>
+                       </div>
                      <li><%= link_to "マイページへ移動する", aggregates_path, class: "post" %></li>
-                     <li><%= link_to "ユーザー情報詳細/編集", user_path(current_user.id) , class: "post" %>
+                     <li class="lists" id= "modal-lists">ユーザー情報詳細表示/編集</li>
                      <li><%= link_to "ユーザー一覧表示", users_index_path, class: "post"%></li>
                      <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "post" %></li>
                   </ul>
@@ -20,7 +37,7 @@
 
 
       <div class="object-lists">
-            <% @objectives.first(20).each do |objective| %>
+            <% @objectives.first(4).each do |objective| %>
         <div class='objective-img-content'>
              <%= link_to  objective_path(objective.id) do %>
                   <%= image_tag objective.image, class: "object-image" if objective.image.attached? %>

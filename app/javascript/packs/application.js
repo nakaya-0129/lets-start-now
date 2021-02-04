@@ -12,7 +12,8 @@ require("../object");
 require("../psy");
 require("../aggregate");
 require("../top");
-require("../animation")
+require("../animation");
+require("../modals");
 require("jquery")
 
 

@@ -1,45 +1,41 @@
 <%= render "shared/mypage"%>
     <div class="main_screen">
-    <div class="aggregate-header">
-      <h2 class="current-group">My page~ワークスペース〜</h2>
+            <div class="center-screen-a">
+               <h1 class="center-title">My Note</h1>
+                <span class="push-btn"><%= link_to  new_aggregate_path(current_user.id) do %>スタート記録を記入する</span><% end %>
+               <%= form_with url: search_aggregates_path, local: true, method: :get do  |f| %>
+              <p class="aggregate-menu">ノートの管理</p>
+             <div class="aggregate-list">達成済みのタスクを表示する<%=f.check_box :user_id %><%= f.submit "確認"%></div>
+                <% end %>
+                    <%= link_to meetings_path,local: true do %>
+                        <div class =calender>#カレンダーを表示する</div>
+                <% end %>
+                <div class= "aggregate-menu">#If-thenルール</div>
+                <div class="aggregate-list">If then 行動</div>
+                  <div class ="aggregate-menu">#学習サポート</div>
+                <div class="aggregate-list">目次</div>
+            </div>
+
+      <div class = "aggregate-box">
+        <h3 class="aggregate-title">Now Doing</h3>
+        <h4 class="supple">(最大５件まで保存可能)</h4>
+        <div class="aggregate-lists">
+              <% @aggregates.first(5).each do |aggregate| %>
+              <%if aggregate.action_point.blank? %>
+                    <span><%= aggregate.start_day %></span>
+                    <span>テーマ：<%= aggregate.result_comment %></span>
+            <%= link_to aggregate_path(aggregate.id) do %>
+                <span><button type ="button" >詳細</button></span>
+            <% end %>
+            <%= link_to edit_aggregate_path(aggregate.id) do %>
+                <span><button type ="button">編集</button></span>
+            <%end%>
+            <%= link_to aggregate_path(aggregate.id), method: :delete do %>
+                <span><button type ="button">削除</button></span>
+            <% end %>
+        <% end %>
+        <% end%>
     </div>
- <div class="center-screen-a">
- <h1 class="center-title">My Note</h1>
- <span class="push-btn"><%= link_to  new_aggregate_path(current_user.id) do %>スタート記録を記入する</span><% end %>
- <%= form_with url: search_aggregates_path, local: true, method: :get do  |f| %>
-  <p class="aggregate-menu">ノートの管理</p>
-  <div class="aggregate-list">達成済みのタスクを表示する<%=f.check_box :user_id %><%= f.submit "確認"%></div>
-  <% end %>
-  <%= link_to meetings_path,local: true do %>
-  <div class =calender>#カレンダーを表示する</div>
-  <% end %>
-  <div class= "aggregate-menu">#If-thenルール</div>
-  <div class="aggregate-list">If then 行動</div>
- <div class = "aggregate-box">
-  <div class ="aggregate-menu">#学習サポート</div>
-  <div class="aggregate-list">目次</div>
- <div class = "aggregate-box">
- <div class="aggregate-board">
   </div>
-  <h3 class="aggregate-title">Now Doing</h3>
-  <h4 class="supple">(最大５件まで保存可能)</h4>
-   <div class="aggregate-lists">
-  <% @aggregates.first(5).each do |aggregate| %>
-  <%if aggregate.action_point.blank? %>
-            <span><%= aggregate.start_day %></span>
-            <span>テーマ：<%= aggregate.result_comment %></span>
-      <%= link_to aggregate_path(aggregate.id) do %>
-          <span><button type ="button" >詳細</button></span>
-      <% end %>
-      <%= link_to edit_aggregate_path(aggregate.id) do %>
-          <span><button type ="button">編集</button></span>
-      <%end%>
-      <%= link_to aggregate_path(aggregate.id), method: :delete do %>
-          <span><button type ="button">削除</button></span>
-      <% end %>
-  <% end %>
-  <% end%>
-  </div>
- </div>
  </div>
  <%= render "shared/futter" %>

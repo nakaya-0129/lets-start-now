@@ -345,6 +345,69 @@ span{
   .side-lists:hover{
     cursor: pointer;
   }
+  .module-show{
+    position: relative;
+  }
+  @keyframes modalAnimation{
+    0%{
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+  }
+  .show-lists{
+    position: absolute;
+    text-align: center;
+    font-size: 20px;
+    width: 380px;
+    height: 500px;
+    background-color:white;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    img{
+      width: 80px;
+      height: 80px;
+      border-radius: 100vh;
+    }
+    h1{
+      margin-bottom: 20px;
+    }
+    p{
+      margin-top: 20px;
+      padding-bottom: 10px;
+    }
+    button{
+    margin-top: 30px;
+    margin-right: 20px;
+    width: 80px;
+    height: 30px;
+    font-size: 15px;
+    background-color: orange;
+    }
+
+  }
+  .show-lists.active{
+    opacity: 1;
+    visibility: visible;
+    animation: modalAnimation 2s;
+    }
+
+  .mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .mask.active{
+    opacity: 0.7;
+    visibility: visible;
+  }
   .object-lists{
     font-size: 20px;
     width: 70%;
@@ -380,10 +443,6 @@ span{
    margin-bottom: 10px;
    margin-left: 20px;
  }
- .object-image image:hover{
- transform: scale(1.1);
- transition: 1S;
- }
  .object-name{
    margin-bottom: 30px;
  }
@@ -400,7 +459,7 @@ span{
    animation: SearchAnimation 0.5s;
  }
   h1{
-    padding-top: 20px;
+    margin-top: 50px;
     font-size: 30px;
   }
 span{
@@ -478,6 +537,8 @@ li:hover{
   cursor: pointer;
   background-color: orange;
   border-bottom: solid 6px rgb(75, 73, 73);
+  position: fixed;
+  right: 930px;
 }
 .submit-btn:hover{
   opacity: 0.6;
@@ -504,11 +565,22 @@ li:hover{
   width: 200px;
   height: 50px;
   font-size: 20px;
+  padding-top: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
   cursor: pointer;
   background-color: orange;
+  border-bottom: solid 6px rgb(75, 73, 73);
+}
+.sign-up:hover{
+  opacity: 0.6;
 }
 .sign-up:active{
-  opacity: 0.6;
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+  color: red;
+  border-bottom: none;
   
 }
 
@@ -517,22 +589,19 @@ li:hover{
   padding-top: 60px;
   margin-bottom: 40px;
   width: 100%;
-  height: 100vh;
+  height: 195vh;
   display: flex;
   text-align: center;
   background-size: cover;
 .contents-side{
   width: 40%;
-  height: 100vh;
+  height: 80vh;
+  border: 2mm ridge orange;
 }
 @keyframes OptionAnimation{
   0%{
     opacity: 0;
     transform: translateX(50px);
-  }
-  50%{
-    background-color: orange;
-    border-radius: 10px;
   }
 }
 .contents-list{
@@ -542,15 +611,14 @@ li:hover{
   margin-top: 20px;
   padding-bottom: 20px;
   margin-bottom: 20px;
-  background-color: orange;
+  background-color: rgb(248, 185, 66);
   border-radius: 10px;
   animation: OptionAnimation 3s;
 }
 @keyframes TextAnimation{
   0%{
     opacity: 0;
-    transform: translateX(50px);
-  }
+    transform: translateY(50px); }
 }
 
 .first-text{
@@ -574,7 +642,7 @@ b{
   font-size: 18px;
   font-weight: normal;
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .container{
   width: 900px;
@@ -605,6 +673,12 @@ p{
 
 .select-area{
   height: 20px;
+}
+.text-field{
+  width: 400px;
+  height: 200px;
+  text-align: center;
+  border: double 5px rgb(87, 84, 84);
 }
 
 .field,.select-box{
