@@ -1,9 +1,8 @@
 // Place all the styles related to the aggregates controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.aggregate-header{ 
+.header-bar{ 
   font-family: monospace;
-  padding-top: 55px;
   margin-bottom: 20px;
   font-size: 30px;
   height: 45px;
@@ -14,56 +13,56 @@
 
 .main_screen{
   width: 125%;
+  height: 100%;
    display: flex;
 .center-screen-a {
-  font-family: monospace;
-  margin-left: 100px;
-  font-size: 20px;
-  height: 100vh;
-  width: 600px;
-  text-decoration: none;
+  margin-left: 50px;
+  padding-top: 30px;
   }
   .center-title{
-    padding-top: 80px;
+    margin-top: 25px;
+    margin-right: 20px;
+    font-size: 35px;
+    width: 400px;
+    height: 50px;
+    background-color: orange;
   }
-  .select-title{
-    padding-top: 50px;
-    font-size: 25px;
+  .note-lists{
+    list-style: none;
+    height: 80vh;
+    width: 400px;
+    text-decoration: none;
+    background-color: rgb(240, 235, 235);
+  }
+  
+  li{
+    padding-left: 20px;
+    padding-top: 20px;
+    font-size: 20px;
+  }
+  li:hover{
+    color: orange;
+    cursor: pointer;
   }
   h1{
-    margin-bottom: 25px;
     font-size: 25px;
   }
-  ul{
-    margin-bottom: 30px;
+  .note{
+    color: black;
+    font-size: 20px;
   }
-
+  .note:hover{
+    color: orange;
+    cursor: pointer;
+  }
   input{
     width: 50px;
   }
-  .calender{
-    margin-top: 30px;
-    margin-bottom: 20px;
-  }
-  .push-btn{
-    display: inline-block;
-    padding: 0.5em 1em;
-    text-decoration: none;
-    background-color: rgb(167, 220, 241);
-    border-bottom: solid 4px rgb(75, 73, 73);
-    border-radius: 3px;
-  }
-  .push-btn:active{
-   -webkit-transform: translateY(4px);
-   transform: translateY(4px);
-   box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
-   color: red;
-   border-bottom: none;
-  }
+  
   .aggregate-box{
     margin-left: 100px;
     padding-top: 60px;
-    width: 1200px;
+    width: 800px;
     height: 100vh;
   }
   .aggregate-title{
@@ -71,32 +70,13 @@
   }
   .post-title{
     margin-left: 30px;
-    margin-top: 15px;
+    margin-top: 20px;
     font-size: 18px;
   }
   .company-name,.selection-form,.explan-list,.help-list{
     font-size: 15px;
     font-weight: initial;
   }
-.aggregate-menu{
-  cursor: pointer;
-  margin-bottom: 10px;
-  margin-top: 20px;
-}
-  .aggregate-list{
-    text-align: center;
-    border: solid 1px rgb(247, 182, 182);
-    line-height: 0;
-    height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition-duration:  0.4s;
-  }
-  .aggregate-list.is-open{
-    font-size: 12px;
-    background-color: white;
-    opacity: 1;
-}
 .aggregate-lists{
   display: flex;
   flex-direction: row;
@@ -105,14 +85,6 @@
 }
   span{
     margin-right: 20px;
-  }
-  button{
-  border: outset 6px rgb(121, 240, 141);
-  background-color: rgb(250, 249, 249);
-  border-radius: 50vh;
-  }
-  button:hover{
-    opacity: 0.6;
   }
 .aggregate-board{
   border-bottom: solid 1px black;

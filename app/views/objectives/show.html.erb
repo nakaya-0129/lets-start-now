@@ -31,21 +31,6 @@
               <th class="detail-object">アクションプラン</th>
               <td class="detail-value"><%= @objective.action_plan %></td>
             </tr>
-
-            <% if current_user.id == @objective.user_id %>
-            <tr>
-              <th class="detail-object">習慣化したい行動</th>
-              <td class="detail-value"><%= @objective.hobituation %></td>
-            </tr>
-            <tr>
-              <th class="detail-object">習慣化のメリット</th>
-              <td class="detail-value"><%= @objective.merit %></td>
-            </tr>
-            <tr>
-              <th class="detail-object">習慣化のデメリット</th>
-              <td class="detail-value"><%= @objective.demerit %></td>
-            </tr>
-            <% end %> 
           </tbody>
        </table>
        <div class= "users-select">

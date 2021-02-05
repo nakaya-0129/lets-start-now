@@ -1,20 +1,30 @@
-<%= render "shared/mypage"%>
+<header class="header">
+      <div class="header-bar">
+      <h1 class="title">Let's Start Now</h1>
+    <div class="header-space">
+      <h1>My Page</h1>
+    </div>
+    <div class="header-user">
+      <%= link_to user_path(current_user.id) do%>
+        <span><%= image_tag(current_user.image_url) %></span>
+        <span><%= current_user.nick_name %></span>
+       <% end %>
+    </div>
+   </div>
+ </header>
     <div class="main_screen">
-            <div class="center-screen-a">
-               <h1 class="center-title">My Note</h1>
-                <span class="push-btn"><%= link_to  new_aggregate_path(current_user.id) do %>スタート記録を記入する</span><% end %>
-               <%= form_with url: search_aggregates_path, local: true, method: :get do  |f| %>
-              <p class="aggregate-menu">ノートの管理</p>
-             <div class="aggregate-list">達成済みのタスクを表示する<%=f.check_box :user_id %><%= f.submit "確認"%></div>
-                <% end %>
-                    <%= link_to meetings_path,local: true do %>
-                        <div class =calender>#カレンダーを表示する</div>
-                <% end %>
-                <div class= "aggregate-menu">#If-thenルール</div>
-                <div class="aggregate-list">If then 行動</div>
-                  <div class ="aggregate-menu">#学習サポート</div>
-                <div class="aggregate-list">目次</div>
+         <div class="center-screen-a">
+               <button class="center-title" id="note-btn">My Note</button>
+            <div class="note-lists" id="note-lists">
+                <li><%= link_to  "#タスクをノートに記入する", new_aggregate_path(current_user.id) ,class:"note"%></li>
+                <li class="aggregate-menu">ノートの管理</li>
+                <li class="aggregate-list">達成済みのタスクを表示する</li>
+                <li class= "aggregate-menu">#If-thenルール</li>
+                 <li class ="aggregate-menu">#学習サポート</li>
+                 <li><%= link_to "#投稿ページに移動する", objectives_path(current_user.id) , class:"note"%></li>
+                 <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "note" %></li>
             </div>
+         </div>
 
       <div class = "aggregate-box">
         <h3 class="aggregate-title">Now Doing</h3>
