@@ -2,50 +2,94 @@
       <div class="header-bar">
       <h1 class="title">Let's Start Now</h1>
     <div class="header-space">
-      <h1>My Page</h1>
+      <h1>Note</h1>
     </div>
     <div class="header-user">
       <%= link_to user_path(current_user.id) do%>
+        <span>login User:<%= current_user.nick_name %></span>
         <span><%= image_tag(current_user.image_url) %></span>
-        <span><%= current_user.nick_name %></span>
        <% end %>
     </div>
    </div>
  </header>
+
     <div class="main_screen">
          <div class="center-screen-a">
-               <button class="center-title" id="note-btn">My Note</button>
-            <div class="note-lists" id="note-lists">
-                <li><%= link_to  "#タスクをノートに記入する", new_aggregate_path(current_user.id) ,class:"note"%></li>
-                <li class="aggregate-menu">ノートの管理</li>
-                <li class="aggregate-list">達成済みのタスクを表示する</li>
-                <li class= "aggregate-menu">#If-thenルール</li>
-                 <li class ="aggregate-menu">#学習サポート</li>
-                 <li><%= link_to "#投稿ページに移動する", objectives_path(current_user.id) , class:"note"%></li>
+               <button class="center-title" id="note-btn">My Note∇</button>
+            <div class="note-lists hidden" id="note-lists">
+                <li><%= link_to  "タスクをノートに記入する", new_aggregate_path(current_user.id) ,class:"note"%></li>
+                <li class="aggregate-menu" id="aggregate-menu">ノートの管理</li>
+
+                <div class="aggregate-note" id="aggregate-note">
+                  <div class="aggregate-notelists">
+                    <h1>実行中のタスク</h1>
+                    <% @aggregates.each do |aggregate| %>
+                      <%= link_to edit_aggregate_path(aggregate.id) do %>
+                       <% if aggregate.action_point.blank? %>
+                            <h3><%= aggregate.result_comment%></h3>
+                            <p><%= aggregate.start_day %></p>
+                        <% end %>
+                       <% end %>
+                     <% end %>
+                   </div>
+                 <div class="aggregate-complet">
+                 <h1>完了したタスク</h1>
+                 <% @aggregates.each do |aggregate| %>
+                  <% if aggregate.action_point.present? %>
+                   <%= link_to aggregate_path(aggregate.id) do %>
+                        <h3 id="edit-box"><%= aggregate.result_comment %></h3> 
+                        <p id ="edit-box">達成率:<%= aggregate.action_point %>%
+                    <% end %>
+                  <span><%= link_to '', aggregate_path(aggregate.id) ,class: "delete", method: :delete  , data: {confirm: '本当に削除しますか？'} %></span></p>
+                 <% end %>
+                 <% end %>
+                 <button id="close">close</button>
+                 </div>
+                </div>
+
+                <li class= "aggregate-menu" id="ifthen-list">If-thenルール</li>
+                  <div class="list-ifthen" id="ifthen-index">
+                    <h1>if-thenルール一覧</h1>
+                    <% @aggregates.each do |aggregate| %>
+                    <p><%= aggregate.self_compliment %></p>
+                     <% end %>
+                   <button id="list-close">close</button>
+                  </div>
+                 <li><%= link_to "投稿ページに移動する", objectives_path(current_user.id) , class:"note"%></li>
                  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "note" %></li>
             </div>
          </div>
 
       <div class = "aggregate-box">
-        <h3 class="aggregate-title">Now Doing</h3>
+       <div class="note-animation">
+           <div class="note-title" id="note-title">
+            <h1>ノート機能</h1>
+             <p>記録を残して、自分だけのノートを作成しよう！</p>
+             <p>タスク管理〜達成した目標を残すことができる！</p>
+            </div>
+          <div class="note-info" id="note-info">
+            <h1>If thenルール</h1>
+             <p>始めるきっかけ、ルーティングを作成しよう！</p>
+             <p>やるべきことが自然にできる仕組みを作ろう。</p>
+         </div> 
+ </div>
+ 
+
+ <%# <h3 class="aggregate-title">Now Doing</h3>
         <h4 class="supple">(最大５件まで保存可能)</h4>
         <div class="aggregate-lists">
               <% @aggregates.first(5).each do |aggregate| %>
-              <%if aggregate.action_point.blank? %>
-                    <span><%= aggregate.start_day %></span>
-                    <span>テーマ：<%= aggregate.result_comment %></span>
-            <%= link_to aggregate_path(aggregate.id) do %>
-                <span><button type ="button" >詳細</button></span>
-            <% end %>
-            <%= link_to edit_aggregate_path(aggregate.id) do %>
-                <span><button type ="button">編集</button></span>
-            <%end%>
-            <%= link_to aggregate_path(aggregate.id), method: :delete do %>
-                <span><button type ="button">削除</button></span>
-            <% end %>
-        <% end %>
-        <% end%>
-    </div>
-  </div>
- </div>
- <%= render "shared/futter" %>
+              <%# <%if aggregate.action_point.blank? %>
+                 <%# <div class="aggregate-content">
+                  <%= link_to aggregate_path(aggregate.id) do %>
+                    <%# <span><%= aggregate.start_day %>
+                    <%# <span>テーマ：<%= aggregate.result_comment %>
+                <%#   </div>
+                 <% end %>
+                 <%# <% end %>
+               <%#  <% end %>
+                <%# <div class="aggregate-btn">
+                    
+               </div>
+        </div>
+      </div> %> 

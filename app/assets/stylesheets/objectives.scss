@@ -274,9 +274,10 @@ padding-top: 10px;
 }
 .header-space{
   margin-right: 30px;
+  font-size: 30px;
 }
   .title{
-    font-size: 30px;
+    font-size: 25px;
     margin-left: 35px;
   }
   .header-title{
@@ -360,7 +361,7 @@ span{
     font-size: 20px;
     width: 380px;
     height: 500px;
-    background-color:white;
+    background-image: url("541639_s.jpg");
     z-index: 2;
     opacity: 0;
     visibility: hidden;
@@ -434,7 +435,7 @@ span{
   .object-hobits{
   .object-hobitlist{
     position: fixed;
-    background-color: white;
+    background-image: url("541639_s.jpg");
     text-align: center;
     top: 200px;
     left: 430px;
@@ -474,12 +475,12 @@ span{
 .user-index{
   .user-contents{
     position: fixed;
-    text-align: center;
     top: 120px;
     left: 430px;
+    text-align: center;
     width: 300px;
     height: 500px;
-    background-color:white;
+    background-image: url("541639_s.jpg");
     opacity: 0;
     visibility: hidden;
   }
@@ -499,6 +500,7 @@ span{
     background-color: orange;
 }
 }
+
 @keyframes userAnimation {
   0%{
     opacity: 0;
@@ -514,7 +516,6 @@ span{
     background-color: rgb(190, 187, 187);
   }
 }
-
   .object-lists{
     font-size: 20px;
     width: 70%;
@@ -595,12 +596,17 @@ li:hover{
   padding-left: 20px;
 }
 .search-screen{
-  font-family: monospace;
   height: 100vh;
   width: 100%;
   text-decoration: none;
   .search-contents{
     height: 100vh;
+  }
+  .select-title{
+    text-align: center;
+    font-size: 30px;
+    padding-top: 60px;
+
   }
 .search-lists{
   float: left;
@@ -699,11 +705,11 @@ li:hover{
   height: 195vh;
   display: flex;
   text-align: center;
+  background-image: url('541639_s.jpg');
   background-size: cover;
 .contents-side{
   width: 40%;
-  height: 80vh;
-  border: 2mm ridge orange;
+  height: 85vh;
 }
 @keyframes OptionAnimation{
   0%{
@@ -764,13 +770,16 @@ li:hover{
 }
 .contents-text{
   opacity: 0;
+  position: relative;
 }
 .first{
-  border-bottom: paleturquoise ridge 2mm;
+  border-bottom: orange ridge 2mm;
   padding-top: 20px;
+  z-index: 2;
 }
 .contents-text.show{
   opacity: 1;
+  font-size: 25px;
   animation: contentAnimation 3s;
 }
 .second-text{
@@ -778,6 +787,15 @@ li:hover{
 }
 .second-text.show{
   opacity: 1;
+}
+img{
+  position: absolute;
+  left: -40px;
+  top: 60px;
+  width: 200px;
+  height: 200px;
+  border-radius: 100vh;
+  z-index: 1;
 }
 b{
   display: inline-block;
@@ -848,15 +866,17 @@ p{
   width: 250px;
   height: 20px;
 }
-
 }
 
 .object-show-box{
   text-align: center;
   height: 90vh;
   font-size: 30px;
+  margin-left: -60px;
+  padding-right: 60px;
   padding-top: 80px;
   padding-bottom: 10px;
+  background-image: url("541639_s.jpg");
   display: flex;
   justify-content: space-around;
 .detail-table{
@@ -867,7 +887,6 @@ p{
   padding-right: 20px;
 }
 .object-display{
-  justify-content: center;
   margin-right: 10px; 
 }
 textarea{
@@ -878,6 +897,10 @@ textarea{
 }
 .text-title{
   margin-bottom: 20px;
+}
+.back{
+  font-size: 15px;
+  margin-top: -20px;
 }
 }
 
@@ -898,20 +921,17 @@ textarea{
 }
 
 .send-btn{
-  margin-bottom: 15px;
-  width: 60px;
-  height: 30px;
-    color: #1a1d21;
+    margin-bottom: 15px;
+    width: 60px;
+    height: 30px;
+    color: black;
     text-decoration: none;
     font-size: 15px;
-    background-color: white;
-    border: 3px solid #57595a;
+    background-color:orange;
     border-bottom: 5px solid #57595a;
-    border-right: 5px solid #57595a;
-    border-left: 5px solid #57595a;
     cursor: pointer;
 }
-.send-btn:hover{
+.send-btn:active{
   margin-top: 5px;
   background-color: rgb(224, 223, 219);
   border: 1px solid whitesmoke;
@@ -938,6 +958,7 @@ textarea{
   width: 600px;
   height: 60px;
   border: double 1px black;
+  background-color: white;
   margin-top: 20px;
   }
   .comment-name{

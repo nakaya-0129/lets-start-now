@@ -2,10 +2,8 @@ class Aggregate < ApplicationRecord
   belongs_to :user
   
   with_options presence: true do
-    validates :ability_id
     validates :result_comment
     validates :start_day
-    validates :period_id
     validates :user_id
   end
 

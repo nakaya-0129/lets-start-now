@@ -52,16 +52,16 @@
        <br>
        <div class="field_hobit">
        <h3>目標達成を妨げる習慣/行動を記入しよう！</h3>
-        <%= f.text_area :hobituation, class: "text"%>
+        <%= f.text_area :hobituation, class: "text",placeholder: "例：夜更かし"%>
      </div>
        <div class="field">
        <h3>習慣/行動のメリットとデメリットを考えよう！</h3>
        <p>(メリットを考えてみよう！)</p>
-        <%= f.text_area :merit, class: "text-field"%>
+        <%= f.text_area :merit, class: "text-field", placeholder: "例：余暇の時間が持てる。"%>
      </div>
         <div class ="field">
        <p>(デメリットを考えてみよう！)</p>
-        <%= f.text_area :demerit, class: "text-field"%>
+        <%= f.text_area :demerit, class: "text-field",placeholder: "例：寝不足が習慣化する。"%>
      </div>
     </div>
      <% end %>
@@ -85,7 +85,8 @@
        </div>
 
            <p class="second-list">習慣を見直そう！</p>
-       <div class="contents-text" id="text">     
+       <div class="contents-text" id="text"> 
+            <%= image_tag "2161013_s.jpg", class: "image"%>    
             <b class="first-contact">目標達成を妨げている習慣を見直すことで、</b>
             <b class="first">継続できる習慣を身につけよう！</b>
         </div>

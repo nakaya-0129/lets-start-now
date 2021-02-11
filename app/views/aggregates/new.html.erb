@@ -1,9 +1,9 @@
 <%= render "shared/login" %>
-<div class="contents">
+<div class="aggregate-contents">
   <div class="container">
     <h1 class="text-title">成長の記録をつけよう！</h1>
 <%= form_with model: @aggregate, url: aggregates_path, class: 'aggregate_user', local: true do |f| %>
-      <h3>スタートした日を入力しよう！</h3>
+      <h3>始める日を入力しよう！</h3>
        <div class='field'>
              <%= raw sprintf(
                   f.date_select(
@@ -17,30 +17,42 @@
                     date_separator: '%s'),
                   "<span> 年 </span>", "<span> 月 </span>")+ "<span> 日 </span>" %>
         </div>
+
       <div class= "field">
-      <h3>取り組んだ期間を入力しよう！</h3>
+      <h3>取り組む期間を入力しよう！</h3>
        <%= f.collection_select(:period_id, Period.all, :id, :name, {}, {class:"select-box",id:"aggregate-category"}) %>
        </div>
+
        <div class="field">
-       <h3>今回取り組んだ内容を記入しよう！</h3>
+       <h3>取り組むテーマを記入しよう！</h3>
        <%= f.text_field :result_comment, class: "post"%>
        </div>
+
        <div class="field">
-        <h3>成長を実感した能力はありますか？</h3>
-       <%= f.collection_select(:ability_id, Ability.all, :id, :name, {}, {class:"select-box",id:"aggregate-category"}) %>
+        <h3>身に付けたい・成長させたい能力を記録しよう！</h3>
+        <%= f.collection_select(:ability_id, Ability.all, :id, :name, {}, {class:"select-box",id:"aggregate-category"}) %>
        </div>
-       <div class="field">
-        <h3>目標の達成率を記入しよう！(0 ~ 100 )</h3>
-        <%= f.text_field :action_point, id: "grow-up", class: "post"%><span>%</span>
-      </div>
-        <span class ="action" id= "action-point"></span>
+
       <div class="field">
-       <h3>コメント欄</h3>
-        <%= f.text_area :self_compliment,class: "text"%>
+       <h3>if-thenルールを決めよう！</h3>
+        <%= f.text_area :self_compliment,class: "text",placeholder: "例：自分の部屋に入ったら、本を開く。"%>
       </div>
+      
       <div class ="actions">
-        <%= f.submit "記録する！" ,class: "submit-btn"%>
+        <%= f.submit "記録する！" ,class: "aggregate-btn"%>
       </div>
       <% end %>
   </div>
+  <div class="content-text">
+     <div class="contents-image" id="contents-image">
+        <%= image_tag "3411592_s.jpg" ,class: "aggregate-image" %>
+        <p>if-thenルール：「XだったらYをする」</p>
+        <p>これから起こること＝Xを予測して、</p>
+        <p>どうするか＝Yを決めておくことです。</p>
+        <p>このように意思決定のフォーマットを作成することで</p>
+        <p>弱い意思でも決めた行動に従うことができます。</p>
+     </div>
+     
+  </div>
 </div>
+<%= render "shared/futter"%>

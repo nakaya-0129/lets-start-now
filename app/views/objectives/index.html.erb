@@ -1,122 +1,85 @@
  <%= render "shared/header"%>
- <div class="spece"></div>
  <div class="center_screen">
-        <div class="object-sidemenu">
-               <button class ="side-bar"  id= "lists" >Menu-list∇</button>
-                  <ul class ="side-lists hidden" id = "side-lists">
-                     <li><%= link_to "投稿を作成する〆", new_objective_path, class: "post"%></li>
-                     <li class="lists" id="modal-class">習慣リスト表示</li>
-                   <div class="object-hobits">
-                       <div class= "object-hobitlist" id="modal-content">
-                       <h2>①改善したい習慣/②メリット/③デメリット</h2>
-                          <% @objectives.first(20).each do |objective| %>
-                          <% if objective.hobituation.present? %>
-                          <% if current_user.id == objective.user.id %>
-                           <p>①<%= objective.hobituation %></p>
-                           <p>②<%= objective.merit %></p>
-                           <p>③<%= objective.demerit %></p>
-                           <%end%>
-                          <%end%>
-                         <% end %>
-                         <p><button class="hobit-close" id="hobit-close">close</button></p>
-                       </div>
-                       <div class="hobit-mask" id="hobit-mask"></div>
-                   </div>
 
-                   <li class="lists" id="modal-userIndex">自分の投稿一覧</li>
-                   <div class="user-index">
-                      <div class="user-contents" id="user-contents">
-                         <h1>ユーザー投稿一覧</h1>
-                          <% @objectives.each do |objective| %>
-                           <% if current_user.id == objective.user.id %>
-                        <div class= "object-name">
-                        <%= link_to objective_path(objective.id) do %>
-                          <p><%= objective.one_day %></p> 
-                          <%end%>
-                           <% end %>
-                          <% end %>
+   <div class="object-sidemenu">
+       <button class ="side-bar"  id= "lists" >Menu-list∇</button>
+          <ul class ="side-lists hidden" id = "side-lists">
+               <li><%= link_to "投稿を作成する〆", new_objective_path, class: "post"%></li>
+               <li class="lists" id="modal-class">習慣リスト表示</li>
+                        <div class="object-hobits">
+                           <div class= "object-hobitlist" id="modal-content">
+                            <h2>①改善したい習慣/②メリット/③デメリット</h2>
+                               <% @objectives.first(20).each do |objective| %>
+                               <% if objective.hobituation.present? && current_user.id == objective.user.id %>
+                                    <p>①<%= objective.hobituation %></p>
+                                    <p>②<%= objective.merit %></p>
+                                    <p>③<%= objective.demerit %></p>
+                                 <% end %>
+                                 <% end %>
+                                 <p><button class="hobit-close" id="hobit-close">close</button></p>
+                           </div>
+                              <div class="hobit-mask" id="hobit-mask"></div>
                         </div>
-                       <button class="user-close" id="user-close">close</button>
-                      </div>
-                     </div>
 
-                      <%= search_form_for @q, url: search_objectives_path do |f| %>
-                     <li class="lists" id="search-lists">投稿テーマで検索する▽</li>
-                     <li class="search" id="search-list"><%= f.collection_select :category_id_eq, Category.where.not(id: 0),:id,:name %><span><%= f.submit '検索',class:"search-btn" %></span></li>
-                     <li class="lists" id="search-name">ユーザー名で検索する▽</li>
-                     <li class="search" id="search-user"><%=f.search_field :user_name_eq, placeholder: "--登録したユーザー名を入力--"%><span><%= f.submit '検索',class: "search-btn" %></span></li>
-                      <% end %> 
-                      <div class="module-show">
-                        <div class="show-lists" id="modal">
-                            <h1>User Profiel</h1>
-                             <p><%= link_to "〆編集", edit_user_registration_path(current_user.id) %></p>
-                           <%= image_tag(current_user.image_url) %>
-                           <p>ユーザー名</p>
-                             <%= current_user.nick_name %>
-                           <p>e-mail</p>
-                             <%= current_user.email %>
-                           <p>プロフィール</p>
-                             <%= current_user.profile %>
-                             <br>
-                            <button class= "close" id="close">close</button>
-                            
-                        </div>
-                        <div class="mask" id="mask"></div>
-                       </div>
-                     <li><%= link_to "マイページへ移動する", aggregates_path, class: "post" %></li>
-                     <li class="lists" id= "modal-lists">ユーザー情報詳細表示/編集</li>
-                     <li><%= link_to "ユーザー一覧表示", users_index_path, class: "post"%></li>
-                     <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "post" %></li>
-                  </ul>
-          </div>
+               <li class="lists" id="modal-userIndex">自分の投稿一覧</li>
+                           <div class="user-index">
+                              <div class="user-contents" id="user-contents">
+                                 <h1>ユーザー投稿一覧</h1>
+                                 <% @objectives.each do |objective| %>
+                                    <% if current_user.id == objective.user.id %>
+                                    <%= link_to objective_path(objective.id) do %>
+                                    <p><%= objective.one_day %></p> 
+                                       <% end %>
+                                       <% end %>
+                                       <% end %>
+                                    <button class="user-close" id="user-close">close</button>
+                              </div>
+                           </div>
 
+                    <%= search_form_for @q, url: search_objectives_path do |f| %>
+               <li class="lists" id="search-lists">投稿テーマで検索する▽</li>
+               <li class="search" id="search-list"><%= f.collection_select :category_id_eq, Category.where.not(id: 0),:id,:name %><span><%= f.submit '検索',class:"search-btn" %></span></li>
+               <li class="lists" id="search-name">ユーザー名で検索する▽</li>
+               <li class="search" id="search-user"><%=f.search_field :user_name_eq, placeholder: "--登録したユーザー名を入力--"%><span><%= f.submit '検索',class: "search-btn" %></span></li>
+                           <% end %> 
+               <li class="lists" id= "modal-lists">ユーザー情報詳細表示/編集</li>
+                           <div class="module-show">
+                              <div class="show-lists" id="modal">
+                                 <h1>User Profiel</h1>
+                                 <p><%= link_to "〆編集", edit_user_registration_path(current_user.id) %></p>
+                                 <% if current_user.image.present? %>
+                                 <%= image_tag(current_user.image_url) %>
+                                 <% end %>
+                                 <p>ユーザー名</p>
+                                 <%= current_user.nick_name %>
+                                 <p>e-mail</p>
+                                 <%= current_user.email %>
+                                 <p>プロフィール</p>
+                                 <%= current_user.profile %>
+                                 <br>
+                                 <button class= "close" id="close">close</button>
+                             </div>
+                              <div class="mask" id="mask"></div>
+                            </div>
+               <li><%= link_to "ユーザー一覧表示", users_index_path, class: "post"%></li>
+               <li><%= link_to "ノートを開く", aggregates_path, class: "post" %></li>
+               <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "post" %></li>
+          </ul>
+   </div>
 
-      <div class="object-lists">
-            <% @objectives.first(4).each do |objective| %>
-        <div class='objective-img-content'>
-             <%= link_to  objective_path(objective.id) do %>
-                  <%= image_tag objective.image, class: "object-image" if objective.image.attached? %>
-                 <div class= "object-name">
-                     <span><%= objective.user_name %></span> 
-                     <span><%= objective.category.name %></span>
-                 </div>
-         </div>
-                <% end %>
-                <% end %>
-      </div>
+  <div class="object-lists">
+       <% @objectives.first(4).each do |objective| %>
+      <div class='objective-img-content'>
+            <%= link_to  objective_path(objective.id) do %>
+            <%= image_tag objective.image, class:"object-image" if objective.image.attached? %>
+               <div class= "object-name">
+                  <span><%= objective.user_name %></span>
+                  <span><%= objective.category.name %></span>
+               </div>
+             </div>
+             <% end %>
+            <% end %>
   </div>
- <%# <section>
-        <div class="psy-accordion">
-        <p class="psy-menu">心理学講座①</p>
-         <div class="psy-list">①宣言効果<br>
-         宣言効果とは：自分の目標を他人に宣言することで、<br>
-   その目標が達成しやすくなることです。<br>
-   理由としては、<br>
-   宣言をすることで、自分にプレッシャーをかけることができることが挙げられます。<br>
-   逆に宣言をしなければ、その目標は自分だけのものになり、<br>
-   辛くなったり、投げ出したくなったときに、<br>
-   簡単に諦めることができてしまいます。<br>
-   また宣言をすることで、<br>
-   その目標に意識を向ける機会が増えるため、<br>
-   目標を達成する意欲を高めることにつながります。</div>
-     <div class="psy-accordion">
-        <p class="psy-menu">心理学講座②</p>
-         <div class="psy-list">②4つのマトリックス<br>
-        ４つのマトリックスとは：様々な解釈が存在しますが、<br>
-        ここでは、目標を達成するための思考法と定義します。<br>
-        目標の達成を妨げている行動がある場合、<br>
-        その行動に関する短期的メリットと長期的メリット、<br>
-        短期的デメリット、長期的デメリットを書き出すことで、<br>
-        メリットのない、または少ない行動を改める効果が期待できます。<br>
-        <br>
-        例：朝寝坊をする。<br>
-        短期的メリット、ぎりぎりまで眠ることができる。<br>
-        短期的デメリット、常に時間に追われてしまう。<br>
-        長期的なメリット、特に思い浮かばない。<br>
-        長期的なデメリット、ゆとりがないことで、遅刻の原因や仕事のミスにつながる。<br>
-        このようにメリットとデメリットが明確になることで、<br>
-        目標達成を妨げる行動を抑えることにつながります。
-        </div>
-     </div>  
-      </section> %>
+
+</div>
    <%= render "shared/futter" %>

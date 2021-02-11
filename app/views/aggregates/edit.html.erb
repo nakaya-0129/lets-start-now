@@ -1,46 +1,27 @@
 <%= render "shared/login" %>
-<div class="contents">
+<div class="aggregate-contents">
   <div class="container">
-    <h1 class="text-title">成長の記録をつけよう！</h1>
-<%= form_with model: @aggregate, url: aggregate_path, class: 'aggregate_user', local: true do |f| %>
-      <h3>スタートした日を入力しよう！</h3>
-       <div class='field'>
-             <%= raw sprintf(
-                  f.date_select(
-                    :start_day,
-                    class:'select-birth',
-                    id:"start-day",
-                    use_month_numbers: true,
-                    prompt:'--',
-                    start_year: 2019,
-                    end_year: (Time.now.year),
-                    date_separator: '%s'),
-                  "<span> 年 </span>", "<span> 月 </span>")+ "<span> 日 </span>" %>
+        <h1 class="text-title">成長の記録をつけよう！</h1>
+          <%= form_with model: @aggregate, url: aggregate_path, class: 'aggregate_user', local: true do |f| %>
+          <div class="field">
+            <h3>成長した能力を記録しよう！</h3>
+          <%= f.collection_select(:ability_id, Ability.all, :id, :name, {}, {class:"select-box",id:"aggregate-category"}) %>
+          </div>
+          <div class="field-average">
+            <h3>目標の達成率を記入しよう！(0 ~ 100 )</h3>
+            <%= f.text_field :action_point, id: "grow-up", class: "average" %><span>%</span>
+          </div>
+            <span class ="action" id= "action-point"></span>
+          <div class="field">
+          <div class ="actions">
+            <%= f.submit "記録する！" ,class: "aggregate-btn"%>
+          </div>
+          <% end %>
         </div>
-      <div class= "field">
-      <h3>取り組んだ期間を入力しよう！</h3>
-       <%= f.collection_select(:period_id, Period.all, :id, :name, {}, {class:"select-box",id:"aggregate-category"}) %>
-       </div>
-       <div class="field">
-       <h3>今回取り組んだ内容を記入しよう！</h3>
-       <%= f.text_field :result_comment, class: "post"%>
-       </div>
-       <div class="field">
-        <h3>成長を実感した能力はありますか？</h3>
-       <%= f.collection_select(:ability_id, Ability.all, :id, :name, {}, {class:"select-box",id:"aggregate-category"}) %>
-       </div>
-       <div class="field">
-        <h3>目標の達成率を記入しよう！(0 ~ 100 )</h3>
-        <%= f.text_field :action_point, id: "grow-up", class: "post"%><span>%</span>
+    </div>
+  <div class="content-text">
+      <div class="aggregate-screen" id="action-complet">
+          <%= image_tag "3711963_s.jpg", class: "aggregate-image"%>
       </div>
-        <span class ="action" id= "action-point"></span>
-      <div class="field">
-       <h3>コメント欄</h3>
-        <%= f.text_area :self_compliment,class: "text"%>
-      </div>
-      <div class ="actions">
-        <%= f.submit "記録する！" ,class: "submit-btn"%>
-      </div>
-      <% end %>
-  </div>
+  </div>  
 </div>

@@ -1,21 +1,21 @@
 <%= render "shared/account" %>
 <div class= "account-page">
  <div class= "account-post">
- <h1 class= "account-title">My Profile Page</h1>
+ <h1 class= "account-title">Acount</h1>
 
   <h3 class="account-list">プロフィール画像（公開）</h3>
    <img src=<%= @user.image %> class="image">
   <h3 class="account-list">ユーザー名（公開）</h3>
     <%= @user.nick_name%>
 
-  <h3 class="account-list">プロフィール（公開）</h3>
-    <%= @user.profile %> 
-
   <%if current_user.id == @user.id%>
     <h3 class ="account-list">メールアドレス（非公開）</h3>
-    <%= @user.email %>
-  <p class="user-edit"><%= link_to "プロフィールを編集する", edit_user_registration_path %></p>
+     <p><%= @user.email %></p>
+     <p class="user-edit"><%= link_to "プロフィール編集", edit_user_registration_path %></p>
     <% end %>
+
+     <h3 class="account-list">プロフィール（公開）</h3>
+    <%= @user.profile %> 
   </div>  
 </div>
 <%=render "shared/futter" %>

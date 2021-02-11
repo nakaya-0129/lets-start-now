@@ -10,6 +10,9 @@
   background-size: cover;
   text-align: center;
 }
+.header-user{
+  margin-right: 20px;
+}
 
 .main_screen{
   width: 125%;
@@ -22,19 +25,31 @@
   .center-title{
     margin-top: 25px;
     margin-right: 20px;
-    font-size: 35px;
+    font-size: 32px;
     width: 400px;
     height: 50px;
     background-color: orange;
+    border-bottom: solid 6px rgb(22, 21, 21);
   }
-  .note-lists{
+  .center-title:active{
+    border: none;
+    color: red;
+  }
+  @keyframes listAnimation{
+    0%{
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+  }
+  .hidden{
     list-style: none;
+    display: none;
     height: 80vh;
     width: 400px;
     text-decoration: none;
-    background-color: rgb(240, 235, 235);
+    background-color: whitesmoke;
+    animation: listAnimation .5s;
   }
-  
   li{
     padding-left: 20px;
     padding-top: 20px;
@@ -58,15 +73,176 @@
   input{
     width: 50px;
   }
-  
+  .aggregate-note{
+    width: 400px;
+    height: 500px;
+    position: fixed;
+    top: 100px;
+    left: 450px;
+    display: flex;
+    background-image:url("541639_s.jpg");
+    opacity: 0;
+    visibility: hidden;
+    .aggregate-notelists{
+      margin: 10px;
+    }
+    .aggregate-complet{
+      margin: 10px;
+    }
+    p{
+      margin-bottom: 20px;
+    }
+    h1{
+      margin-bottom: 20px;
+    }
+      .delete {
+        color: #000;
+        position: absolute;
+        margin-left: 5px;
+        margin-top: 7px;
+        width: 9px;
+        height: 10px;
+        border-left: solid 1px currentColor;
+        border-right: solid 1px currentColor;
+        border-bottom: solid 1px currentColor;
+        border-radius: 0 0 2px 2px;
+      }
+      
+      .delete:before {
+        content: '';
+        position: absolute;
+        left: -4px;
+        top: -2px;
+        width: 17px;
+        height: 1px;
+        background-color: currentColor;
+      }
+      
+      .delete:after {
+        content: '';
+        position: absolute;
+        left: 0px;
+        top: -5px;
+        width: 7px;
+        height: 2px;
+        border-left: solid 1px currentColor;
+        border-right: solid 1px currentColor;
+        border-top: solid 1px currentColor;
+        border-radius: 4px 4px 0 0;
+      }
+    button{
+      margin-top: 30px;
+      margin-right: 50px;
+      width: 80px;
+      height: 30px;
+      font-size: 15px;
+      background-color: orange;
+    }
+  }
+  @keyframes noteAnimation {
+    0%{
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+  }
+  .aggregate-note.active{
+    opacity: 1;
+    visibility: visible;
+    animation: noteAnimation 2s;
+  }
+    .list-ifthen{
+    position: fixed;
+    top: 350px;
+    left: 50px;
+    text-align: center;
+    width: 500px;
+    height: 350px;
+    background-image: url("541639_s.jpg");
+    opacity: 0;
+    visibility: hidden;
+    h1{
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    p{
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    button{
+    margin-top: 20px;
+    width: 80px;
+    height: 30px;
+    font-size: 15px;
+    background-color: orange; 
+    }
+  }
+    @keyframes ifthenAnimation{
+      0%{
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+    }
+    .list-ifthen.active{
+      opacity: 1;
+      visibility: visible;
+      animation: ifthenAnimation .5s;
+    }
   .aggregate-box{
-    margin-left: 100px;
+    margin-left: 400px;
     padding-top: 60px;
-    width: 800px;
+    width: 60%;
     height: 100vh;
   }
-  .aggregate-title{
-    padding-top: 20px;
+  .note-animation{
+    margin-top: 100px;
+  }
+  .note-title{
+   margin-bottom: 30px;
+   opacity: 0;
+   h1{
+     border-bottom: orange 2mm ridge;
+     margin-top: 30px;
+     width: 400px;
+   }
+   p{
+     margin-top: 20px;
+     margin-left: 10px;
+   }
+  }
+  .note-info{
+    margin-bottom: 30px;
+    opacity: 0;
+    h1{
+      width: 400px;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      border-bottom: orange 2mm ridge;
+    }
+    h2{
+      font-size: 25px;
+      width: 400px;
+      margin-top: 30px;
+    }
+    p{
+      font-size: 15px;
+      font-weight: normal;
+      margin-left: 10px;
+      margin-bottom: 20px;
+    }
+  }
+  @keyframes noteAnimation {
+    0%{
+      opacity: 0;
+      transform: translateX(50px);
+    }
+  }
+  .note-title.show{
+    opacity: 1;
+    animation: noteAnimation 3s;
+  }
+  .note-info.show{
+    opacity: 1;
+    animation: noteAnimation 3s;
   }
   .post-title{
     margin-left: 30px;
@@ -77,26 +253,17 @@
     font-size: 15px;
     font-weight: initial;
   }
-.aggregate-lists{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  text-decoration: none;
-}
-  span{
+span{
     margin-right: 20px;
   }
-.aggregate-board{
-  border-bottom: solid 1px black;
-}
 .ability-point{
   animation:blink 1s ease-in-out infinite alternate;
+}
 }
 .action{
   margin-top: 10px;
   font-size: 30px;
   color: rgb(236, 77, 77);
-}
 }
 
 .aggregate-show{
@@ -131,7 +298,6 @@
 }
 
 .aggregate-title{
-  font-family: monospace;
   font-size: 25px;
 }
 .supple{
@@ -139,3 +305,138 @@
   margin-bottom: 25px;
   margin-top: 10px;
 }
+
+.aggregate-btn{
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  margin-top: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: orange;
+  border-bottom: solid 6px rgb(75, 73, 73);
+}
+.aggregate-btn:hover{
+  opacity: 0.6;
+  cursor: pointer;
+}
+.aggregate-btn:active{
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+  color: red;
+  border-bottom: none;
+}
+
+.aggregate-contents{
+  padding-top: 60px;
+  width: 100%;
+  height: 88vh;
+  display: flex;
+  text-align: center;
+  background-image: url('541639_s.jpg');
+  .container{
+    margin-left: 50px;
+    margin-bottom: 40px;
+    width: 45%;
+    height: 75vh;
+    text-align: center;
+    .select-area{
+      height: 20px;
+    }
+    .text-field{
+      width: 400px;
+      height: 200px;
+      text-align: center;
+      border: double 5px rgb(87, 84, 84);
+    }
+    
+    .field,.select-box{
+      margin-top: 20px;
+    }
+    
+    .text{
+      text-align: center;
+      margin-top: 10px;
+      height: 100px;
+      width: 400px;
+    }
+    
+    .post{
+      font-size: 15px;
+      height: 40px;
+      width: 400px;
+      margin-top: 15px;
+    }
+    .select-box{
+      width: 250px;
+      height: 20px;
+    }
+    .average{
+      width: 30px;
+      height: 20px;
+    }
+
+  h1{
+    margin-left: 60px;
+    margin-right: 60px;
+    padding-top: 20px;
+    margin-bottom: 40px;
+    font-size: 40px;
+    color: rgb(10, 10, 10);
+  }
+  h2,h3{
+    font-weight: 100;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+}
+.content-text{
+  width: 55%;
+  height: 75vh;
+  p{
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  .contents-image{
+    margin-top: 10px;
+  .aggregate-image{
+   width: 500px;
+   height: 300px;
+   padding-top: 80px;
+  }
+}
+.aggregate-image.active{
+  background-image: url("3411592_s.jpg");
+  border-radius: 10px;
+  width: 500px;
+  height: 300px;
+}
+ }
+ .aggregate-screen{
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes aggregateAnimation{
+  0%{
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  10%{
+    opacity: 0.3;
+  }
+  50%{
+    opacity: 0.5;
+  }
+  80%{
+    opacity: 1;
+  }
+}
+.aggregate-screen.action{
+  opacity: 1;
+  visibility: visible;
+  animation: aggregateAnimation 3S;
+}
+}
+
+

@@ -35,11 +35,11 @@ ActiveRecord::Schema.define(version: 2021_01_23_062737) do
 
   create_table "aggregates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.integer "ability_id", null: false
+    t.integer "ability_id"
     t.string "result_comment", null: false
     t.date "start_day", null: false
     t.integer "action_point"
-    t.integer "period_id", null: false
+    t.integer "period_id"
     t.string "self_compliment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
