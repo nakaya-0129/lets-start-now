@@ -2,6 +2,7 @@ class ObjectivesController < ApplicationController
   before_action :authenticate_user!, except: [:top]
   before_action :objective_find, only: [:show,:edit,:update,:destroy]
   before_action :searching_object, only: [:search,:index]
+  
   def top
 
   end
@@ -17,6 +18,8 @@ class ObjectivesController < ApplicationController
 
   def create
       @objective = Objective.new(objects_params)
+      @objective.user_id = current_user.id
+
       if @objective.save
         flash[:success] = "目標を投稿しました"
         redirect_to objectives_path

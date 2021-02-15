@@ -5,7 +5,6 @@
 //=require_tree
 
 require("@rails/ujs").start()
-require("turbolinks").start()
 require("@rails/activestorage").start()
 require("../action_point");
 require("../object");
@@ -14,8 +13,6 @@ require("../aggregate");
 require("../top");
 require("../animation");
 require("../modals");
-require("jquery")
-
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

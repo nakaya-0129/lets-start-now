@@ -414,28 +414,34 @@ span{
 }
  }
  .aggregate-screen{
+   width: 500px;
+   height: 400px;
   opacity: 0;
   visibility: hidden;
 }
 @keyframes aggregateAnimation{
   0%{
     opacity: 0;
-    transform: translateY(-100px);
+    background-color: gold;
   }
   10%{
-    opacity: 0.3;
+    opacity: 1;
+    background-image:url("2143197_s.jpg");
   }
   50%{
-    opacity: 0.5;
+    background-image:url("4193091_s.jpg");
+    opacity: 1;
   }
   80%{
+    background-image:url("3711963_s.jpg");
     opacity: 1;
   }
 }
 .aggregate-screen.action{
   opacity: 1;
   visibility: visible;
-  animation: aggregateAnimation 3S;
+  animation: aggregateAnimation 3S infinite;
+  animation-duration: alternate;
 }
 }
 

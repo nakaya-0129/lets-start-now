@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   root to: 'objectives#top'
   get 'top' => 'objectives#top'
+  post 'like/:id' => 'likes#create', as: 'create_like'
+  delete 'like/:id' => 'likes#destory', as: 'destory_like'
   resources :objectives do
     resources :comments, only: [:create,:destroy]
      post 'add' => 'favorites#create'
@@ -35,8 +37,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :groups, only: [:index, :new, :show,:create, :edit, :update]
-  resources :meetings
+  
   
 
   

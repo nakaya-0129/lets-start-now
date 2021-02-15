@@ -1,4 +1,4 @@
-window.addEventListener('turbolinks:load', () => {
+window.addEventListener('load', () => {
   const abilityPoint = document.getElementById("grow-up");
   abilityPoint.addEventListener("input", () => {
     const inputValue = abilityPoint.value;

@@ -1,6 +1,7 @@
 class Objective < ApplicationRecord
   has_one_attached :image,  dependent: :destroy 
   belongs_to :user
+  has_many :likes
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
 

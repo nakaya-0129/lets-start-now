@@ -1,4 +1,4 @@
-window.addEventListener('turbolinks:load', ()=>{
+window.addEventListener('load', ()=>{
   const modalObject = document.getElementById("modal-lists");
  modalObject.addEventListener('click', ()=>{
   document.getElementById("modal").classList.add("active");
@@ -6,7 +6,7 @@ window.addEventListener('turbolinks:load', ()=>{
  });
 });
 
-window.addEventListener('turbolinks:load', ()=>{
+window.addEventListener('load', ()=>{
   const modalObject = document.getElementById("close");
  modalObject.addEventListener('click', ()=>{
   document.getElementById("modal").classList.remove("active");
@@ -14,7 +14,7 @@ window.addEventListener('turbolinks:load', ()=>{
  });
 });
 
-window.addEventListener('turbolinks:load', ()=>{
+window.addEventListener('load', ()=>{
   const modalObject = document.getElementById("modal-class");
  modalObject.addEventListener('click', ()=>{
   document.getElementById("modal-content").classList.add("active");
@@ -22,7 +22,7 @@ window.addEventListener('turbolinks:load', ()=>{
  });
 });
 
-window.addEventListener('turbolinks:load', ()=>{
+window.addEventListener('load', ()=>{
   const modalObject = document.getElementById("hobit-close");
  modalObject.addEventListener('click', ()=>{
   document.getElementById("modal-content").classList.remove("active");
@@ -30,14 +30,14 @@ window.addEventListener('turbolinks:load', ()=>{
  });
 });
 
-window.addEventListener('turbolinks:load', ()=>{
+window.addEventListener('load', ()=>{
   const modalObject = document.getElementById("modal-userIndex");
  modalObject.addEventListener('click', ()=>{
   document.getElementById("user-contents").classList.add("active");
  });
 });
 
-window.addEventListener('turbolinks:load', ()=>{
+window.addEventListener('load', ()=>{
   const modalObject = document.getElementById("user-close");
  modalObject.addEventListener('click', ()=>{
   document.getElementById("user-contents").classList.remove("active");

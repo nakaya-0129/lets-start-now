@@ -25,7 +25,7 @@
 
           <div class="login-field">
             <% if @minimum_password_length %>
-              <em><%= @minimum_password_length %> 文字(英数字含む)</em>
+              <em><%= @minimum_password_length %> 文字以上(英数字含む)</em>
             <% end %><br />
             <%= f.password_field :password, autocomplete: "off",class: "text",placeholder:"------新規パスワードを設定-------" %>
           </div>

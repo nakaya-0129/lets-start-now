@@ -1,11 +1,11 @@
-window.addEventListener('turbolinks:load', ()=>{
+window.addEventListener('load', ()=>{
   const modalObject = document.getElementById("aggregate-menu");
  modalObject.addEventListener('click', ()=>{
   document.getElementById("aggregate-note").classList.add("active");
  });
 });
 
-window.addEventListener('turbolinks:load', ()=>{
+window.addEventListener('load', ()=>{
   const listAggregate = document.getElementById("ifthen-list");
   const listClose = document.getElementById("list-close");
   listAggregate.addEventListener('click', ()=>{
@@ -16,7 +16,7 @@ window.addEventListener('turbolinks:load', ()=>{
  })
 });
 
-window.addEventListener('turbolinks:load', ()=>{
+window.addEventListener('load', ()=>{
   const modalObject = document.getElementById("close");
  modalObject.addEventListener('click', ()=>{
   document.getElementById("aggregate-note").classList.remove("active");
@@ -24,7 +24,7 @@ window.addEventListener('turbolinks:load', ()=>{
 });
 
 
-window.addEventListener('turbolinks:load', ()=>{
+window.addEventListener('load', ()=>{
   const pullDownObject = document.getElementById("note-btn");
   const pullDownLists = document.getElementById("note-lists");
  pullDownObject.addEventListener('click', ()=>{
@@ -44,7 +44,7 @@ function  second(){
  document.getElementById('note-info').classList.add('show')
 };
 
-window.document.addEventListener('turbolinks:load',function(){
+window.document.addEventListener('load',function(){
   setTimeout(first,3000);
   setTimeout(second,8000);
 });
