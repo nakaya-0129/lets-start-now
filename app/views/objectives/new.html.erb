@@ -1,61 +1,56 @@
 <%= render "shared/top" %>
+
 <div class="contents">
-<span><%=link_to "《戻る" , objectives_path, class:"post" %></span>
   <div class="conainer">
-  
      <h1 class="text-title">目標とアクションプランを作成して、投稿しよう！</h1>
         <%= form_with model: @objective , url: objectives_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+         <%= render 'shared/error_messages', model: f.object %>
+          <div class="field">
+          <h3>ユーザーネーム</h3>
+            <%= f.text_field :user_name, class: "post"%>
+          </div>
 
-      <div class="field">
-       <h3>ユーザーネーム</h3>
-        <%= f.text_field :user_name, class: "post"%>
-      </div>
+          <div class="field">
+            <h3>目標投稿イメージ画像<h3>
+            <%= f.file_field :image, id:"profile-image",class: "text" %>
+          </div> 
 
-      <div class="field">
-        <h3>目標投稿イメージ画像<h3>
-        <%= f.file_field :image, id:"profile-image",class: "text" %>
-      </div> 
+          <div class="field">
+              <h3>目標のテーマを決めよう！</h3>
+              <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box",id:"item-category",include_blank: "---取り組むテーマを選択して下さい---"}) %>
+          </div>
 
-      <div class="field">
-          <h3>目標のテーマを決めよう！</h3>
-          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box",id:"item-category",include_blank: "---取り組むテーマを選択して下さい---"}) %>
-      </div>
+          <div class="field">
+              <h3>時間設定(一日あたりの時間)</h3>
+                <%= f.collection_select(:hobit_id, Hobit.all, :id, :name, {}, {class:"select-box",id:"item-category"}) %>
+          </div>
 
-       <div class="field">
-          <h3>時間設定(一日あたりの時間)</h3>
-            <%= f.collection_select(:hobit_id, Hobit.all, :id, :name, {}, {class:"select-box",id:"item-category"}) %>
-        </div>
-
-        <div class="field">
-            <h3>目標宣言（具体的な目標を設定しよう！）</h3>
-             <%= f.text_area :one_day, class: "text"%>
-        </div>
-
-      <div class="field">
-          <h3>First-Step：目標を達成するためのアクションプランを考えよう！</h3>
-            <p>(具体的な行動を記入しよう！)</p>
-            <%= f.text_area :action_plan, class: "text"%>
-      </div>
-    <span>※目標宣言はここまで</span>
-      <div class="actions">
- <%= f.submit "投稿する！", class: "submit-btn" %>
-      </div>
-
- <br>
- <br>
- <br>
- <br>
- <br>
+            <div class="field">
+                <h3>目標宣言（具体的な目標を設定しよう！）</h3>
+                <%= f.text_area :one_day, class: "text"%>
+            </div>
+          <div class="field">
+            <h3>First-Step：目標を達成するためのアクションプランを考えよう！</h3>
+              <p>(具体的な行動を記入しよう！)</p>
+              <%= f.text_area :action_plan, class: "text"%>
+          </div>
+          <h2>※目標宣言(必須項目）はここまで</h2>
+           <div class="actions">
+        <%= f.submit "投稿する！", class: "submit-btn" %>
+     </div>
+      <br>
+      <br>
+      <br>
    <div class="hobit-field">
     <h1 class="text-title">行動/習慣を見直してみよう！</h1>
       <p>注：行動/習慣については、個人的な内容を含むため非公開になっています。</p>
        <br>
        <div class="field_hobit">
-       <h3>目標達成を妨げる習慣/行動を記入しよう！</h3>
+       <h3>目標達成を妨げる習慣/行動を記入しよう！（任意）</h3>
         <%= f.text_area :hobituation, class: "text",placeholder: "例：夜更かし"%>
      </div>
        <div class="field">
-       <h3>習慣/行動のメリットとデメリットを考えよう！</h3>
+       <h3>習慣/行動のメリットとデメリットを考えよう！（任意）</h3>
        <p>(メリットを考えてみよう！)</p>
         <%= f.text_area :merit, class: "text-field", placeholder: "例：余暇の時間が持てる。"%>
      </div>

@@ -1,0 +1,30 @@
+ja:
+  activerecord:
+    models:
+       objective:
+       aggregate:
+    attributes:
+      objective:
+        image: イメージ画像
+        user_name: ユーザーネーム
+        category_id: テーマ
+        hobit_id: 時間設定
+        one_day: 目標宣言
+        action_plan: アクションプラン
+        hobituation: 習慣
+        merit: メリット
+        demerit: デメリット
+      aggregate:
+        result_comment: 取り組むテーマ
+        start_day: 始める日
+        ability_id: 能力
+        period_id: 期間
+        action_point: 達成率
+        self_compliment: if-thenルール
+      user:
+        nick_name: 公開名
+        email: メールアドレス
+        password: パスワード
+        image: ユーザー画像
+
+

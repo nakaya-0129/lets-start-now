@@ -3,6 +3,7 @@
   <div class="container">
         <h1 class="text-title">成長の記録をつけよう！</h1>
           <%= form_with model: @aggregate, url: aggregate_path, class: 'aggregate_user', local: true do |f| %>
+           <%= render 'shared/error_messages', model: f.object %>
           <div class="field">
             <h3>成長した能力を記録しよう！</h3>
           <%= f.collection_select(:ability_id, Ability.all, :id, :name, {}, {class:"select-box",id:"aggregate-category"}) %>

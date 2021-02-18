@@ -5,6 +5,7 @@
   
      <h1 class="text-title">目標とアクションプランを作成して、投稿しよう！</h1>
         <%= form_with model: @objective , url: objective_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+         <%= render 'shared/error_messages', model: f.object%>
 
       <div class="field">
        <h3>ユーザーネーム</h3>

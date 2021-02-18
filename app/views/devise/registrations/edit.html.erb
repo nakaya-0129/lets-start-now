@@ -3,7 +3,7 @@
 <div class="account-post">
 <h2 class="account-title"><%= resource_name.to_s.humanize %> Profile</h2>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= render "shared/error_messages", model: f.object %>
       <div class= "login-field">
       <p>プロフィール画像を選択して下さい</p>
         <%= f.file_field :image, id:"profile-image",class: "text" %>

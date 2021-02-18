@@ -71,15 +71,15 @@
     <% @objectives.first(4).each do |objective| %>
        <div class='objective-img-content'>
             <%= link_to  objective_path(objective.id) do %>
-            <%= image_tag objective.image, class:"object-image" if objective.image.attached? %>
-               <div class= "object-name">
+                <%= image_tag objective.image, class:"object-image" if objective.image.attached? %>
+                <div class= "object-name">
                   <span><%= objective.user_name %></span>
                   <span><%= objective.category.name %></span>
-                   <%= render 'post' ,objective: objective %>
-              <% end %>
+            <% end %>
+             <%= render 'post' ,objective: objective %>
             </div>
           </div>
-      <% end %>
+    <% end %>
   </div>
 
 </div>

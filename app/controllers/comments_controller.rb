@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
         flash[:success] ="コメントを投稿しました"
         redirect_back(fallback_location: objective_path(@objective.id))
       else
-        redirect_back(fallback_location: objective_path)
+        redirect_back(fallback_location: objective_path(@objective.id))
       end
    end
 

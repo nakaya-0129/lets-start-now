@@ -1,0 +1,10 @@
+<% if model.errors.any? %>
+<div class="errors-alert">
+ <pre>※エラーメッセージ</pre>
+  <ul>
+   <% model.errors.full_messages.each do |message| %>
+     <li class="error-lists"><%= message %></li>
+    <% end %>
+  </ul>
+ </div>
+ <% end %>

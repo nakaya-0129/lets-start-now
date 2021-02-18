@@ -9,23 +9,23 @@
      <div class="signup-contents">
        <h2 class=form-text>Contact Us </h2>
         <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-          <%= devise_error_messages! %>
+          <%= render 'shared/error_messages',model: f.object %>
           <div class="login-field">
-            <p>プロフィール画像を選択して下さい</p>
+            <p>プロフィール画像を選択して下さい<var>※必須</var></p>
             <%= f.file_field :image, id:"profile-image",class: "text" %>
           </div>
 
           <div class="login-field">
-            <%= f.email_field :email , class: "text",placeholder:"----メールアドレスを登録して下さい----" %>
+            <%= f.email_field :email , class: "text",placeholder:"----メールアドレスを登録して下さい----" %><var>※必須</var>
           </div>
 
           <div class="login-field">
-            <%= f.text_field :nick_name, autofocus: true, maxlength: "8" ,class: "text",placeholder:"---公開するユーザー名を登録して下さい---"%>
+            <%= f.text_field :nick_name, autofocus: true, maxlength: "8" ,class: "text",placeholder:"---公開するユーザー名を登録して下さい---"%><var>※必須</var>
           </div>
 
           <div class="login-field">
             <% if @minimum_password_length %>
-              <em><%= @minimum_password_length %> 文字以上(英数字含む)</em>
+              <em><%= @minimum_password_length %> 文字以上(英数字含む)</em><var>※必須</var>
             <% end %><br />
             <%= f.password_field :password, autocomplete: "off",class: "text",placeholder:"------新規パスワードを設定-------" %>
           </div>

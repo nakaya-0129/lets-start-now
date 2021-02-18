@@ -3,6 +3,7 @@
   <div class="container">
     <h1 class="text-title">成長の記録をつけよう！</h1>
 <%= form_with model: @aggregate, url: aggregates_path, class: 'aggregate_user', local: true do |f| %>
+ <%= render 'shared/error_messages', model: f.object%>
       <h3>始める日を入力しよう！</h3>
        <div class='field'>
              <%= raw sprintf(
