@@ -8,7 +8,7 @@ validates :email, length: { minimum: 1, message: "は必須です"}
 validates :nick_name, length: { minimum: 1, message: "は必須です"}
 validates :nick_name, length: { maximum: 10,message: "の制限を超えています"}
 validates :profile, length: { maximum: 100 ,message: "の制限を超えています"}
-validates :password,length: {in: 6..15,message: "の入力が不正です"}
+validates :password,length: {in: 6..15,message: "の入力が不正です"},on: :create
 validates :image, presence: {message: "は必須です"}
 
 
