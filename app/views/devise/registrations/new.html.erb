@@ -7,7 +7,7 @@
     </div>
 
      <div class="signup-contents">
-       <h2 class=form-text>Contact Us </h2>
+       <h2 class=form-text>Sign Up</h2>
         <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
           <%= render 'shared/error_messages',model: f.object %>
           <div class="login-field">
@@ -16,11 +16,11 @@
           </div>
 
           <div class="login-field">
-            <%= f.email_field :email , class: "text",placeholder:"----メールアドレスを登録して下さい----" %><var>※必須</var>
+            <%= f.text_field :nick_name, autofocus: true, maxlength: "8" ,class: "text",placeholder:"公開するユーザー名を登録して下さい(8文字以内)"%><var>※必須</var>
           </div>
 
           <div class="login-field">
-            <%= f.text_field :nick_name, autofocus: true, maxlength: "8" ,class: "text",placeholder:"---公開するユーザー名を登録して下さい---"%><var>※必須</var>
+            <%= f.email_field :email , class: "text",placeholder:"----メールアドレスを登録して下さい----" %><var>※必須</var>
           </div>
 
           <div class="login-field">
@@ -35,7 +35,7 @@
           </div>
 
           <div class="actions">
-            <%= f.submit "Sign Up" ,class: "sign-up"%>
+            <%= f.submit "Confirm" ,class: "sign-up"%>
           </div>
         <% end %>
      </div>

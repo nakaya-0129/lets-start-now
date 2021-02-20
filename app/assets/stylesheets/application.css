@@ -143,6 +143,12 @@ input{
     list-style: none;
     font-size: 15px;
   }
+  .form-text{
+   margin-left: 80px;
+  }
+  .login-title{
+    margin-left: 60px;
+  }
   .company-name,.selection-form,.explan-list,.help-list{
     font-size: 15px;
     font-weight: initial;

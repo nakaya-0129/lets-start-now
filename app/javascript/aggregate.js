@@ -45,9 +45,9 @@ function  second(){
 };
 
 window.document.addEventListener('load',function(){
-  setTimeout(first,3000);
-  setTimeout(second,8000);
+  setTimeout(first,1000);
+  setTimeout(second,2000);
 });
 
-setTimeout(first,3000);
-setTimeout(second,8000);
+setTimeout(first,1000);
+setTimeout(second,2000);
