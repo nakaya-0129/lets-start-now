@@ -35,14 +35,9 @@
               <%= f.text_area :action_plan, class: "text"%>
           </div>
           <h2>※目標宣言(必須項目）はここまで</h2>
-           <div class="actions">
-        <%= f.submit "投稿する！", class: "submit-btn" %>
-     </div>
-      <br>
-      <br>
-      <br>
+          <br>
    <div class="hobit-field">
-    <h1 class="text-title">行動/習慣を見直してみよう！</h1>
+     <h1 class="text-title">行動/習慣を見直してみよう！</h1>
       <p>注：行動/習慣については、個人的な内容を含むため非公開になっています。</p>
        <br>
        <div class="field_hobit">
@@ -58,6 +53,9 @@
        <p>(デメリットを考えてみよう！)</p>
         <%= f.text_area :demerit, class: "text-field",placeholder: "例：寝不足が習慣化する。"%>
      </div>
+   </div>
+    <div class="actions">
+      <%= f.submit "投稿する！", class: "submit-btn" %>
     </div>
      <% end %>
   </div>

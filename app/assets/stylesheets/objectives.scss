@@ -308,7 +308,6 @@ span{
 
 .center_screen{
   display: flex;
-  height: 120vh;
   width: 100%;
   text-decoration: none;
   .object-sidemenu{
@@ -653,8 +652,7 @@ li:hover{
   cursor: pointer;
   background-color: orange;
   border-bottom: solid 6px rgb(75, 73, 73);
-  position: fixed;
-  right: 930px;
+  margin-top: 20px;
 }
 .submit-btn:hover{
   opacity: 0.6;
@@ -703,9 +701,8 @@ li:hover{
 
 .contents{
   padding-top: 60px;
-  margin-bottom: 40px;
   width: 100%;
-  height: 210vh;
+  height: 195vh;
   display: flex;
   text-align: center;
   background-image: url('541639_s.jpg');
