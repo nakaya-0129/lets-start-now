@@ -323,10 +323,22 @@ span{
     }
   }
   .side-bar{
+    width: 400px;
+    height: 50px;
+    font-size: 30px;
     background-color: orange;
     text-align: center;
     margin-top: 70px;
     padding-bottom: 15px;
+  }
+  @media screen and(max-width: 800px)
+  {
+    .side-bar{
+      padding-left: 30px;
+      font-size: 30px;
+      width: 200px;
+      height: 50px;
+    }
   }
   .hidden{
    opacity: 0.8;
@@ -718,6 +730,7 @@ li:hover{
     transform: translateX(50px);
   }
 }
+
 .contents-list{
   font-weight: bold;
   font-size: 40px;
@@ -767,6 +780,13 @@ li:hover{
   0%{
     opacity: 0;
     transform: translateY(-50px);
+  }
+}
+@media screen and(max-width:800px){
+  .second-list{
+    padding-top: 0px;
+    margin-top: 0px;
+    background-size: cover;
   }
 }
 .contents-text{

@@ -31,6 +31,15 @@
     background-color: orange;
     border-bottom: solid 6px rgb(22, 21, 21);
   }
+  @media screen and(max-width: 800px)
+  {
+    .center-title{
+      width: 200px;
+      height: 50px;
+      padding-left: 30px;
+    }
+    
+  }
   .center-title:active{
     border: none;
     color: red;
@@ -49,6 +58,14 @@
     text-decoration: none;
     background-color: whitesmoke;
     animation: listAnimation .5s;
+  }
+  @media screen and(max-width: 800px){
+    .hidden{
+      list-style: none;
+      display: none;
+      height: 80vh;
+      width: 200px;
+    }
   }
   li{
     padding-left: 20px;
@@ -77,7 +94,7 @@
     width: 400px;
     height: 500px;
     position: fixed;
-    top: 100px;
+    top: 110px;
     left: 450px;
     display: flex;
     background-image:url("541639_s.jpg");
@@ -86,6 +103,15 @@
     .aggregate-notelists{
       margin: 10px;
     }
+    @media screen and(max-width:800px){
+      .aggregete-note:active{
+        width: 200px;
+        height: 300px;
+        top: 100px;
+        left: 0px;
+      }
+    }
+
     .aggregate-complet{
       margin: 10px;
     }
@@ -192,6 +218,11 @@
     padding-top: 60px;
     width: 60%;
     height: 93vh;
+  }
+  @media screen and(max-width: 800px){
+    .aggregate-box{
+      margin-left: 50px;
+    }
   }
   .note-animation{
     margin-top: 100px;
@@ -361,12 +392,24 @@ span{
       height: 100px;
       width: 400px;
     }
+    @media screen and(max-width:800px){
+      .text{
+        width: 250px;
+        height: 100px;
+      }
+    }
     
     .post{
       font-size: 15px;
       height: 40px;
       width: 400px;
       margin-top: 15px;
+    }
+    @media screen and(max-width: 800px){
+      .post{
+        width: 200px;
+        height: 40px;
+      }
     }
     .select-box{
       width: 250px;
@@ -385,6 +428,11 @@ span{
     font-size: 40px;
     color: rgb(10, 10, 10);
   }
+  @media screen and(max-width: 800px){
+    h1{
+      font-size: 28px;
+    }
+  }
   h2,h3{
     font-weight: 100;
     font-size: 18px;
@@ -397,6 +445,11 @@ span{
   p{
     margin-top: 20px;
     font-size: 20px;
+  }
+  @media screen and(max-width:800px){
+    p{
+      font-size: 15px;
+    }
   }
   .contents-image{
     margin-top: 10px;
