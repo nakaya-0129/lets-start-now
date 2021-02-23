@@ -42,7 +42,18 @@
    color: red;
    border-bottom: none;
   }
+  @media screen and(max-width: 800px){
+    .header-btn{
+      font-size: 13px;
+      padding: 0px;
+      width: 50px;
+      height: 35px;
+      margin: 0px;
+    }
+  }
 }
+
+
 
 .top-page{
   width: 100%;
@@ -50,8 +61,13 @@
 .top-title{
   text-align: center;
   width: 50%;
-  height: 350vh;
+  height: 390vh;
   background-color: orange;
+}
+@media screen and(max-width: 800px){
+  .top-title{
+    height: 250vh;
+  }
 }
 h1{
   margin-bottom: 100vh;
@@ -97,9 +113,14 @@ h2{
   transform: translateY(50px);
   transition: 2s;
   padding: 10px;
-  height: 200px;
-  margin-top: 300px;
-  margin-bottom: 50px;
+  height: 250px;
+  margin-top: 380px;
+}
+@media screen and(max-width: 800px){
+  .top-lists{
+    margin-top: 80px;
+    height: 200px;
+  }
 }
 .top-lists.show{
   opacity: 1.0;
@@ -107,7 +128,7 @@ h2{
 }
   p{
     transform: translateZ(50px);
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     margin-left: 50px;
     color: black;
     font-size: 20px;
@@ -126,18 +147,39 @@ h2{
     margin-bottom: 30px;
     font-size: 40px;
   }
+  h5{
+    margin-left: 150px;
+    font-size: 50px;
+  }
   
   b{
     font-size: 30px;
-    margin-left: 5px;
+    margin-left: 60px;
   }
   .image{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     margin-left: 80px;
-    width: 300px;
-    height: 200px;
+    width: 500px;
+    height: 400px;
     opacity: 1.0;
-    border-radius: 100vh;
+  }
+  @media screen and(max-width: 800px){
+    .image{
+      display: none;
+      visibility: hidden;
+    }
+    b{
+      font-size: 25px;
+      margin-left: 60px;
+    }
+    h2,h4{
+      font-size: 25px;
+    }
+    h5{
+      margin-left: 100px;
+      font-size: 25px;
+    }
+
   }
   .main-btn{
     margin-bottom: 20px;
@@ -183,6 +225,12 @@ h2{
    color: red;
    border-bottom: none;
   }
+  @media screen and(max-width: 800px){
+    .login-btn,.main-btn{
+      margin-top: 20px;
+      margin-left: 60px;
+    }
+  }
 }
 
  .top-signup{
@@ -198,6 +246,12 @@ h2{
     text-decoration: none;
     border-bottom: solid 6px rgb(75, 73, 73);
     border-radius: 3px;
+  }
+  @media screen and(max-width: 800px){
+    .start-btn{
+      margin-top: 10px;
+      font-size: 13px;
+    }
   }
   .start-btn:hover{
     cursor: pointer;
