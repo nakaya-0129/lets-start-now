@@ -1,14 +1,11 @@
 <%=render "shared/top" %>
 
 <div class= "object-show-box">
-  <div class="back">
-   <%=link_to "《戻る" , objectives_path, class:"post" %>
-  </div>
   <div class="object-explain-box">
     <table class="detail-table">
     <tbody>
     <tr>
-     <%= image_tag @objective.image.variant(gravity: :center, resize: '450x450') %>
+     <%= image_tag @objective.image.variant(gravity: :center, resize: '380x380') %>
     </tr> 
             <tr>
                <th class="detail-object">ユーザー名</th>
@@ -68,7 +65,7 @@
           <%= comment.user.nick_name %>
           <% end %>
           <% if current_user.id == comment.user_id%>
-        <span><%= link_to "コメント削除", objective_comment_path(@objective,comment) ,method: :delete ,class: "comment-btn",data: {confirm: '本当に削除しますか？'} %></span>
+        <span><%= link_to "削除", objective_comment_path(@objective,comment) ,method: :delete ,class: "comment-btn",data: {confirm: '本当に削除しますか？'} %></span>
           <% end %>
           </div>
         </div> 

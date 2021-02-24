@@ -74,6 +74,11 @@ h1{
   padding-top: 200px;
   font-size: 100px;
 }
+@media screen and(max-width: 800px){
+  h1{
+    font-size: 80px;
+  }
+}
 
 @keyframes titleAnimation {
   0%{
@@ -632,6 +637,27 @@ span{
    height: 30px;
    animation: SearchAnimation 0.5s;
  }
+ .search-btn{
+   width: 50px;
+   height: 20px;
+   background-color: orange;
+ }
+ @media screen and(max-width: 800px){
+   select,input{
+     text-align: center;
+     width: 170px;
+     height: 20px;
+     margin-left: 0px;
+     padding-right:5px;
+     font-size: 8px;
+   }
+   .search-btn{
+     background-color: orange;
+     font-size: 5px;
+     width: 30px;
+     padding: 3px;
+   }
+ }
   h1{
     margin-top: 50px;
     font-size: 30px;
@@ -772,7 +798,7 @@ li:hover{
   height: 195vh;
   display: flex;
   text-align: center;
-  background-image: url('541639_s.jpg');
+  background-color: rgb(250, 236, 209);
   background-size: cover;
 .contents-side{
   width: 40%;
@@ -944,24 +970,46 @@ p{
 }
 
 .object-show-box{
-  text-align: center;
   height: 90vh;
-  font-size: 30px;
-  margin-left: -60px;
-  padding-right: 60px;
-  padding-top: 80px;
-  padding-bottom: 10px;
+  font-size: 18px;
+  padding: 80px 0px;
   background-image: url("541639_s.jpg");
   display: flex;
   justify-content: space-around;
 .detail-table{
-  margin: 0 auto;
   font-size: 25px;
+}
+
+h3{
+  font-size: 25px;
+}
+p{
+  font-size: 20px;
+}
+@media screen and(max-width: 800px){
+  .detail-table{
+    margin-left: 30px;
+    font-size: 15px;
+  }
+  .object-explain-box{
+    padding-left: 30px;
+  }
+  h3{
+    font-size: 20px;
+  }
+  p{
+    font-size: 18px;
+  }
+  .comments{
+    font-size: 15px;
+    margin-left: 20px;
+  }
 }
 .detail-object{
   padding-right: 20px;
 }
 .object-display{
+  text-align: center;
   margin-right: 10px; 
 }
 textarea{
@@ -969,6 +1017,12 @@ textarea{
   text-align: center;
   width: 520px;
   height: 40px;
+}
+@media screen and(max-width: 800px){
+  textarea{
+    width: 230px;
+    margin-left: 20px;
+  }
 }
 .text-title{
   margin-bottom: 20px;
@@ -993,6 +1047,11 @@ textarea{
   height: 30px;
   border-radius: 50vh;
 }
+@media screen and(max-width: 800px){
+  .users-selection{
+    font-size: 18px;
+  }
+}
 }
 
 .send-btn{
@@ -1014,9 +1073,11 @@ textarea{
 }
 
 .detail-object{
+  font-size: 20px;
   padding-top: 30px;
 }
 .detail-value{
+  font-size: 18px;
   padding-top:  30px;
 }
 .object-explain-box{
@@ -1040,6 +1101,7 @@ textarea{
     padding-top:   15px;
     padding-left: 400px;
   }
+
   img{
     width: 20px;
     height: 20px;
@@ -1047,9 +1109,9 @@ textarea{
     border-radius: 100px;
   }
   .comment-btn{
-    font-size: 12px;
+    font-size: 15px;
     border: solid 1px black;
-    background-color: rgb(231, 226, 226);
+    background-color: rgb(245, 243, 243);
   }
   .comment-btn:hover{
     color: red;
@@ -1057,6 +1119,25 @@ textarea{
   textarea{
     width: 300px;
     height: 40px;
+  }
+  @media screen and(max-width: 800px){
+    .comments-table{
+      width: 250px;
+    }
+    .comment-name{
+      font-size: 10px;
+      padding-left: 130px;
+      padding-top: 30px;
+    }
+    .comment-btn{
+      font-size: 10px;
+    }
+    textarea{
+      width: 200px;
+    }
+    img{
+      display: none;
+    }
   }
 }
 
