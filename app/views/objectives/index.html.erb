@@ -40,7 +40,7 @@
                <li class="lists" id="search-lists">投稿テーマで検索する▽</li>
                <li class="search" id="search-list"><%= f.collection_select :category_id_eq, Category.where.not(id: 0),:id,:name %><span><%= f.submit '検索',class:"search-btn" %></span></li>
                <li class="lists" id="search-name">ユーザー名で検索する▽</li>
-               <li class="search" id="search-user"><%=f.search_field :user_name_eq, placeholder: "--登録したユーザー名を入力--"%><span><%= f.submit '検索',class: "search-btn" %></span></li>
+               <li class="search" id="search-user"><%= f.search_field :user_name_eq, placeholder: "--登録したユーザー名を入力--"%><span><%= f.submit '検索',class: "search-btn" %></span></li>
                            <% end %> 
                <li class="lists" id= "modal-lists">ユーザー情報詳細表示/編集</li>
                            <div class="module-show">
@@ -76,7 +76,6 @@
                   <span><%= objective.user_name %></span>
                   <span><%= objective.category.name %></span>
             <% end %>
-             <%= render 'post' ,objective: objective %>
             </div>
           </div>
     <% end %>

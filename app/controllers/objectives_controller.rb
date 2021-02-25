@@ -29,7 +29,7 @@ class ObjectivesController < ApplicationController
     end
 
     def search
-      @selection = @q.result
+      @selection = @q.result(distinct: true)
       category_id = params[:q][:category_id_eq]
       @category_id = Category.find_by(id: category_id)
     end

@@ -1,8 +1,9 @@
 <header class="header">
       <div class="header-bar">
-      <h1 class="title" >Let's Start Now!</h1>
+      <h1 class="title" ><%=link_to "Let's Start Now", objectives_path ,class: "title-logo"%></h1>
+      <h1 class="title">Search Index</h1>
         <div class="header-link">
-        <span class= "post-list"><%=link_to "投稿ページ", objectives_path %>/<%= link_to "ユーザー一覧", users_index_path %></span>
+        <span class= "post-list"><%= link_to "ユーザー一覧", users_index_path %></span>
         </div>
     </div>
     </header>

@@ -985,6 +985,12 @@ h3{
 }
 p{
   font-size: 20px;
+
+}
+.follow{
+  font-size: 20px;
+  margin-left: 35px;
+  margin-top: 10px;
 }
 @media screen and(max-width: 800px){
   .detail-table{
@@ -1003,6 +1009,12 @@ p{
   .comments{
     font-size: 15px;
     margin-left: 20px;
+  }
+  .follow{
+    font-size: 15px;
+  }
+  a{
+    font-size: 18px;
   }
 }
 .detail-object{

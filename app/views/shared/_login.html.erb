@@ -1,11 +1,10 @@
 <header class="header">
      <div class="header-bar">
-       <h1 class="title" >Let's Start Now!</h1>
+       <h1 class="title" ><%= link_to "Let's Start Now!", aggregates_path, class: "title-logo" %></h1>
         <div class="user">
          
         </div>
        <div class ="user-name">
-       <%=link_to "前ページに戻る", aggregates_path, class: "post"%>/   
         <span>login user:</span>
           <% if current_user.image_url.present? %>
               <%= link_to user_path(current_user.id) do%>
