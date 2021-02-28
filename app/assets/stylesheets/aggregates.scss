@@ -183,7 +183,7 @@
     text-align: center;
     width: 500px;
     height: 350px;
-    background-image: url("541639_s.jpg");
+    background-color: rgb(247, 231, 201);
     opacity: 0;
     visibility: hidden;
     h1{
@@ -365,7 +365,7 @@ span{
   height: 93vh;
   display: flex;
   text-align: center;
-  background-image: url('541639_s.jpg');
+  background-image:image-url("541639_s.jpg");
   .container{
     margin-left: 50px;
     margin-bottom: 40px;
@@ -479,10 +479,10 @@ span{
   }
   10%{
     opacity: 1;
-    background-image:url("2143197_s.jpg");
+    background-image: image-url("2143197_s.jpg");
   }
   50%{
-    background-image:url("3711963_s.jpg");
+    background-image: image-url("3711963_s.jpg");
     opacity: 1;
   }
 }

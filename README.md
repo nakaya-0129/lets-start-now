@@ -11,7 +11,7 @@
 このアプリは、目標を宣言して全体に公開し、<br>
 達成度を自己管理することでユーザーの目標達成をサポートします。
 
- URL https://lets-start-now.herokuapp.com/
+ URL https://lets-start-now.herokuapp.com/  
  URL http://18.180.144.79/
 
 # 使い方・機能
@@ -36,8 +36,6 @@ indexページに内容が表示されます。
 # 環境
 Ruby '2.6.5'
 Rails '6.0.0'
-Javascript
-Ajax
 
 ## テーブル設計
 
