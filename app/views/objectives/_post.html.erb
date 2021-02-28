@@ -1,7 +1,5 @@
  <% if current_user.liked_by?(objective.id) %>
       <%= link_to "応援中★", destory_like_path(objective), method: :delete %>
-      <p class="follow">フォロワー数：<%= objective.likes.count %>人</p>
     <% else %>
       <%= link_to "応援する☆", create_like_path(objective), method: :post %>
-       <p class="follow">フォロワー数：<%= objective.likes.count %>人</p>
     <% end %>

@@ -119,6 +119,7 @@ hr {
 }
 
 input{
+  text-align: center;
   vertical-align:middle;
   height: 20px;
   width: 200px;
