@@ -540,23 +540,20 @@ span{
     }
   }
   h2,h3{
-    font-weight: 100;
     font-size: 18px;
     margin-top: 10px;
   }
 }
 .content-text{
-  width: 45%;
+  width: 50%;
   height: 93vh;
-  background-color: rgb(248, 182, 59);
-  margin-left: 20px;
   p{
     margin-top: 20px;
     font-size: 20px;
   }
   h4{
-    font-size: 100px;
-    margin: 80px 20px;
+    font-size: 80px;
+    margin: 20px 0px;
   }
   .contents-image{
     margin-top: 10px;
@@ -594,17 +591,29 @@ h6{
  margin-top: 50px;
 }
 @keyframes aggregateAnimation{
+  0%{
+   transform: translateY(50px);
+  }
+  50%{
+    opacity: 1;
+    letter-spacing: 2em;
+  }
   100%{
     opacity: 1;
-    background: -webkit-linear-gradient(#cff, #39f);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #DA8E00;
+  background: -webkit-linear-gradient(-45deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03, #DA8E00, #EDAC06, #F7DE05, #ECB802, #EDAC06);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   }
 }
 .aggregate-screen.action{
   opacity: 1;
+  color: #DA8E00;
+  background: -webkit-linear-gradient(-45deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03, #DA8E00, #EDAC06, #F7DE05, #ECB802, #EDAC06);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   visibility: visible;
-  animation: aggregateAnimation 3S infinite;
+  animation: aggregateAnimation 3S ;
   animation-duration: alternate;
 }
 }
