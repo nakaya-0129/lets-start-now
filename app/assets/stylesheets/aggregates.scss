@@ -417,6 +417,7 @@ span{
     .select-box{
       width: 250px;
       height: 20px;
+      margin-bottom: 20px;
     }
     .average{
       width: 30px;
@@ -541,7 +542,7 @@ span{
   }
   h2,h3{
     font-size: 18px;
-    margin-top: 10px;
+    margin: 10px;
   }
 }
 .content-text{
@@ -555,6 +556,18 @@ span{
     font-size: 80px;
     margin: 20px 0px;
   }
+  @media screen and(max-width: 800px){
+    h4{
+          margin-left: 40px;
+          font-size: 40px;
+        }
+     h6{
+          font-size: 30px;
+          padding-right: 20px;
+          margin-top: 10px;
+          margin-right: 300px;
+        }
+      }
   .contents-image{
     margin-top: 10px;
   .aggregate-image{
@@ -592,7 +605,8 @@ h6{
 }
 @keyframes aggregateAnimation{
   0%{
-   transform: translateY(50px);
+    transform-style: preserve-3d;
+    transform:rotateY(-30deg) rotateX(-30deg) rotateZ(10deg); 
   }
   50%{
     opacity: 1;
