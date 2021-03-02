@@ -9,8 +9,10 @@ class ObjectivesController < ApplicationController
 
   def index
     @objectives = Objective.all.order(created_at: :desc)
-
+    likes = Like.where(user_id: current_user.id).pluck(:objective_id)
+    @likes = Objective.find(likes)
   end
+
 
   def new
     @objective = Objective.new

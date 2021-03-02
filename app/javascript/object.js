@@ -23,13 +23,15 @@ window.addEventListener('load', ()=>{
 });
 
 window.addEventListener('load', ()=>{
-  const pullDownObject = document.getElementById("search-name");
-  const pullDownLists = document.getElementById("search-user");
- pullDownObject.addEventListener('click', ()=>{
-   if (pullDownLists.getAttribute("style") =="display:block;") {
-     pullDownLists.removeAttribute("style","display:block;")
-   } else{
-     pullDownLists.setAttribute("style","display:block;")
-   }
+  const likeObject = document.getElementById("search-name");
+  likeObject.addEventListener('click', ()=>{
+  document.getElementById("like-list").classList.add("active");
+ });
+});
+
+window.addEventListener('load', ()=>{
+  const likeObject = document.getElementById("like-close");
+  likeObject.addEventListener('click', ()=>{
+  document.getElementById("like-list").classList.remove("active");
  });
 });
