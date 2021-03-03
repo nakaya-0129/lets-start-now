@@ -187,3 +187,16 @@ input{
     font-size: 20px;
     color: rgb(241, 65, 65);
   }
+
+  .btn-follow{
+    width: 150px;
+    height: 40px;
+    background-color: orange;
+    font-size: 18px;
+    border-radius: 10px;
+    border-bottom: 5px solid rgb(53, 52, 52);
+  }
+  .btn-follow:active{
+    border: none;
+    color: red;
+  }
