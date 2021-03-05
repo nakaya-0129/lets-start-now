@@ -4,11 +4,11 @@
    <div class="object-sidemenu">
        <button class ="side-bar"  id= "lists" >Menu-list∇</button>
           <ul class ="side-lists hidden" id = "side-lists">
-               <li><%= link_to "投稿を作成する〆", new_objective_path, class: "post"%></li>
-               <li class="lists" id="modal-class">習慣リスト表示</li>
+               <li><%= link_to new_objective_path, class: "post" do %><%= image_tag "note.jpeg", class: "icon" %>投稿を作成する</li><% end %>
+               <li class="lists" id="modal-class"><%= image_tag "lists.jpeg", class: "icon" %>習慣リスト表示</li>
                         <div class="object-hobits">
                            <div class= "object-hobitlist" id="modal-content">
-                            <h2>①改善したい習慣/②メリット/③デメリット</h2>
+                            <h2><%= image_tag "lists.jpeg", class: "icon" %>①改善したい習慣/②メリット/③デメリット</h2>
                                <% @objectives.first(20).each do |objective| %>
                                <% if objective.hobituation.present? && current_user.id == objective.user.id %>
                                     <p>①<%= objective.hobituation %></p>
@@ -21,10 +21,10 @@
                               <div class="hobit-mask" id="hobit-mask"></div>
                         </div>
 
-               <li class="lists" id="modal-userIndex">自分の投稿一覧</li>
+               <li class="lists" id="modal-userIndex"><%= image_tag "lists.jpeg", class: "icon" %>自分の投稿一覧</li>
                            <div class="user-index">
                               <div class="user-contents" id="user-contents">
-                                 <h1>ユーザー投稿一覧</h1>
+                                 <h1><%= image_tag "lists.jpeg", class: "icon" %>ユーザー投稿一覧</h1>
                                  <% @objectives.each do |objective| %>
                                     <% if current_user.id == objective.user.id %>
                                     <%= link_to objective_path(objective.id) do %>
@@ -37,12 +37,12 @@
                            </div>
 
                     <%= search_form_for @q, url: search_objectives_path do |f| %>
-                     <li class="lists" id="search-lists">投稿テーマで検索する▽</li>
+                     <li class="lists" id="search-lists"><%= image_tag "search.png", class: "icon" %> 投稿テーマで検索する▽</li>
                      <li class="search" id="search-list"><%= f.collection_select :category_id_eq, Category.where.not(id: 0),:id,:name %><span><%= f.submit '検索',class:"search-btn" %></span></li>
                     <% end %>
-               <li class="lists" id="search-name">応援中の投稿を表示</li>
+                   <li class="lists" id="search-name"><%= image_tag "yell.jpeg", class: "icon" %>応援中の投稿を表示</li>
                    <div class = "like-list" id = "like-list">
-                      <h2>応援中の投稿一覧</h2>
+                      <h2>応援中の投稿</h2>
                        <% @likes.each do |like| %>
                          <%= link_to objective_path(like.id) do %>
                           <span><%= like.one_day %>  <%= like.user_name %></span>
@@ -51,7 +51,7 @@
                        <button class="like-close" id ="like-close">close</button>
                    </div>
 
-               <li class="lists" id= "modal-lists">ユーザー情報詳細表示/編集</li>
+               <li class="lists" id= "modal-lists"><%= image_tag "account.jpeg",class: "icon" %>ユーザー情報詳細表示/編集</li>
                            <div class="module-show">
                               <div class="show-lists" id="modal">
                                  <h1>User Profiel</h1>
@@ -70,9 +70,9 @@
                              </div>
                               <div class="mask" id="mask"></div>
                             </div>
-               <li><%= link_to "ユーザー一覧表示", users_index_path, class: "post"%></li>
-               <li><%= link_to "ノートを開く", aggregates_path, class: "post" %></li>
-               <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "post" %></li>
+               <li><%= link_to users_index_path, class: "post" do%><%= image_tag "human.png", class: "icon" %>ユーザー一覧</li><% end %>
+               <li><%= link_to aggregates_path, class: "post" do %><%= image_tag "list.jpg", class: "icon" %>ノートを開く</li><% end %>
+               <li><%= link_to destroy_user_session_path, method: :delete,class: "post" do %><%= image_tag "logout.jpg" ,class: "icon"%>ログアウト</li><% end %>
           </ul>
    </div>
 

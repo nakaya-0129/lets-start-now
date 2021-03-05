@@ -1,14 +1,16 @@
 <%= render "shared/account" %>
 <div class= "account-page">
   <div class= "account-post">
+      <div class= "follower-lists">
+        <%= render 'relationships/follow', user: @user %> 
+        <p class="follower">フォロワー数：<%= @user.followers.count %>人</p>
+      </div>
     <h1 class= "account-title">Acount</h1>
-     <%= render 'relationships/follow', user: @user %> 
-      <p>フォロワー数：<%= @user.followers.count %>人</p>
+     
     <h3 class="account-list">プロフィール画像（公開）</h3>
       <img src=<%= @user.image %> class="image">
     <h3 class="account-list">ユーザー名（公開）</h3>
       <%= @user.nick_name%>
-
     <%if current_user.id == @user.id%>
       <h3 class ="account-list">メールアドレス（非公開）</h3>
         <p><%= @user.email %></p>

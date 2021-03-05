@@ -1,7 +1,7 @@
 <%= render "shared/user_header" %>
  <div class="users-box"> 
   <div class="user-contents">
-    <h1 class="user-title">ユーザー一覧</h1>
+    <h1 class="user-title"><%= image_tag "human.png", class: "icon" %>ユーザー一覧</h1>
         <% @users.each do |user| %>
     <div class= "users-table">
      <%=link_to user_path(user.id) do%>

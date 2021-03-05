@@ -1,5 +1,5 @@
  <% if current_user.liked_by?(objective.id) %>
-      <%= link_to "応援中★", destory_like_path(objective), method: :delete %>
+      <%= image_tag "yell.jpg", class: "icon" %><%= link_to "応援中★", destory_like_path(objective), method: :delete %>
     <% else %>
       <%= link_to "応援する☆", create_like_path(objective), method: :post %>
     <% end %>

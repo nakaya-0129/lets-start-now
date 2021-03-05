@@ -17,8 +17,8 @@
          <div class="center-screen-a">
                <button class="center-title" id="note-btn">My Note∇</button>
             <div class="note-lists hidden" id="note-lists">
-                <li><%= link_to  "タスクをノートに記入する", new_aggregate_path(current_user.id) ,class:"note"%></li>
-                <li class="aggregate-menu" id="aggregate-menu">ノートの管理</li>
+                <li><%= link_to  new_aggregate_path(current_user.id) ,class:"note" do %><%= image_tag "pen.png",class: "icon" %>ノートを記入する</li><% end %>
+                <li class="aggregate-menu" id="aggregate-menu"><%= image_tag "list.jpg", class: "icon" %>ノートの管理</li>
 
                 <div class="aggregate-note" id="aggregate-note">
                   <div class="aggregate-notelists">
@@ -40,23 +40,23 @@
                         <h3 id="edit-box"><%= aggregate.result_comment %></h3> 
                         <p id ="edit-box">達成率:<%= aggregate.action_point %>%
                     <% end %>
-                  <span><%= link_to '', aggregate_path(aggregate.id) ,class: "delete", method: :delete  , data: {confirm: '本当に削除しますか？'} %></span></p>
+                  <span><%= link_to aggregate_path(aggregate.id) ,class: "delete", method: :delete  , data: {confirm: '本当に削除しますか？'}  do%><%= image_tag "doust.png", class: "icon" %></span><% end %></p>
                  <% end %>
                  <% end %>
                  <button id="close">close</button>
                  </div>
                 </div>
 
-                <li class= "aggregate-menu" id="ifthen-list">If-thenルール</li>
+                <li class= "aggregate-menu" id="ifthen-list"><%= image_tag "lists.jpeg", class: "icon" %>If-thenルール</li>
                   <div class="list-ifthen" id="ifthen-index">
-                    <h1>if-thenルール一覧</h1>
+                    <h1><%= image_tag "lists.jpeg", class: "icon" %>if-thenルール一覧</h1>
                     <% @aggregates.each do |aggregate| %>
                     <p><%= aggregate.self_compliment %></p>
                      <% end %>
                    <button id="list-close">close</button>
                   </div>
-                 <li><%= link_to "投稿ページに移動する", objectives_path(current_user.id) , class:"note"%></li>
-                 <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "note" %></li>
+                 <li><%= link_to  objectives_path(current_user.id), class: "note" do %><%= image_tag "turn.jpeg", class: "icon" %>投稿ページに戻る</li><% end %>
+                 <li><%= link_to destroy_user_session_path, method: :delete , class: "note" do %><%= image_tag "logout.jpg", class: "icon" %>ログアウト</li><% end %>
             </div>
          </div>
 
