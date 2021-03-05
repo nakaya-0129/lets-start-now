@@ -4,11 +4,11 @@
    <div class="object-sidemenu">
        <button class ="side-bar"  id= "lists" >Menu-list∇</button>
           <ul class ="side-lists hidden" id = "side-lists">
-               <li><%= link_to new_objective_path, class: "post" do %><%= image_tag "note.jpeg", class: "icon" %>投稿を作成する</li><% end %>
+               <li><%= link_to new_objective_path, class: "post" do %><%= image_tag "note.jpg", class: "icon" %>投稿を作成する</li><% end %>
                <li class="lists" id="modal-class"><%= image_tag "lists.jpg", class: "icon" %>習慣リスト表示</li>
                         <div class="object-hobits">
                            <div class= "object-hobitlist" id="modal-content">
-                            <h2><%= image_tag "lists.jpeg", class: "icon" %>①改善したい習慣/②メリット/③デメリット</h2>
+                            <h2><%= image_tag "lists.jpg", class: "icon" %>①改善したい習慣/②メリット/③デメリット</h2>
                                <% @objectives.first(20).each do |objective| %>
                                <% if objective.hobituation.present? && current_user.id == objective.user.id %>
                                     <p>①<%= objective.hobituation %></p>
@@ -24,7 +24,7 @@
                <li class="lists" id="modal-userIndex"><%= image_tag "lists.jpg", class: "icon" %>自分の投稿一覧</li>
                            <div class="user-index">
                               <div class="user-contents" id="user-contents">
-                                 <h1><%= image_tag "lists.jpeg", class: "icon" %>ユーザー投稿一覧</h1>
+                                 <h1><%= image_tag "lists.jpg", class: "icon" %>ユーザー投稿一覧</h1>
                                  <% @objectives.each do |objective| %>
                                     <% if current_user.id == objective.user.id %>
                                     <%= link_to objective_path(objective.id) do %>
