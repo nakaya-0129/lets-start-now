@@ -47,15 +47,15 @@
                  </div>
                 </div>
 
-                <li class= "aggregate-menu" id="ifthen-list"><%= image_tag "lists.jpeg", class: "icon" %>If-thenルール</li>
+                <li class= "aggregate-menu" id="ifthen-list"><%= image_tag "lists.jpg", class: "icon" %>If-thenルール</li>
                   <div class="list-ifthen" id="ifthen-index">
-                    <h1><%= image_tag "lists.jpeg", class: "icon" %>if-thenルール一覧</h1>
+                    <h1><%= image_tag "lists.jpg", class: "icon" %>if-thenルール一覧</h1>
                     <% @aggregates.each do |aggregate| %>
                     <p><%= aggregate.self_compliment %></p>
                      <% end %>
                    <button id="list-close">close</button>
                   </div>
-                 <li><%= link_to  objectives_path(current_user.id), class: "note" do %><%= image_tag "turn.jpeg", class: "icon" %>投稿ページに戻る</li><% end %>
+                 <li><%= link_to  objectives_path(current_user.id), class: "note" do %><%= image_tag "turn.jpg", class: "icon" %>投稿ページに戻る</li><% end %>
                  <li><%= link_to destroy_user_session_path, method: :delete , class: "note" do %><%= image_tag "logout.jpg", class: "icon" %>ログアウト</li><% end %>
             </div>
          </div>
@@ -74,22 +74,3 @@
          </div> 
  </div>
  
-
- <%# <h3 class="aggregate-title">Now Doing</h3>
-        <h4 class="supple">(最大５件まで保存可能)</h4>
-        <div class="aggregate-lists">
-              <% @aggregates.first(5).each do |aggregate| %>
-              <%# <%if aggregate.action_point.blank? %>
-                 <%# <div class="aggregate-content">
-                  <%= link_to aggregate_path(aggregate.id) do %>
-                    <%# <span><%= aggregate.start_day %>
-                    <%# <span>テーマ：<%= aggregate.result_comment %>
-                <%#   </div>
-                 <% end %>
-                 <%# <% end %>
-               <%#  <% end %>
-                <%# <div class="aggregate-btn">
-                    
-               </div>
-        </div>
-      </div> %> 
