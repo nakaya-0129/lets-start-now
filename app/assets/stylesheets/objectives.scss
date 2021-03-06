@@ -862,6 +862,12 @@ li:hover{
   border-radius: 10px;
   animation: OptionAnimation 2s;
 }
+@media screen and(max-width: 800px){
+  .contents-list{
+    font-size: 20px;
+    margin-right: 10px;
+  }
+}
 @keyframes TextAnimation{
   0%{
     opacity: 0;
@@ -949,6 +955,26 @@ b{
   width: 900px;
   height: 120vh;
 }
+@media screen and(max-width: 800px){
+   height: 185vh;
+ b{
+   font-size: 12px;
+   margin-top: 0px;
+   margin-right: 10px;
+ }
+ .first-contact{
+   margin-top: 0px;
+ }
+ .first{
+   margin-bottom: 20px;
+ }
+ .second-list{
+   margin-top: 230px;
+ }
+ .second{
+   margin-top: 10px;
+ }
+}
 .text-title{
   margin-left: 60px;
   margin-right: 60px;
@@ -1006,6 +1032,28 @@ p{
 .select-box{
   width: 250px;
   height: 20px;
+}
+@media screen and(max-width: 800px){
+.text-title{
+  font-size: 20px;
+}
+h3{
+  font-size: 15px;
+}
+p{
+  font-size: 13px;
+}
+.text{
+  width: 200px;
+  height: 30px;
+}
+img{
+  display: none;
+}
+.text-field{
+  width: 250px;
+  height: 100px;
+}
 }
 }
 
