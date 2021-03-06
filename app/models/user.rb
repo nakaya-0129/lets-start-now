@@ -8,8 +8,8 @@ validates :email, length: { minimum: 1, message: "は必須です"}
 validates :nick_name, length: { minimum: 1, message: "は必須です"}
 validates :nick_name, length: { maximum: 10,message: "の制限を超えています"}
 validates :profile, length: { maximum: 100 ,message: "の制限を超えています"}
-validates :password,length: {in: 6..15,message: "の入力が不正です"},on: :create
-validates :image, presence: {message: "は必須です"}
+validates :password,length: {in: 6..30,message: "の入力が不正です"},on: :create
+#validates :image, presence: {message: "は必須です"}
 
 
          
@@ -23,6 +23,12 @@ has_many :followings, through: :relationships, source: :follow
 has_many :reverse_of_reationships, class_name: 'Relationship', foreign_key: 'follow_id'
 has_many :followers, through: :reverse_of_reationships, source: :user
 mount_uploader :image, ImageUploader
+
+def self.guest
+  find_or_create_by!(email: 'guest@example.com',nick_name: 'user') do |user|
+    user.password = SecureRandom.urlsafe_base64
+  end
+end
 
 def follow(other_user)
   unless self == other_user

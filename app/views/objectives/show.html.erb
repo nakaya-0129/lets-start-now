@@ -34,7 +34,8 @@
           </tbody>
        </table>
        <div class= "users-select">
-            <img src=<%= @objective.user.image %> class="image">
+          <% if current_user.image_url.present? %>
+            <img src=<%= @objective.user.image %> class="image"><% end %>
             <%=link_to 'プロフィール表示/', user_path(@objective.user.id), method: :get, class: "users-selection"  %>
           <% if user_signed_in? && current_user.id == @objective.user_id%>
               <span>/</span>

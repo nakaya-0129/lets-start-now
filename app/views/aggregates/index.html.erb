@@ -5,10 +5,14 @@
       <h1>Note</h1>
     </div>
     <div class="header-user">
+     <% if current_user.image_url.present? %>
       <%= link_to user_path(current_user.id) do%>
         <span>login User:<%= current_user.nick_name %></span>
         <span><%= image_tag(current_user.image_url) %></span>
-       <% end %>
+      <% end %>
+     <% else %>
+        <span>login User:<%= current_user.nick_name %></span>
+      <% end %>
     </div>
    </div>
  </header>

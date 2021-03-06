@@ -4,9 +4,10 @@ Rails.application.routes.draw do
     :registrations => 'users/registrations',
     :sessions => 'users/sessions',
     :passwords => 'users/posswords'
-  }  do
-    get :favorites, on: :collection
-  end
+  }
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+  end  
 
   get "users/:id/show", to: "users#show", as: "user"
   get "users/index" => "users#index"
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
   end
 
   root to: 'objectives#top'
+  post '/objectives/guest_sigm_in', to: 'objectives#new_guest'
   get 'top' => 'objectives#top'
   post 'like/:id' => 'likes#create', as: 'create_like'
   delete 'like/:id' => 'likes#destory', as: 'destory_like'

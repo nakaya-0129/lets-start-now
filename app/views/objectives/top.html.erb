@@ -1,14 +1,16 @@
 <header class="top-header">
 <h1 class="title">Let's Start Now!</h1>
-  <div class="top-about" id="about">about</div>
 
   <div class="top-signup">
       <span>Let's Start!</span><%= link_to  new_user_registration_path do %>
          <button class="header-btn" id="header-btn">SignUp</button>
+       <% end %>
+      <%= link_to user_session_path do %>
+         <button class="start-btn" id="start-btn">LogIn</button>
       <% end %>
-          <%= link_to user_session_path do %>
-            <button class="start-btn" id="start-btn">LogIn</button>
-          <% end %>
+       <%= link_to users_guest_sign_in_path, method: :post do %>
+         <button class= "start-btn" id= "start-btn" >Guest Login</button>
+       <% end %>
   </div>
 </header>
  
