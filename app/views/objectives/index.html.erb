@@ -42,10 +42,10 @@
                     <% end %>
                    <li class="lists" id="search-name"><%= image_tag "yell.jpg", class: "icon" %>応援中の投稿を表示</li>
                    <div class = "like-list" id = "like-list">
-                      <h2>応援中の投稿</h2>
+                        <h2>応援中の投稿</h2>
                        <% @likes.each do |like| %>
                          <%= link_to objective_path(like.id) do %>
-                          <span><%= like.one_day %>  <%= like.user_name %></span>
+                          <p><%= like.one_day %>  <%= like.user_name %></p>
                        <% end %>
                        <% end %>
                        <button class="like-close" id ="like-close">close</button>
