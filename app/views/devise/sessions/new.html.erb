@@ -7,7 +7,7 @@
 </div>
 
   <div class="login-contents">
-    <h2 class="login-title">Log in form</h2>
+    <h2 class="login-title">Login Form</h2>
     <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
     <%= render 'shared/error_messages', model: f.object%>
       <div class="login-field">
@@ -19,7 +19,7 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "Log in " ,class: "sign-up"%>
+        <%= f.submit "Login " ,class: "sign-up"%>
       </div>
     <% end %>
     <p>*パスワードを忘れてしまった場合</p>

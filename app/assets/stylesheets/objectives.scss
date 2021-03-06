@@ -61,12 +61,12 @@
 .top-title{
   text-align: center;
   width: 50%;
-  height: 390vh;
+  height: 400vh;
   background-color: orange;
 }
 @media screen and(max-width: 800px){
   .top-title{
-    height: 250vh;
+    height: 255vh;
   }
 }
 h1{
@@ -160,6 +160,7 @@ h2{
   b{
     font-size: 30px;
     margin-left: 60px;
+    margin-top: 10px;
   }
   .image{
     margin-bottom: 20px;
@@ -293,7 +294,7 @@ h2{
 
 .top-footer{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 10px 10px 20px 10px;
   height: 30px;
   width: 100%;

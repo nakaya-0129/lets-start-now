@@ -56,7 +56,21 @@ has_many   :objective
 has_many   :likes
 has_many   :aggregates
 has_many   :comments
+has_many   :relationships
+has_many   :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id'
+has_many   :followers, through: :reverse_of_relationships, source: :user
+mount_uploader :image, ImageUploader
 
+## relationship テーブル
+
+| Column        | Type      | Options                         |
+| --------------|-----------|---------------------------------|
+| user_id       | reference | foreign_key: true               |
+| follow_id     | reference | foreign_key: { to_table: :users}|
+
+## Association
+belongs_to    :users
+belongs_to    :follow, class_name: 'User'
 
 
 ##  objective テーブル

@@ -17,7 +17,6 @@ has_many :objectives
 has_many :likes  
 has_many :comments 
 has_many :aggregates  
-has_many :favorites, dependent: :destroy
 has_many :relationships
 has_many :followings, through: :relationships, source: :follow
 has_many :reverse_of_reationships, class_name: 'Relationship', foreign_key: 'follow_id'

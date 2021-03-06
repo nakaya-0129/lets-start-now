@@ -6,7 +6,7 @@
          <button class="header-btn" id="header-btn">SignUp</button>
        <% end %>
       <%= link_to user_session_path do %>
-         <button class="start-btn" id="start-btn">LogIn</button>
+         <button class="start-btn" id="start-btn">Login</button>
       <% end %>
        <%= link_to users_guest_sign_in_path, method: :post do %>
          <button class= "start-btn" id= "start-btn" >Guest Login</button>
@@ -64,16 +64,16 @@
          <b>Frist Of All</b><%= link_to new_user_registration_path do%>
         <button class="main-btn" id="main-btn">SignUp</button>
         <% end %><br>
-         <b>Let's Start</b> <%= link_to user_session_path do %>
+         <b>Let's Start</b><%= link_to user_session_path do %>
          <button class="login-btn" id="login-btn">Login</button>
-         <%end%>
-     </div>
+         <%end%><br>
+         <b>Welcome </b><%= link_to users_guest_sign_in_path, method: :post do %>
+         <button class="login-btn" id="login-btn">Guest Login</button>
+         <% end %>
+    </div>
   </div>
   </div>
 
   <div class="top-footer">
-  <p>利用規約</p>
-  <p>ヘルプ</p>
-  <p>個人情報保護</p>
   <p>2021/ Let's Start Now from Nakaya</P>
   </div>
