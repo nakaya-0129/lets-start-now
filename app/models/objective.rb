@@ -3,7 +3,6 @@ class Objective < ApplicationRecord
   belongs_to :user
   has_many :likes
   has_many :comments, dependent: :destroy
-  has_many :favorites, dependent: :destroy
 
   with_options presence: {message: "は必須です"} do
     validates :user_name
