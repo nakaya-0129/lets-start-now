@@ -1,8 +1,6 @@
 <%= render "shared/top" %>
 <div class="contents">
-<span><%=link_to "《戻る" , objective_path, class:"post" %></span>
   <div class="conainer">
-  
      <h1 class="text-title">目標とアクションプランを作成して、投稿しよう！</h1>
         <%= form_with model: @objective , url: objective_path, id: 'new_user', class: 'new_user', local: true do |f| %>
          <%= render 'shared/error_messages', model: f.object%>
@@ -38,9 +36,6 @@
             <%= f.text_area :action_plan, class: "text"%>
       </div>
     <span>※目標宣言はここまで</span>
-      <div class="actions">
- <%= f.submit "投稿する！", class: "submit-btn" %>
-      </div>
 
  <br>
  <br>
@@ -65,6 +60,9 @@
         <%= f.text_area :demerit, class: "text-field"%>
      </div>
     </div>
+      <div class="actions">
+        <%= f.submit "投稿する！", class: "submit-btn" %>
+      </div>
      <% end %>
   </div>
 

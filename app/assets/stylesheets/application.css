@@ -14,7 +14,7 @@
  *= require_self
  */
 
- /* 
+/* 
 html5doctor.com Reset Stylesheet
 v1.6.1
 Last Updated: 2010-09-17
@@ -22,113 +22,183 @@ Author: Richard Clark - http://richclarkdesign.com
 Twitter: @rich_clark
 */
 
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-  margin:0;
-  padding:0;
-  border:0;
-  outline:0;
-  font-size:100%;
-  background:transparent;
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  background: transparent;
 }
 
 body {
   margin: 0;
-  line-height:1;
+  line-height: 1;
 }
 
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section { 
-  display:block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 
 nav ul {
-  list-style:none;
+  list-style: none;
 }
 
-blockquote, q {
-  quotes:none;
+blockquote,
+q {
+  quotes: none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content:'';
-  content:none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
-var{
+var {
   color: orange;
   font-size: 15px;
 }
 
 a {
-  margin:0;
-  padding:0;
-  font-size:100%;
-  vertical-align:baseline;
-  background:transparent;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
   text-decoration: none;
 }
 
 /* change colours to suit your needs */
 ins {
-  background-color:#ff9;
-  color:#000;
-  text-decoration:none;
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
 }
 
 /* change colours to suit your needs */
 mark {
-  background-color:#ff9;
-  color:#000; 
-  font-style:italic;
-   font-weight:bold;
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
 }
 
 del {
   text-decoration: line-through;
 }
 
-abbr[title], dfn[title] {
-  border-bottom:1px dotted;
-  cursor:help;
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
 }
 
 table {
-  border-collapse:collapse;
-  border-spacing:0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* change border colour to suit your needs */
 hr {
-  display:block;
-  height:1px;
-  border:0;   
-  border-top:1px solid #cccccc;
-  margin:1em 0;
-  padding:0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
 }
 
-input{
+input {
   text-align: center;
-  vertical-align:middle;
+  vertical-align: middle;
   height: 20px;
   width: 200px;
   margin: 5px;
 }
-.select{
+.select {
   width: 100px;
   margin: 5px;
-  vertical-align:middle;
+  vertical-align: middle;
 }
 
 .futter-form {
@@ -140,25 +210,28 @@ input{
   justify-content: space-around;
   background-color: white;
 }
-  .form-lists{
-    list-style: none;
-    font-size: 15px;
-  }
-  .form-text{
-   margin-left: 80px;
-  }
-  .login-title{
-    margin-left: 60px;
-  }
-  .company-name,.selection-form,.explan-list,.help-list{
-    font-size: 15px;
-    font-weight: initial;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-  .form-text{
-    font-size: 30px;
-  } 
-.errors-alert{
+.form-lists {
+  list-style: none;
+  font-size: 15px;
+}
+.form-text {
+  margin-left: 80px;
+}
+.login-title {
+  margin-left: 60px;
+}
+.company-name,
+.selection-form,
+.explan-list,
+.help-list {
+  font-size: 15px;
+  font-weight: initial;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.form-text {
+  font-size: 30px;
+}
+.errors-alert {
   text-align-last: center;
   margin: 0 auto;
   padding: 10px;
@@ -169,49 +242,35 @@ input{
   right: 50px;
   top: 100px;
 }
-  .error-lists{
-    list-style: none;
-    font-size: 13px;
-    padding-bottom: 15px;
-  }
-  pre{
-    margin-bottom: 10px;
-  }
+.error-lists {
+  list-style: none;
+  font-size: 13px;
+  padding-bottom: 15px;
+}
+pre {
+  margin-bottom: 10px;
+}
 
-  .user_info{
-    margin-right: 20px;
-  }
+.user_info {
+  margin-right: 20px;
+}
 
-  h6{
-    margin-top: 20px;
-    font-size: 20px;
-    color: rgb(241, 65, 65);
-  }
+h6 {
+  margin-top: 20px;
+  font-size: 20px;
+  color: rgb(241, 65, 65);
+}
 
-  .btn-follow{
-    margin-left: 330px;
-    margin-top: 10px;
-    width: 80px;
-    height: 25px;
-    background-color: orange;
-    font-size: 10px;
-    border-radius: 10px;
-    border-bottom: 5px solid rgb(53, 52, 52);
-  }
-  .btn-follow:active{
-    border: none;
-    color: red;
-  }
-  .icon{
-    margin-right: 5px;
-    width: 20px;
-    height: 20px;
-    background-color: rgba(0,0,0,0);
-  }
-.post-list{
+.icon {
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0);
+}
+.post-list {
   margin-right: 30px;
 }
-.title-acount{
-margin-right: 80px;
-font-size: 30px;
+.title-acount {
+  margin-right: 80px;
+  font-size: 30px;
 }
