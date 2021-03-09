@@ -64,7 +64,9 @@
           <%= comment.text %>
            <div class="comment-name">
            <%= link_to user_path(comment.user.id) do%>
+         <% if current_user.image_url.present? %>
           <%= image_tag(comment.user.image_url) %>
+         <% end %>
           <%= comment.user.nick_name %>
           <% end %>
           <% if current_user.id == comment.user_id%>

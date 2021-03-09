@@ -1,16 +1,16 @@
 <%= render "shared/account" %>
 <div class= "account-page">
  <div class= "account-post">
-   <div class ="user-header">
+   <div class= "user-header">
         <%if current_user.id == @user.id%>
      <div class="user-edit"><%= link_to  edit_user_registration_path  do %>
-       <%= image_tag "pen.png" ,class: "icon"%>
+       <div class="edit-icon"><%= image_tag "pen.png" ,class: "icon"%><p>編集</p></div>
      </div>
         <% end %>
         <% end %>
        <div class= "follower-lists">
-          <p class="follower">フォロワー数：<%= @user.followers.count %>人</p>
           <%= render 'relationships/follow', user: @user %> 
+          <p class="follower">フォロワー数：<%= @user.followers.count %>人</p>
        </div>
     </div>
   
