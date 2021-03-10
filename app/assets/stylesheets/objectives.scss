@@ -731,6 +731,7 @@ h4 {
     padding-top: 60px;
   }
   .search-lists {
+    text-align: center;
     float: left;
     margin: 10px;
     font-size: 20px;
@@ -1000,6 +1001,7 @@ h4 {
   .field,
   .select-box {
     margin-top: 20px;
+    text-align: center;
   }
   .field_hobit {
     margin-top: 30px;
@@ -1180,7 +1182,7 @@ h4 {
   font-size: 18px;
   .comments-table {
     width: 600px;
-    height: 60px;
+    height: 90px;
     border: double 1px black;
     background-color: white;
     margin-top: 20px;

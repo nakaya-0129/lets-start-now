@@ -1,7 +1,7 @@
 // Place all the styles related to the aggregates controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.header-bar{ 
+.header-bar {
   font-family: monospace;
   margin-bottom: 20px;
   font-size: 30px;
@@ -10,19 +10,19 @@
   background-size: cover;
   text-align: center;
 }
-.header-user{
+.header-user {
   margin-right: 20px;
 }
 
-.main_screen{
+.main_screen {
   width: 125%;
   height: 100%;
-   display: flex;
-.center-screen-a {
-  margin-left: 50px;
-  padding-top: 30px;
+  display: flex;
+  .center-screen-a {
+    margin-left: 50px;
+    padding-top: 30px;
   }
-  .center-title{
+  .center-title {
     margin-top: 25px;
     margin-right: 20px;
     font-size: 32px;
@@ -31,66 +31,64 @@
     background-color: orange;
     border-bottom: solid 6px rgb(22, 21, 21);
   }
-  @media screen and(max-width: 800px)
-  {
-    .center-title{
+  @media screen and(max-width: 800px) {
+    .center-title {
       width: 200px;
       height: 50px;
       padding-left: 30px;
     }
-    
   }
-  .center-title:active{
+  .center-title:active {
     border: none;
     color: red;
   }
-  @keyframes listAnimation{
-    0%{
+  @keyframes listAnimation {
+    0% {
       opacity: 0;
       transform: translateX(-30px);
     }
   }
-  .hidden{
+  .hidden {
     list-style: none;
     display: none;
     height: 80vh;
     width: 400px;
     text-decoration: none;
     background-color: whitesmoke;
-    animation: listAnimation .5s;
+    animation: listAnimation 0.5s;
   }
-  @media screen and(max-width: 800px){
-    .hidden{
+  @media screen and(max-width: 800px) {
+    .hidden {
       list-style: none;
       display: none;
       height: 80vh;
       width: 200px;
     }
   }
-  li{
+  li {
     padding-left: 20px;
     padding-top: 20px;
     font-size: 20px;
   }
-  li:hover{
+  li:hover {
     color: orange;
     cursor: pointer;
   }
-  h1{
+  h1 {
     font-size: 25px;
   }
-  .note{
+  .note {
     color: black;
     font-size: 20px;
   }
-  .note:hover{
+  .note:hover {
     color: orange;
     cursor: pointer;
   }
-  input{
+  input {
     width: 50px;
   }
-  .aggregate-note{
+  .aggregate-note {
     width: 400px;
     height: 500px;
     position: fixed;
@@ -100,11 +98,11 @@
     background-color: rgb(248, 233, 205);
     opacity: 0;
     visibility: hidden;
-    .aggregate-notelists{
+    .aggregate-notelists {
       margin: 10px;
     }
-    @media screen and(max-width:800px){
-      .aggregete-note:active{
+    @media screen and(max-width:800px) {
+      .aggregete-note:active {
         width: 200px;
         height: 300px;
         top: 100px;
@@ -112,16 +110,16 @@
       }
     }
 
-    .aggregate-complet{
+    .aggregate-complet {
       margin: 10px;
     }
-    p{
+    p {
       margin-bottom: 20px;
     }
-    h1{
+    h1 {
       margin-bottom: 20px;
     }
-    button{
+    button {
       margin-top: 30px;
       margin-right: 50px;
       width: 80px;
@@ -131,17 +129,17 @@
     }
   }
   @keyframes noteAnimation {
-    0%{
+    0% {
       opacity: 0;
       transform: translateX(-30px);
     }
   }
-  .aggregate-note.active{
+  .aggregate-note.active {
     opacity: 1;
     visibility: visible;
     animation: noteAnimation 2s;
   }
-    .list-ifthen{
+  .list-ifthen {
     position: fixed;
     top: 350px;
     left: 50px;
@@ -151,75 +149,75 @@
     background-color: rgb(247, 231, 201);
     opacity: 0;
     visibility: hidden;
-    h1{
+    h1 {
       font-size: 20px;
       margin-bottom: 20px;
     }
-    p{
+    p {
       font-size: 18px;
       margin-bottom: 10px;
     }
-    button{
-    margin-top: 20px;
-    width: 80px;
-    height: 30px;
-    font-size: 15px;
-    background-color: orange; 
+    button {
+      margin-top: 20px;
+      width: 80px;
+      height: 30px;
+      font-size: 15px;
+      background-color: orange;
     }
   }
-    @keyframes ifthenAnimation{
-      0%{
-        opacity: 0;
-        transform: translateX(-30px);
-      }
+  @keyframes ifthenAnimation {
+    0% {
+      opacity: 0;
+      transform: translateX(-30px);
     }
-    .list-ifthen.active{
-      opacity: 1;
-      visibility: visible;
-      animation: ifthenAnimation .5s;
-    }
-  .aggregate-box{
+  }
+  .list-ifthen.active {
+    opacity: 1;
+    visibility: visible;
+    animation: ifthenAnimation 0.5s;
+  }
+  .aggregate-box {
     margin-left: 400px;
     padding-top: 60px;
     width: 60%;
     height: 93vh;
   }
-  @media screen and(max-width: 800px){
-    .aggregate-box{
+  @media screen and(max-width: 800px) {
+    .aggregate-box {
       margin-left: 50px;
     }
   }
-  .note-animation{
+  .note-animation {
     margin-top: 100px;
   }
-  .note-title{
-   margin-bottom: 30px;
-   opacity: 0;
-   h1{
-     border-bottom: orange 2mm ridge;
-     margin-top: 30px;
-     width: 400px;
-   }
-   p{
-     margin-top: 20px;
-     margin-left: 10px;
-   }
-  }
-  .note-info{
+  .note-title {
     margin-bottom: 30px;
     opacity: 0;
-    h1{
+    h1 {
+      border-bottom: orange 2mm ridge;
+      margin-top: 30px;
+      width: 400px;
+    }
+    p {
+      margin-top: 20px;
+      margin-left: 10px;
+    }
+  }
+  .note-info {
+    margin-bottom: 30px;
+    opacity: 0;
+    h1 {
       width: 400px;
       margin-bottom: 20px;
       margin-top: 20px;
       border-bottom: orange 2mm ridge;
     }
-    h2{
+    h2 {
       font-size: 25px;
       width: 400px;
       margin-top: 30px;
     }
-    p{
+    p {
       font-size: 15px;
       font-weight: normal;
       margin-left: 10px;
@@ -227,42 +225,45 @@
     }
   }
   @keyframes noteAnimation {
-    0%{
+    0% {
       opacity: 0;
       transform: translateX(50px);
     }
   }
-  .note-title.show{
+  .note-title.show {
     opacity: 1;
     animation: noteAnimation 1s;
   }
-  .note-info.show{
+  .note-info.show {
     opacity: 1;
     animation: noteAnimation 1s;
   }
-  .post-title{
+  .post-title {
     margin-left: 30px;
     margin-top: 20px;
     font-size: 18px;
   }
-  .company-name,.selection-form,.explan-list,.help-list{
+  .company-name,
+  .selection-form,
+  .explan-list,
+  .help-list {
     font-size: 15px;
     font-weight: initial;
   }
-span{
+  span {
     margin-right: 20px;
   }
-.ability-point{
-  animation:blink 1s ease-in-out infinite alternate;
+  .ability-point {
+    animation: blink 1s ease-in-out infinite alternate;
+  }
 }
-}
-.action{
+.action {
   margin-top: 10px;
   font-size: 30px;
   color: rgb(236, 77, 77);
 }
 
-.aggregate-show{
+.aggregate-show {
   width: 100%;
   height: 100%;
   display: inline-block;
@@ -270,39 +271,39 @@ span{
   flex-direction: row;
   flex-wrap: wrap;
   text-decoration: none;
-  span{
+  span {
     margin-right: 20px;
   }
-  button{
-  margin-bottom: 10px;
+  button {
+    margin-bottom: 10px;
   }
 }
 
-.aggregate-show-box{
+.aggregate-show-box {
   text-align: center;
   height: auto;
   font-size: 30px;
   padding-top: 60px;
   padding-bottom: 10px;
-.detail-table{
-  margin: 0 auto;
-  font-size: 25px;
-}
-.detail-object{
-  padding-right: 20px;
-}
+  .detail-table {
+    margin: 0 auto;
+    font-size: 25px;
+  }
+  .detail-object {
+    padding-right: 20px;
+  }
 }
 
-.aggregate-title{
+.aggregate-title {
   font-size: 25px;
 }
-.supple{
+.supple {
   font-size: 16px;
   margin-bottom: 25px;
   margin-top: 10px;
 }
 
-.aggregate-btn{
+.aggregate-btn {
   width: 200px;
   height: 50px;
   font-size: 20px;
@@ -312,289 +313,320 @@ span{
   background-color: orange;
   border-bottom: solid 6px rgb(75, 73, 73);
 }
-.aggregate-btn:hover{
+.aggregate-btn:hover {
   opacity: 0.6;
   cursor: pointer;
 }
-.aggregate-btn:active{
+.aggregate-btn:active {
   -webkit-transform: translateY(4px);
   transform: translateY(4px);
-  box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
   color: red;
   border-bottom: none;
 }
 
-.aggregate-contents{
+.aggregate-contents {
   padding-top: 60px;
   width: 100%;
   height: 100vh;
   display: flex;
   text-align: center;
   background-color: rgb(248, 230, 196);
-  .container{
+  .container {
     margin-left: 50px;
     margin-bottom: 40px;
     width: 45%;
     height: 75vh;
     text-align: center;
-    .select-area{
+    .select-area {
       height: 20px;
     }
-    .text-field{
+    .text-field {
       width: 400px;
       height: 200px;
       text-align: center;
       border: double 5px rgb(87, 84, 84);
     }
-    .post{
+    .post {
       text-align: center;
     }
-    
-    .field,.select-box{
+
+    .field,
+    .select-box {
       margin-top: 20px;
     }
-    
-    .text{
+
+    .text {
       text-align: center;
       margin-top: 10px;
       height: 100px;
       width: 400px;
     }
-    @media screen and(max-width:800px){
-      .text{
+    @media screen and(max-width:800px) {
+      .text {
         width: 250px;
         height: 100px;
       }
     }
-    
-    .post{
+
+    .post {
       font-size: 15px;
       height: 40px;
       width: 400px;
       margin-top: 15px;
     }
-    @media screen and(max-width: 800px){
-      .post{
+    @media screen and(max-width: 800px) {
+      .post {
         width: 200px;
         height: 40px;
       }
     }
-    .select-box{
+    .select-box {
+      text-align: center;
       width: 250px;
       height: 20px;
       margin-bottom: 20px;
     }
-    .average{
+    .average {
       width: 30px;
       height: 20px;
     }
 
-  h1{
-    margin-left: 60px;
-    margin-right: 60px;
-    padding-top: 20px;
-    margin-bottom: 40px;
-    font-size: 40px;
-    color: rgb(10, 10, 10);
-  }
-  @media screen and(max-width: 800px){
-    h1{
-      font-size: 28px;
+    h1 {
+      margin-left: 60px;
+      margin-right: 60px;
+      padding-top: 20px;
+      margin-bottom: 40px;
+      font-size: 40px;
+      color: rgb(10, 10, 10);
+    }
+    @media screen and(max-width: 800px) {
+      h1 {
+        font-size: 28px;
+      }
+    }
+    h2,
+    h3 {
+      font-weight: 100;
+      font-size: 18px;
+      margin-top: 10px;
     }
   }
-  h2,h3{
-    font-weight: 100;
-    font-size: 18px;
-    margin-top: 10px;
-  }
-}
-.content-text{
-  width: 45%;
-  height: 93vh;
-  margin-left: 20px;
-  p{
-    margin-top: 20px;
-    font-size: 20px;
-  }
-  h4{
-    font-size: 100px;
-    margin: 80px 20px;
-  }
-  .contents-image{
-    margin-top: 10px;
-  .aggregate-image{
-   width: 500px;
-   height: 300px;
-   padding-top: 80px;
-  }
-  @media screen and(max-width:800px){
-    p{
-      font-size: 12px;
+  .content-text {
+    width: 45%;
+    height: 93vh;
+    margin-left: 20px;
+    p {
+      margin-top: 20px;
+      font-size: 20px;
     }
-    .aggregate-image{
-      width: 280px;
-      height: 200px;
+    h4 {
+      font-size: 100px;
+      margin: 80px 20px;
+    }
+    .contents-image {
+      margin-top: 10px;
+      .aggregate-image {
+        width: 500px;
+        height: 300px;
+        padding-top: 80px;
+      }
+      @media screen and(max-width:800px) {
+        p {
+          font-size: 12px;
+        }
+        .aggregate-image {
+          width: 280px;
+          height: 200px;
+        }
+      }
+    }
+    .aggregate-image.active {
+      background-image: url("3411592_s.jpg");
+      border-radius: 10px;
+      width: 500px;
+      height: 300px;
     }
   }
-}
-.aggregate-image.active{
-  background-image: url("3411592_s.jpg");
-  border-radius: 10px;
-  width: 500px;
-  height: 300px;
-}
- }
- .aggregate-screen{
-   width: 500px;
-   height: 400px;
-  opacity: 0;
-  visibility: hidden;
-}
-@keyframes aggregateAnimation{
-  0%{
+  .aggregate-screen {
+    width: 500px;
+    height: 400px;
     opacity: 0;
-    background-color: gold;
+    visibility: hidden;
   }
-  10%{
+  @keyframes aggregateAnimation {
+    0% {
+      opacity: 0;
+      background-color: gold;
+    }
+    10% {
+      opacity: 1;
+      background-image: image-url("2143197_s.jpg");
+    }
+    50% {
+      background-image: image-url("3711963_s.jpg");
+      opacity: 1;
+    }
+  }
+  .aggregate-screen.action {
     opacity: 1;
-    background-image: image-url("2143197_s.jpg");
+    visibility: visible;
+    animation: aggregateAnimation 3s infinite;
+    animation-duration: alternate;
   }
-  50%{
-    background-image: image-url("3711963_s.jpg");
-    opacity: 1;
-  }
-}
-.aggregate-screen.action{
-  opacity: 1;
-  visibility: visible;
-  animation: aggregateAnimation 3S infinite;
-  animation-duration: alternate;
-}
 }
 
-.aggregate-edit{
+.aggregate-edit {
   padding-top: 60px;
   width: 100%;
   height: 100vh;
   display: flex;
   text-align: center;
-  .edit-contents{
+  .edit-contents {
     margin-left: 50px;
     margin-bottom: 40px;
     width: 45%;
     height: 75vh;
     text-align: center;
-    .field,.select-box{
+    .field,
+    .select-box {
       margin-top: 20px;
     }
-    .average{
+    .average {
       width: 30px;
       height: 20px;
     }
 
-  h1{
-    margin-left: 60px;
-    margin-right: 60px;
-    padding-top: 20px;
-    margin-bottom: 40px;
-    font-size: 40px;
-    color: rgb(10, 10, 10);
-  }
-  @media screen and(max-width: 800px){
-    h1{
-      font-size: 28px;
+    h1 {
+      margin-left: 60px;
+      margin-right: 60px;
+      padding-top: 20px;
+      margin-bottom: 40px;
+      font-size: 40px;
+      color: rgb(10, 10, 10);
+    }
+    @media screen and(max-width: 800px) {
+      h1 {
+        font-size: 28px;
+      }
+    }
+    h2,
+    h3 {
+      font-size: 18px;
+      margin: 10px;
     }
   }
-  h2,h3{
-    font-size: 18px;
-    margin: 10px;
-  }
-}
-.content-text{
-  width: 50%;
-  height: 93vh;
-  p{
-    margin-top: 20px;
-    font-size: 20px;
-  }
-  h4{
-    font-size: 80px;
-    margin: 20px 0px;
-  }
-  @media screen and(max-width: 800px){
-    h4{
-          margin-left: 40px;
-          font-size: 40px;
+  .content-text {
+    width: 50%;
+    height: 93vh;
+    p {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+    h4 {
+      font-size: 80px;
+      margin: 20px 0px;
+    }
+    @media screen and(max-width: 800px) {
+      h4 {
+        margin-left: 40px;
+        font-size: 40px;
+      }
+      h6 {
+        font-size: 30px;
+        padding-right: 20px;
+        margin-top: 10px;
+        margin-right: 300px;
+      }
+    }
+    .contents-image {
+      margin-top: 10px;
+      .aggregate-image {
+        width: 500px;
+        height: 300px;
+        padding-top: 80px;
+      }
+      @media screen and(max-width:800px) {
+        p {
+          font-size: 12px;
         }
-     h6{
-          font-size: 30px;
-          padding-right: 20px;
-          margin-top: 10px;
-          margin-right: 300px;
+        .aggregate-image {
+          width: 280px;
+          height: 200px;
         }
       }
-  .contents-image{
-    margin-top: 10px;
-  .aggregate-image{
-   width: 500px;
-   height: 300px;
-   padding-top: 80px;
-  }
-  @media screen and(max-width:800px){
-    p{
-      font-size: 12px;
     }
-    .aggregate-image{
-      width: 280px;
-      height: 200px;
+    .aggregate-image.active {
+      background-image: url("3411592_s.jpg");
+      border-radius: 10px;
+      width: 500px;
+      height: 300px;
     }
   }
-}
-.aggregate-image.active{
-  background-image: url("3411592_s.jpg");
-  border-radius: 10px;
-  width: 500px;
-  height: 300px;
-}
- }
- .aggregate-screen{
-   width: 500px;
-   height: 400px;
-   margin-left: 100px;
-  opacity: 0;
-  visibility: hidden;
-}
-h6{
- font-size: 40px;
- margin-top: 50px;
-}
-@keyframes aggregateAnimation{
-  0%{
-    transform-style: preserve-3d;
-    transform:rotateY(-30deg) rotateX(-30deg) rotateZ(10deg); 
+  .aggregate-screen {
+    width: 500px;
+    height: 400px;
+    margin-left: 100px;
+    opacity: 0;
+    visibility: hidden;
   }
-  50%{
+  h6 {
+    font-size: 40px;
+    margin-top: 50px;
+  }
+  @keyframes aggregateAnimation {
+    0% {
+      transform-style: preserve-3d;
+      transform: rotateY(-30deg) rotateX(-30deg) rotateZ(10deg);
+    }
+    50% {
+      opacity: 1;
+      letter-spacing: 2em;
+    }
+    100% {
+      opacity: 1;
+      color: #da8e00;
+      background: -webkit-linear-gradient(
+        -45deg,
+        #f7de05,
+        #da8e00,
+        #edac06,
+        #f7de05,
+        #ecb802,
+        #daaf08,
+        #b67b03,
+        #da8e00,
+        #edac06,
+        #f7de05,
+        #ecb802,
+        #edac06
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  .aggregate-screen.action {
     opacity: 1;
-    letter-spacing: 2em;
+    color: #da8e00;
+    background: -webkit-linear-gradient(
+      -45deg,
+      #f7de05,
+      #da8e00,
+      #edac06,
+      #f7de05,
+      #ecb802,
+      #daaf08,
+      #b67b03,
+      #da8e00,
+      #edac06,
+      #f7de05,
+      #ecb802,
+      #edac06
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    visibility: visible;
+    animation: aggregateAnimation 3s;
+    animation-duration: alternate;
   }
-  100%{
-    opacity: 1;
-    color: #DA8E00;
-  background: -webkit-linear-gradient(-45deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03, #DA8E00, #EDAC06, #F7DE05, #ECB802, #EDAC06);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  }
 }
-.aggregate-screen.action{
-  opacity: 1;
-  color: #DA8E00;
-  background: -webkit-linear-gradient(-45deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03, #DA8E00, #EDAC06, #F7DE05, #ECB802, #EDAC06);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  visibility: visible;
-  animation: aggregateAnimation 3S ;
-  animation-duration: alternate;
-}
-}
-
-
