@@ -5,7 +5,9 @@
     <table class="detail-table">
     <tbody>
     <tr>
+    <% if @objective.image.present? %>
      <%= image_tag @objective.image.variant(gravity: :center, resize: '380x380') %>
+    <% end %>
     </tr> 
             <tr>
                <th class="detail-object">ユーザー名</th>
