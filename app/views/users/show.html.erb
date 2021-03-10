@@ -21,6 +21,6 @@
         <h3 class="account-list">ユーザー名（公開）</h3>
       <%= @user.nick_name %>
         <h3 class="account-list">プロフィール（公開）</h3>
-      <%= @user.profile %> 
+      <%= simple_format(@user.profile) %> 
   </div> 
 </div>

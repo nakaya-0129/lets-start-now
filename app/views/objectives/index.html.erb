@@ -11,9 +11,9 @@
                             <h2><%= image_tag "lists.jpg", class: "icon" %>①改善したい習慣/②メリット/③デメリット</h2>
                                <% @objectives.first(20).each do |objective| %>
                                <% if objective.hobituation.present? && current_user.id == objective.user.id %>
-                                    <p>①<%= objective.hobituation %></p>
-                                    <p>②<%= objective.merit %></p>
-                                    <p>③<%= objective.demerit %></p>
+                                    <p>①<%= simple_format(objective.hobituation) %></p>
+                                    <p>②<%= simple_format(objective.merit) %></p>
+                                    <p>③<%= simple_format(objective.demerit) %></p>
                                  <% end %>
                                  <% end %>
                                  <p><button class="hobit-close" id="hobit-close">close</button></p>
@@ -28,7 +28,7 @@
                                  <% @objectives.each do |objective| %>
                                     <% if current_user.id == objective.user.id %>
                                     <%= link_to objective_path(objective.id) do %>
-                                    <p><%= objective.one_day %></p> 
+                                    <p><%= simple_format(objective.one_day) %></p> 
                                        <% end %>
                                        <% end %>
                                        <% end %>
@@ -64,7 +64,7 @@
                                  <p>e-mail</p>
                                   <%= current_user.email %>
                                  <p>プロフィール</p>
-                                  <%= current_user.profile %>
+                                  <%= simple_format(current_user.profile) %>
                                  <br>
                                  <button class= "close" id="close">close</button>
                              </div>

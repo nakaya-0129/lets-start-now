@@ -55,7 +55,7 @@
                   <div class="list-ifthen" id="ifthen-index">
                     <h1><%= image_tag "lists.jpg", class: "icon" %>if-thenルール一覧</h1>
                     <% @aggregates.each do |aggregate| %>
-                    <p><%= aggregate.self_compliment %></p>
+                    <p><%= simple_format(aggregate.self_compliment) %></p>
                      <% end %>
                    <button id="list-close">close</button>
                   </div>

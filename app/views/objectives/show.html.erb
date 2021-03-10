@@ -29,7 +29,7 @@
 
             <tr>
               <th class="detail-object">アクションプラン</th>
-              <td class="detail-value"><%= @objective.action_plan %></td>
+              <td class="detail-value"><%= simple_format(@objective.action_plan) %></td>
             </tr>
           </tbody>
        </table>
@@ -61,7 +61,7 @@
      <% @comments.first(10).each do |comment| %>
       <% unless comment.id.nil? %>
          <div class ="comments-table">
-          <%= comment.text %>
+          <%= simple_format(comment.text) %>
            <div class="comment-name">
            <%= link_to user_path(comment.user.id) do%>
          <% if current_user.image_url.present? %>

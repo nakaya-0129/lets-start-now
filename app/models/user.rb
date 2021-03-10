@@ -11,7 +11,6 @@ validates :profile, length: { maximum: 100 ,message: "の制限を超えてい�
 validates :password,length: {in: 6..30,message: "の入力が不正です"},on: :create
 #validates :image, presence: {message: "は必須です"}
 
-
          
 has_many :objectives 
 has_many :likes  
