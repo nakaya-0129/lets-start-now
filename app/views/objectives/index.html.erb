@@ -25,13 +25,13 @@
                            <div class="user-index">
                               <div class="user-contents" id="user-contents">
                                  <h1><%= image_tag "lists.jpg", class: "icon" %>ユーザー投稿一覧</h1>
-                                 <% @objectives.each do |objective| %>
-                                    <% if current_user.id == objective.user.id %>
-                                    <%= link_to objective_path(objective.id) do %>
-                                    <p><%= simple_format(objective.one_day) %></p> 
-                                       <% end %>
-                                       <% end %>
-                                       <% end %>
+                                    <% @objectives.each do |objective| %>
+                                       <% if current_user.id == objective.user.id %>
+                                       <%= link_to objective_path(objective.id) do %>
+                                       <p><%= simple_format(objective.one_day) %><%= link_to  objective_path(objective.id), method: :delete, data: {confirm: '本当に削除しますか？'}  do %><%= image_tag "doust.png", class: "dust-icon" %><% end %></p>
+                                          <% end %>
+                                          <% end %>
+                                          <% end %>
                                     <button class="user-close" id="user-close">close</button>
                               </div>
                            </div>
