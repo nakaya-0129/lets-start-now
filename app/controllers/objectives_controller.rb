@@ -1,7 +1,7 @@
 class ObjectivesController < ApplicationController
   before_action :authenticate_user!, except: [:top]
-  before_action :objective_find, only: [:show,:edit,:update,:destroy]
-  before_action :searching_object, only: [:search,:index]
+  before_action :objective_find, only: %i[show edit update destroy]
+  before_action :searching_object, only: %i[search index]
   
   def top
 
