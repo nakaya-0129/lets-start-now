@@ -1,5 +1,5 @@
 class AggregatesController < ApplicationController
-before_action :set_aggregate, only: %i[show edit destroy]
+before_action :set_aggregate, only: %i[show edit destroy update]
   def index
    @aggregates = current_user.aggregates.all.order(created_at: :desc)
   end
