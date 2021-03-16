@@ -2,21 +2,25 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable ,:validatable
+  :recoverable, :rememberable 
 
-validates :email, length: { minimum: 1, message: "は必須です"}
-validates :nick_name, length: { minimum: 1, message: "は必須です"}
-validates :nick_name, length: { maximum: 10,message: "の制限を超えています"}
-validates :profile, length: { maximum: 100 ,message: "の制限を超えています"}
+#validates :image, presence: {message: "を入力して下さい"}  
+validates :nick_name, length: { minimum: 1, message: "入力は必須です"}
+validates :nick_name, length: { maximum: 10,message: "の文字数制限を超えています"}
+validates :email, length: { minimum: 1, message: "の入力は必須です"}
+validates :password, presence: {message: "の入力は必須です"}
 validates :password,length: {in: 6..30,message: "の入力が不正です"},on: :create
-#validates :image, presence: {message: "は必須です"}
+validates :profile, length: { maximum: 100 ,message: "の制限を超えています"}
+
+
+
 
          
-has_many :objectives 
-has_many :likes  
-has_many :comments 
-has_many :aggregates  
-has_many :relationships
+has_many :objectives, dependent: :delete_all 
+has_many :likes, dependent: :delete_all  
+has_many :comments, dependent: :delete_all
+has_many :aggregates, dependent: :delete_all 
+has_many :relationships, dependent: :delete_all
 has_many :followings, through: :relationships, source: :follow
 has_many :reverse_of_reationships, class_name: 'Relationship', foreign_key: 'follow_id'
 has_many :followers, through: :reverse_of_reationships, source: :user

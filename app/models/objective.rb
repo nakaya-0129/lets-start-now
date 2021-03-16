@@ -1,8 +1,8 @@
 class Objective < ApplicationRecord
   has_one_attached :image,  dependent: :destroy 
   belongs_to :user
-  has_many :likes
-  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :delete_all
+  has_many :comments, dependent: :delete_all
 
   with_options presence: {message: "は必須です"} do
     validates :user_name

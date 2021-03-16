@@ -1,8 +1,8 @@
 ja:
   activerecord:
     models:
-       objective:
-       aggregate:
+      objective:
+      aggregate:
     attributes:
       objective:
         image: イメージ画像
@@ -22,9 +22,8 @@ ja:
         action_point: 達成率
         self_compliment: if-thenルール
       user:
-        nick_name: 公開名
+        nick_name: ユーザー名
         email: メールアドレス
         password: パスワード
-        image: ユーザー画像
-
-
+        password_confirmation: パスワード（確認）
+        image: プロフィール画像
