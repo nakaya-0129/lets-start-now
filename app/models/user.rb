@@ -8,7 +8,6 @@ class User < ApplicationRecord
 validates :nick_name, length: { minimum: 1, message: "入力は必須です"}
 validates :nick_name, length: { maximum: 10,message: "の文字数制限を超えています"}
 validates :email, length: { minimum: 1, message: "の入力は必須です"}
-validates :password, presence: {message: "の入力は必須です"}
 validates :password,length: {in: 6..30,message: "の入力が不正です"},on: :create
 validates :profile, length: { maximum: 100 ,message: "の制限を超えています"}
 
