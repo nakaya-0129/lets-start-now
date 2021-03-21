@@ -1,26 +1,24 @@
 <%= render "shared/account" %>
 <div class= "account-page">
  <div class= "account-post">
-   <div class= "user-header">
+        <h1 class= "account-title">Acount</h1>
+        <div class= "user-header">
         <%if current_user.id == @user.id%>
      <div class="user-edit"><%= link_to  edit_user_registration_path  do %>
        <div class="edit-icon"><%= image_tag "pen.png" ,class: "icon"%><p>編集</p></div>
      </div>
         <% end %>
         <% end %>
-       <div class= "follower-lists">
-          <%= render 'relationships/follow', user: @user %> 
-          <p class="follower">フォロワー数：<%= @user.followers.count %>人</p>
-       </div>
     </div>
-  
-        <h1 class= "account-title">Acount</h1>
-        
-        <h3 class="account-list">プロフィール画像（公開）</h3>
+        <h3 class="account-list">プロフィール画像</h3>
           <img src=<%= @user.image %> class="image">
-        <h3 class="account-list">ユーザー名（公開）</h3>
+        <h3 class="account-list">ユーザー名</h3>
       <%= @user.nick_name %>
-        <h3 class="account-list">プロフィール（公開）</h3>
+        <h3 class="account-list">プロフィール</h3>
       <%= simple_format(@user.profile) %> 
-  </div> 
+      <div class= "follower-lists">
+          <%= render 'relationships/follow', user: @user %> 
+          <%= image_tag "human.png" %><p class="follower">フォロワー：<%= @user.followers.count %>人</p>
+       </div>
+  </div>
 </div>
