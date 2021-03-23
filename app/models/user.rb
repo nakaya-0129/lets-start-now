@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-  :recoverable, :rememberable 
+  :recoverable, :rememberable
 
 #validates :image, presence: {message: "を入力して下さい"}  
 validates :nick_name, length: { minimum: 1, message: "入力は必須です"}
@@ -11,15 +11,11 @@ validates :email, length: { minimum: 1, message: "の入力は必須です"}
 validates :password,length: {in: 6..30,message: "の入力が不正です"},on: :create
 validates :profile, length: { maximum: 100 ,message: "の制限を超えています"}
 
-
-
-
-         
-has_many :objectives, dependent: :delete_all 
-has_many :likes, dependent: :delete_all  
-has_many :comments, dependent: :delete_all
-has_many :aggregates, dependent: :delete_all 
-has_many :relationships, dependent: :delete_all
+has_many :objectives
+has_many :likes
+has_many :comments
+has_many :aggregates
+has_many :relationships
 has_many :followings, through: :relationships, source: :follow
 has_many :reverse_of_reationships, class_name: 'Relationship', foreign_key: 'follow_id'
 has_many :followers, through: :reverse_of_reationships, source: :user
