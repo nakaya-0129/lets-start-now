@@ -24,7 +24,7 @@
 
 ## ログインページ
 
-<img width="1440" alt="スクリーンショット 2021-04-05 19 27 45" src="https://user-images.githubusercontent.com/71679288/113565242-a9c37180-9645-11eb-805e-de1ab49ac30d.png">
+<img width="1077" alt="スクリーンショット 2021-04-05 19 27 45" src="https://user-images.githubusercontent.com/71679288/113565831-9e247a80-9646-11eb-9db2-f28f5f7fcf9b.png">
   
 ## 投稿一覧 ページ
 
@@ -32,7 +32,7 @@
   
 ## 詳細表示＆コメント入力画面
 
-<img width="1440" alt="スクリーンショット 2021-04-05 19 26 08" src="https://user-images.githubusercontent.com/71679288/113564925-2013a400-9645-11eb-877b-7d58427b1e65.png">
+<img width="1436" alt="スクリーンショット 2021-04-05 19 26 08" src="https://user-images.githubusercontent.com/71679288/113565780-85b46000-9646-11eb-9647-d0897cad9648.png">
   
 ## ユーザーの目標管理 ページ
   
