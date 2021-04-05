@@ -18,22 +18,30 @@
 
 <img width="1399" alt="スクリーンショット 2021-03-24 20 29 33" src="https://user-images.githubusercontent.com/71679288/112304337-b7413900-8ce0-11eb-8a8e-63a4fbe7a8ff.png">
 
-## signup ページ
+## 新規登録 ページ
 
 <img width="1024" alt="スクリーンショット 2021-03-24 20 29 54" src="https://user-images.githubusercontent.com/71679288/112304942-71d13b80-8ce1-11eb-8179-25a2c6cc2325.png">
 
-## index ページ
+## ログインページ
+
+<img width="1440" alt="スクリーンショット 2021-04-05 19 27 45" src="https://user-images.githubusercontent.com/71679288/113565242-a9c37180-9645-11eb-805e-de1ab49ac30d.png">
+  
+## 投稿一覧 ページ
 
 <img width="1419" alt="スクリーンショット 2021-03-24 20 33 33" src="https://user-images.githubusercontent.com/71679288/112305044-94635480-8ce1-11eb-9f1b-274ea934107c.png">
+  
+## 詳細表示＆コメント入力画面
 
-## note ページ
-
+<img width="1440" alt="スクリーンショット 2021-04-05 19 26 08" src="https://user-images.githubusercontent.com/71679288/113564925-2013a400-9645-11eb-877b-7d58427b1e65.png">
+  
+## ユーザーの目標管理 ページ
+  
 <img width="1291" alt="スクリーンショット 2021-03-24 20 34 27" src="https://user-images.githubusercontent.com/71679288/112305191-beb51200-8ce1-11eb-8bcf-fc96e6dc9282.png">
 
-## acount ページ
+## ユーザーのアカウント ページ
 
 <img width="699" alt="スクリーンショット 2021-03-21 22 01 03" src="https://user-images.githubusercontent.com/71679288/112305307-e0ae9480-8ce1-11eb-81cd-6ad84d2f9012.png">
-
+  
 # 使い方・機能
 
 ## 目標宣言・投稿機能
